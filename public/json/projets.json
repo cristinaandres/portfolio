@@ -1,17 +1,5 @@
 [
-    {
-        "bg_color": "#E2E2DB",
-        "logo": "main_logo.svg",
-        "complete_name": "This is a new project",
-        "name": "New project",
-        "name_color": "black",
-        "padding_top": 132,
-        "content": [
-            "Portfolio_cristina_page-0004.jpg",
-            "Portfolio_cristina_page-0005.jpg",
-            "Portfolio_cristina_page-0006.jpg"
-        ]
-    },
+    
     {
         "bg_color": "#000",
         "logo": "curefab.svg",
