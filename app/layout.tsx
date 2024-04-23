@@ -22,7 +22,7 @@ export default function RootLayout({
       <Suspense>
         <body className={inter.className}>
           <Toaster richColors position="bottom-center" />
-          <div className="flex flex-col justify-between items-stretch h-[100dvh]">
+          <div className="flex flex-col justify-between items-stretch h-[100dvh] select-none">
             <Header />
             <div>{children}</div>
 

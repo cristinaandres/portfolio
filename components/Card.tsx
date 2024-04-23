@@ -44,30 +44,21 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
         }
     }, [searchParams, complete_name]);
 
-    // useEffect(() => {
-    //     const updateBottomValue = () => {
-    //         if (ref.current) {
-    //             const height = ref.current.offsetHeight;
-    //             ref.current.style.setProperty('--bottom-value', `${0.2 * height}px`);
-    //         }
-    //     };
-
-    //     updateBottomValue();
-    //     window.addEventListener('resize', updateBottomValue);
-
-    //     return () => window.removeEventListener('resize', updateBottomValue);
-    // }, []);
     const ref = useRef(null);
-    const elmnt = document.getElementById("cardID");
+    let elmnt = null;
 
-    const [bottomValue, setBottomValue] = useState('92px'); // Default value
+    useEffect(() => {
+        elmnt = document.getElementById("cardID");
+    })
+
+    const [bottomValue, setBottomValue] = useState('92px');
+    const [fontSize, setFontSize] = useState('12px')
 
     useEffect(() => {
         const updateBottomValue = () => {
-            if (ref.current) {
-                const height = elmnt!.offsetHeight;
-                setBottomValue(`${0.2 * height}px`);
-            }
+            const height = elmnt!.offsetHeight;
+            setFontSize(`${0.03 * height}px`);
+            setBottomValue(`${0.2 * height}px`);
         };
 
 
@@ -91,18 +82,22 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
                 id="cardID"
             >
                 <div className='h-full flex flex-col justify-between'>
-
-                    <div className="flex items-center justify-center h-full scale-80">
+                    <div className="flex items-center justify-center h-full scale-[.7]">
                         <img src={`/images/${logo}`} alt='Logo' className='group-hover:scale-110 transition-all duration-200' onContextMenu={e => e.preventDefault()} />
                     </div>
-                    <h2 className={`  uppercase text-xs tracking-[6px] text-center text-${name_color}`}>{name}</h2>
+
+                    <h2
+                        style={{
+                            fontSize: fontSize
+                        }}
+                        className={`uppercase tracking-[6px] text-center text-${name_color}`}>{name}</h2>
 
                 </div>
 
 
 
                 <div className="absolute left-0 w-full bottom-0 h-1/3 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 w-full  p-4 text-white text-center">
+                    <div className="absolute bottom-0 w-full p-4 text-white font-extrabold text-center">
                         <p>{complete_name}</p>
                     </div>
                 </div>

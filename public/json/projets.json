@@ -2,7 +2,7 @@
     
     {
         "bg_color": "#000",
-        "logo": "curefab.svg",
+        "logo": "curefab.png",
         "complete_name": "Website for Curefab Technologies GmbH",
         "name": "Website redesign",
         "name_color": "white",
@@ -15,7 +15,7 @@
     },
     {
         "bg_color": "#91A399",
-        "logo": "montezuma.svg",
+        "logo": "montezuma.png",
         "complete_name": "Montezuma: a new marketing strategy",
         "name": "Marketing strategy + packaging design",
         "name_color": "black",
@@ -70,7 +70,7 @@
     },
     {
         "bg_color": "#718B75",
-        "logo": "moca.svg",
+        "logo": "moca.png",
         "complete_name": "Design of a new brand",
         "name": "Brand design",
         "name_color": "white",
@@ -95,7 +95,7 @@
     },
     {
         "bg_color": "#1D252D",
-        "logo": "aresdomus.svg",
+        "logo": "aresdomus.png",
         "complete_name": "Design of a amazing brand",
         "name": "Brand design",
         "name_color": "white",
@@ -108,7 +108,7 @@
     },
     {
         "bg_color": "#597177",
-        "logo": "sakana.svg",
+        "logo": "sakana.png",
         "complete_name": "Design for a Swiss watch",
         "name": "Swiss watch design",
         "name_color": "white",
@@ -121,7 +121,7 @@
     },
     {
         "bg_color": "#000",
-        "logo": "ciclogreen.svg",
+        "logo": "ciclogreen.png",
         "complete_name": "Project Ciclogreen",
         "name": "Product design",
         "name_color": "white",
@@ -134,7 +134,7 @@
     },
     {
         "bg_color": "#D9ABBA",
-        "logo": "blossom.svg",
+        "logo": "blossom.png",
         "complete_name": "Blossom",
         "name": "Product design",
         "name_color": "white",
