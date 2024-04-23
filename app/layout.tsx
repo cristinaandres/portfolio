@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/Footer";
 import { Toaster } from 'sonner'
-
+import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,12 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Toaster richColors position="bottom-center"/>
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <Suspense>
+        <body className={inter.className}>
+          <Toaster richColors position="bottom-center" />
+          <div className="flex flex-col justify-between items-stretch h-[100dvh]">
+            <Header />
+            <div>{children}</div>
+
+            <Footer />
+          </div>
+
+        </body>
+      </Suspense>
     </html>
   );
 }

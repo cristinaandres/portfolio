@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "@adobe/react-spectrum": "^3.34.1",
-    "@nextui-org/react": "^2.2.10",
-    "next": "14.2.0",
+    "@nextui-org/react": "^2.3.5",
+    "next": "^14.2.2",
     "next-share": "^0.27.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
     "react-spectrum": "^1.2.6",
+    "sharp": "^0.33.3",
     "sonner": "^1.4.41"
   },
   "devDependencies": {
@@ -24,7 +25,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.0",
+    "eslint-config-next": "^14.2.2",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

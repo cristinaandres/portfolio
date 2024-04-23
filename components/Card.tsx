@@ -20,7 +20,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
 
             return params.toString()
         },
-        [searchParams]
+        [searchParams, complete_name]
     )
 
 
@@ -42,7 +42,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
         if (project && project === complete_name.toLowerCase()) {
             setModalOpen(true);
         }
-    }, [complete_name]);
+    }, [searchParams, complete_name]);
 
 
     return (
@@ -54,8 +54,8 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
                 className="relative aspect-square flex flex-col justify-center items-center gap-12 group cursor-pointer  size-full sm:size-full md:size-1/2 lg:size-1/3 xl:size-1/4 2xl:size-1/5 3xl:size-1/6 4xl:size-1/7 transition-all duration-250"
                 onClick={openModal}
             >
-                <div className="border border-black flex items-center justify-center px-8 scale-80">
-                    <img src={`/images/${logo}`} alt='Logo' className='group-hover:scale-110 transition-all duration-200' />
+                <div className="flex items-center justify-center px-8 scale-80">
+                    <img src={`/images/${logo}`} alt='Logo' className='group-hover:scale-110 transition-all duration-200' onContextMenu={e => e.preventDefault()}/>
                 </div>
                 <h2
                     className={`absolute bottom-[92px]  uppercase text-xs tracking-[6px] text-center text-${name_color}`}>{name}</h2>
@@ -71,7 +71,10 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
                 <div className='flex flex-col gap-4'>
                     {content.map((link, index) => {
                         return (
-                            <img src={`/images/projets/${link}`} alt={'Project content'} key={index} className="max-w-full h-auto" />
+                            <Image src={`/images/projets/${link}`} alt={'Project content'} key={index}
+                                width={1920}
+                                height={1080}                                
+                                className="max-w-full h-auto" />
                         )
                     })}
                 </div>

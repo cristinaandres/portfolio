@@ -2,82 +2,159 @@
     {
         "bg_color": "#E2E2DB",
         "logo": "main_logo.svg",
-        "complete_name":"This is a new project",
+        "complete_name": "This is a new project",
         "name": "New project",
         "name_color": "black",
         "padding_top": 132,
-        "content": ["Portfolio_cristina_page-0004.jpg", "Portfolio_cristina_page-0005.jpg", "Portfolio_cristina_page-0006.jpg"]
-    },
-    {
-        "bg_color": "#E2E2DB",
-        "logo": "main_logo.svg",
-        "complete_name":"This is a new project",
-        "name": "New project",
-        "name_color": "black",
-        "padding_top": 132,
-        "content": ["Portfolio_cristina_page-0004.jpg", "Portfolio_cristina_page-0005.jpg", "Portfolio_cristina_page-0006.jpg"]
-    },
-    {
-        "bg_color": "#E2E2DB",
-        "logo": "main_logo.svg",
-        "complete_name":"This is a new project",
-        "name": "New project",
-        "name_color": "black",
-        "padding_top": 132,
-        "content": ["Portfolio_cristina_page-0004.jpg", "Portfolio_cristina_page-0005.jpg", "Portfolio_cristina_page-0006.jpg"]
+        "content": [
+            "Portfolio_cristina_page-0004.jpg",
+            "Portfolio_cristina_page-0005.jpg",
+            "Portfolio_cristina_page-0006.jpg"
+        ]
     },
     {
         "bg_color": "#000",
         "logo": "curefab.svg",
-        "complete_name":"Website for Curefab Technologies GmbH",
+        "complete_name": "Website for Curefab Technologies GmbH",
         "name": "Website redesign",
         "name_color": "white",
         "padding_top": 192,
-        "content": ["Portfolio_cristina_page-0004.jpg", "Portfolio_cristina_page-0005.jpg", "Portfolio_cristina_page-0006.jpg"]
-    },
-    {
-        "bg_color": "#597177",
-        "logo": "sakana.svg",
-        "complete_name":"Design for a Swiss watch",
-        "name": "Swiss watch design",
-        "name_color": "white",
-        "padding_top": 124,
-        "content": ["Portfolio_cristina_page-0018.jpg", "Portfolio_cristina_page-0019.jpg", "Portfolio_cristina_page-0020.jpg"]
-    },
-    {
-        "bg_color": "#FFF",
-        "logo": "smurfit.png",
-        "complete_name":"Smurfit packaging design",
-        "name": "Packaging design",
-        "name_color": "black",
-        "padding_top": 196,
-        "content": ["Portfolio_cristina_page-0014.jpg", "Portfolio_cristina_page-0015.jpg", "Portfolio_cristina_page-0016.jpg", "Portfolio_cristina_page-0017.jpg"]
+        "content": [
+            "curefab_1.png",
+            "curefab_2.png",
+            "curefab_3.png"
+        ]
     },
     {
         "bg_color": "#91A399",
         "logo": "montezuma.svg",
-        "complete_name":"Montezuma: a new marketing strategy",
+        "complete_name": "Montezuma: a new marketing strategy",
         "name": "Marketing strategy + packaging design",
         "name_color": "black",
         "padding_top": 156,
-        "content": ["Portfolio_cristina_page-0009.jpg", "Portfolio_cristina_page-0010.jpg", "Portfolio_cristina_page-0011.jpg", "Portfolio_cristina_page-0012.jpg", "Portfolio_cristina_page-0013.jpg"]
+        "content": [
+            "Portfolio_cristina_page-0009.jpg",
+            "Portfolio_cristina_page-0010.jpg",
+            "Portfolio_cristina_page-0011.jpg",
+            "Portfolio_cristina_page-0012.jpg",
+            "Portfolio_cristina_page-0013.jpg"
+        ]
+    },
+    {
+        "bg_color": "#FFF",
+        "logo": "smurfit.png",
+        "complete_name": "Smurfit packaging design",
+        "name": "Packaging design",
+        "name_color": "black",
+        "padding_top": 196,
+        "content": [
+            "Portfolio_cristina_page-0014.jpg",
+            "Portfolio_cristina_page-0015.jpg",
+            "Portfolio_cristina_page-0016.jpg",
+            "Portfolio_cristina_page-0017.jpg"
+        ]
+    },
+    {
+        "bg_color": "#E2E2DB",
+        "logo": "punt.png",
+        "complete_name": "Product design for Punt",
+        "name": "Product design",
+        "name_color": "black",
+        "padding_top": 132,
+        "content": [
+            "Portfolio_cristina_page-0004.jpg",
+            "Portfolio_cristina_page-0005.jpg",
+            "Portfolio_cristina_page-0006.jpg"
+        ]
+    },
+    {
+        "bg_color": "#69A0AF",
+        "logo": "compak.png",
+        "complete_name": "Redesign of a Compa-K Product",
+        "name": "Product redesign",
+        "name_color": "white",
+        "padding_top": 132,
+        "content": [
+            "Portfolio_cristina_page-0004.jpg",
+            "Portfolio_cristina_page-0005.jpg",
+            "Portfolio_cristina_page-0006.jpg"
+        ]
     },
     {
         "bg_color": "#718B75",
         "logo": "moca.svg",
-        "complete_name":"Design of a new brand",
+        "complete_name": "Design of a new brand",
         "name": "Brand design",
         "name_color": "white",
         "padding_top": 140,
-        "content": ["Portfolio_cristina_page-0007.jpg", "Portfolio_cristina_page-0008.jpg"]
+        "content": [
+            "Portfolio_cristina_page-0007.jpg",
+            "Portfolio_cristina_page-0008.jpg"
+        ]
+    },
+    {
+        "bg_color": "#FFF",
+        "logo": "rosa.png",
+        "complete_name": "Smartwatch product design",
+        "name": "Product design",
+        "name_color": "black",
+        "padding_top": 132,
+        "content": [
+            "Portfolio_cristina_page-0004.jpg",
+            "Portfolio_cristina_page-0005.jpg",
+            "Portfolio_cristina_page-0006.jpg"
+        ]
     },
     {
         "bg_color": "#1D252D",
         "logo": "aresdomus.svg",
-        "complete_name":"Design of a amazing brand",
+        "complete_name": "Design of a amazing brand",
         "name": "Brand design",
         "name_color": "white",
         "padding_top": 132,
-        "content": ["Portfolio_cristina_page-0004.jpg", "Portfolio_cristina_page-0005.jpg", "Portfolio_cristina_page-0006.jpg"]
+        "content": [
+            "Portfolio_cristina_page-0004.jpg",
+            "Portfolio_cristina_page-0005.jpg",
+            "Portfolio_cristina_page-0006.jpg"
+        ]
+    },
+    {
+        "bg_color": "#597177",
+        "logo": "sakana.svg",
+        "complete_name": "Design for a Swiss watch",
+        "name": "Swiss watch design",
+        "name_color": "white",
+        "padding_top": 124,
+        "content": [
+            "Portfolio_cristina_page-0018.jpg",
+            "Portfolio_cristina_page-0019.jpg",
+            "Portfolio_cristina_page-0020.jpg"
+        ]
+    },
+    {
+        "bg_color": "#000",
+        "logo": "ciclogreen.svg",
+        "complete_name": "Project Ciclogreen",
+        "name": "Product design",
+        "name_color": "white",
+        "padding_top": 132,
+        "content": [
+            "Portfolio_cristina_page-0004.jpg",
+            "Portfolio_cristina_page-0005.jpg",
+            "Portfolio_cristina_page-0006.jpg"
+        ]
+    },
+    {
+        "bg_color": "#D9ABBA",
+        "logo": "blossom.svg",
+        "complete_name": "Blossom",
+        "name": "Product design",
+        "name_color": "white",
+        "padding_top": 132,
+        "content": [
+            "Portfolio_cristina_page-0004.jpg",
+            "Portfolio_cristina_page-0005.jpg",
+            "Portfolio_cristina_page-0006.jpg"
+        ]
     }
 ]
