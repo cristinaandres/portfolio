@@ -18,7 +18,6 @@ const Modal: React.FC<ModalProps> = ({ children, isOpen, onClose }) => {
     }, [isOpen]);
 
     const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        // Checks if the click is on the modal overlay itself and not its children
         if (e.target === e.currentTarget) {
             onClose();
         }

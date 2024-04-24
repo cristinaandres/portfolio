@@ -11,7 +11,9 @@
             "curefab_1.png",
             "curefab_2.png",
             "curefab_3.png"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#91A399",
@@ -26,7 +28,9 @@
             "Portfolio_cristina_page-0011.jpg",
             "Portfolio_cristina_page-0012.jpg",
             "Portfolio_cristina_page-0013.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#FFF",
@@ -40,7 +44,9 @@
             "Portfolio_cristina_page-0015.jpg",
             "Portfolio_cristina_page-0016.jpg",
             "Portfolio_cristina_page-0017.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#E2E2DB",
@@ -53,7 +59,9 @@
             "Portfolio_cristina_page-0004.jpg",
             "Portfolio_cristina_page-0005.jpg",
             "Portfolio_cristina_page-0006.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#69A0AF",
@@ -66,7 +74,9 @@
             "Portfolio_cristina_page-0004.jpg",
             "Portfolio_cristina_page-0005.jpg",
             "Portfolio_cristina_page-0006.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#718B75",
@@ -78,7 +88,9 @@
         "content": [
             "Portfolio_cristina_page-0007.jpg",
             "Portfolio_cristina_page-0008.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#FFF",
@@ -91,7 +103,9 @@
             "Portfolio_cristina_page-0004.jpg",
             "Portfolio_cristina_page-0005.jpg",
             "Portfolio_cristina_page-0006.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#1D252D",
@@ -104,7 +118,9 @@
             "Portfolio_cristina_page-0004.jpg",
             "Portfolio_cristina_page-0005.jpg",
             "Portfolio_cristina_page-0006.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#597177",
@@ -117,7 +133,9 @@
             "Portfolio_cristina_page-0018.jpg",
             "Portfolio_cristina_page-0019.jpg",
             "Portfolio_cristina_page-0020.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#000",
@@ -130,7 +148,9 @@
             "Portfolio_cristina_page-0004.jpg",
             "Portfolio_cristina_page-0005.jpg",
             "Portfolio_cristina_page-0006.jpg"
-        ]
+        ],
+        "additional_files":false,
+        "files":[]
     },
     {
         "bg_color": "#D9ABBA",
@@ -141,6 +161,8 @@
         "padding_top": 132,
         "content": [
             "Portfolio_Page_Blossom.png"
-        ]
+        ],
+        "additional_files":true,
+        "files":["panda.jpg", "portfolio.pdf"]
     }
 ]

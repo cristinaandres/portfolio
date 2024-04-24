@@ -10,7 +10,7 @@ export default function Home() {
 
         {projets.map((projet, index) => {
           return (
-            <Card key={index} bg_color={projet.bg_color} logo={projet.logo} name={projet.name} name_color={projet.name_color} complete_name={projet.complete_name} content={projet.content} />
+            <Card key={index} bg_color={projet.bg_color} logo={projet.logo} name={projet.name} name_color={projet.name_color} complete_name={projet.complete_name} content={projet.content} additional_files={projet.additional_files} content_files={projet.files}/>
           )
         })}
         

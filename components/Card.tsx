@@ -1,13 +1,17 @@
 'use client'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Modal from "@/components/Modal";
-
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-
 import Image from 'next/image';
+import { FaFilePdf } from 'react-icons/fa';
+import { CiImageOn } from "react-icons/ci";
+import { FaFile } from "react-icons/fa";
+import Link from 'next/link';
 
-const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg_color: string, logo: string, name: string, name_color: string, complete_name: string, content: string[] }) => {
+const Card = ({ bg_color, logo, name, name_color, complete_name, content, additional_files, content_files }: { bg_color: string, logo: string, name: string, name_color: string, complete_name: string, content: string[], additional_files: boolean, content_files: string[] }) => {
     const [isModalOpen, setModalOpen] = useState(false);
+    const [contentFiles, setContentFiles] = useState<string[]>(content_files);
+    const [showAdditionalFiles, setShowAdditionalFiles] = useState(false);
 
     const router = useRouter();
     const pathname = usePathname();
@@ -44,7 +48,6 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
         }
     }, [searchParams, complete_name]);
 
-    const ref = useRef(null);
     let elmnt = null;
 
     useEffect(() => {
@@ -68,6 +71,24 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
         return () => window.removeEventListener('resize', updateBottomValue);
     }, []);
 
+    // Function to select an icon based on the file extension
+    const getFileIcon = (filename: string) => {
+        const extension = filename.split('.').pop();
+        switch (extension) {
+            case 'pdf':
+                return <FaFilePdf size={25}/>;
+            case 'png':
+                return <CiImageOn size={25}/>;
+            case 'jpg':
+                return <CiImageOn size={25}/>;
+            case 'jpeg':
+                return <CiImageOn size={25}/>;
+            case 'gif':
+                return <CiImageOn size={25}/>;
+            default:
+                return <FaFile size={25}/>;
+        }
+    };
 
     return (
         <>
@@ -91,9 +112,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
                             fontSize: fontSize
                         }}
                         className={`uppercase tracking-[6px] text-center text-${name_color}`}>{name}</h2>
-
                 </div>
-
 
 
                 <div className="absolute left-0 w-full bottom-0 h-1/3 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -113,8 +132,24 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content }: { bg
                                 className="max-w-full h-auto" />
                         )
                     })}
+                    {additional_files && (
+                        <div className='bg-black w-full text-white flex flex-col justify-center items-center text-xl gap-3'>
+                            <p className='font-poppins font-bold'>Attached files</p>
+                            <div className='flex gap-4'>
+                                {
+                                    content_files.map((file, index) => {
+                                        return (
+                                            <Link href={`/attached/${file}`} target='_blank' key={index} className='flex flex-col items-center justify-center gap-2 hover:scale-105 hover:opacity-80 transition-all duration-250'>
+                                                {getFileIcon(file)}
+                                                <p className='text-[8px]'>{file}</p>
+                                            </Link>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    )}
                 </div>
-
             </Modal>
         </>
 
