@@ -8,7 +8,7 @@ import main_log_white from '@/public/images/main_logo_white.svg'
 const Footer = () => {
     return (
         <>
-            <div className='flex flex-col w-full bg-[#000] px-16 py-8 gap-4'>
+            <div className='font-inter flex flex-col w-full bg-[#000] px-16 py-8 gap-4'>
                 <div className='w-full flex justify-between items-end'>
                     <div className='h-full'>
                         <Image src={main_log_white} alt='main logo' width={120} height={120} />

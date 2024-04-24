@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <>
 
-            <div className='w-full bg-white py-4 lg:py-8 flex lg:flex-col items-center justify-center gap-16 transition-all duration-300'>
+            <div className='font-inter w-full bg-white py-4 lg:py-8 flex lg:flex-col items-center justify-center gap-16 transition-all duration-300'>
                 <div className='flex items-center justify-between lg:justify-center gap-8 w-full px-8  transition-all duration-300'>
                     <div className='block lg:hidden'>
                         <IoMenu size={52} />
