@@ -24,11 +24,12 @@ export default function RootLayout({
           <Toaster richColors position="bottom-center" />
           <div className="flex flex-col justify-between items-stretch h-[100dvh] select-none">
             <Header />
-            <div>{children}</div>
+            <div>
+              {children}
+            </div>
 
             <Footer />
           </div>
-
         </body>
       </Suspense>
     </html>
