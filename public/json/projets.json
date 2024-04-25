@@ -35,7 +35,7 @@
     {
         "bg_color": "#FFF",
         "logo": "smurfit.png",
-        "complete_name": "Smurfit packaging design",
+        "complete_name": "Packaging design for Smurfit Kappa",
         "name": "Packaging design",
         "name_color": "black",
         "padding_top": 196,
@@ -56,9 +56,7 @@
         "name_color": "black",
         "padding_top": 132,
         "content": [
-            "Portfolio_cristina_page-0004.jpg",
-            "Portfolio_cristina_page-0005.jpg",
-            "Portfolio_cristina_page-0006.jpg"
+            "Portfolio_Page_Yokohama1.jpg"
         ],
         "additional_files":false,
         "files":[]
