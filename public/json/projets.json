@@ -73,8 +73,8 @@
             "Portfolio_Page_Compak2.jpg",
             "Portfolio_Page_Compak3.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files":true,
+        "files":["Compa-k_Cartel.pdf"]
     },
     {
         "bg_color": "#718B75",
@@ -103,8 +103,8 @@
             "Portfolio_Page_Smartwatch3.jpg",
             "Portfolio_Page_Smartwatch4.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files":true,
+        "files":["Smartwatch_Poster.pdf"]
     },
     {
         "bg_color": "#1D252D",
