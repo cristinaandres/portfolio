@@ -71,9 +71,9 @@
         "name_color": "white",
         "padding_top": 132,
         "content": [
-            "Portfolio_cristina_page-0004.jpg",
-            "Portfolio_cristina_page-0005.jpg",
-            "Portfolio_cristina_page-0006.jpg"
+            "Portfolio_Page_Compak1.jpg",
+            "Portfolio_Page_Compak2.jpg",
+            "Portfolio_Page_Compak3.jpg"
         ],
         "additional_files":false,
         "files":[]
@@ -100,9 +100,10 @@
         "name_color": "black",
         "padding_top": 132,
         "content": [
-            "Portfolio_cristina_page-0004.jpg",
-            "Portfolio_cristina_page-0005.jpg",
-            "Portfolio_cristina_page-0006.jpg"
+            "Portfolio_Page_Smartwatch1.jpg",
+            "Portfolio_Page_Smartwatch2.jpg",
+            "Portfolio_Page_Smartwatch3.jpg",
+            "Portfolio_Page_Smartwatch4.jpg"
         ],
         "additional_files":false,
         "files":[]
@@ -145,9 +146,9 @@
         "name_color": "white",
         "padding_top": 132,
         "content": [
-            "Portfolio_cristina_page-0004.jpg",
-            "Portfolio_cristina_page-0005.jpg",
-            "Portfolio_cristina_page-0006.jpg"
+            "Portfolio_Page_Ciclogreen1.jpg",
+            "Portfolio_Page_Ciclogreen2.jpg",
+            "Portfolio_Page_Ciclogreen3.jpg"
         ],
         "additional_files":false,
         "files":[]
@@ -160,7 +161,11 @@
         "name_color": "white",
         "padding_top": 132,
         "content": [
-            "Portfolio_Page_Blossom.png"
+            "Portfolio_Page_Blossom1.jpg",
+            "Portfolio_Page_Blossom2.jpg",
+            "Portfolio_Page_Blossom3.jpg",
+            "Portfolio_Page_Blossom4.jpg"
+            
         ],
         "additional_files":true,
         "files":["panda.jpg", "Portfolio.pdf"]
