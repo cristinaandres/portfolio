@@ -115,7 +115,6 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
                         className={`uppercase tracking-[6px] text-center text-${name_color}`}>{name}</h2>
                 </div>
 
-
                 <div className="absolute left-0 w-full bottom-0 h-1/3 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 w-full p-4 text-white font-extrabold text-center">
                         <p>{complete_name}</p>
@@ -143,7 +142,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
                             />
                         );
                     })}
-                                        
+
                     {additional_files && (
                         <div className='bg-black w-full text-white flex flex-col justify-center items-center text-xl gap-3 pt-8'>
                             <p className='font-poppins font-bold'>Attached files</p>

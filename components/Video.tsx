@@ -1,19 +1,18 @@
 'use client'
 import React, { useRef, useState } from 'react';
-import { FaVolumeMute, FaVolumeUp } from 'react-icons/fa'; // Import icons
+import { FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 
 interface VideoBackgroundProps {
-    videoSrc: string; // Path to the video file
+    videoSrc: string;
 }
 
-
 const Video: React.FC<VideoBackgroundProps> = ({ videoSrc }) => {
-    const [isMuted, setIsMuted] = useState(true); // State to handle mute functionality
-    const videoRef = useRef<HTMLVideoElement>(null); // Ref to access the video element
+    const [isMuted, setIsMuted] = useState(true);
+    const videoRef = useRef<HTMLVideoElement>(null);
     const toggleMute = () => {
         const currentState = videoRef.current?.muted ?? true;
         if (videoRef.current) {
-            videoRef.current.muted = !currentState; // Toggle the mute state
+            videoRef.current.muted = !currentState;
             setIsMuted(!currentState);
         }
     };
