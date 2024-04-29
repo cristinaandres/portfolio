@@ -143,14 +143,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
                             />
                         );
                     })}
-                    {/* {content.map((link, index) => {
-                        return (
-                            <Image src={`/images/projets/${link}`} alt={'Project content'} key={index}
-                                width={1920}
-                                height={1080}
-                                className="max-w-full h-auto" />
-                        )
-                    })} */}
+                                        
                     {additional_files && (
                         <div className='bg-black w-full text-white flex flex-col justify-center items-center text-xl gap-3 pt-8'>
                             <p className='font-poppins font-bold'>Attached files</p>
