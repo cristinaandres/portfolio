@@ -38,7 +38,7 @@ export default function RootLayout({
         <body className={`${inter.variable} ${poppins.variable}`}>
           <Providers>
             <Toaster richColors position="bottom-center" />
-            <div className="flex flex-col justify-between items-stretch h-[100dvh] select-none">
+            <div className="flex flex-col justify-between items-stretch h-[100dvh] select-none overflow-x-hidden">
               <Header />
               <Menu />
               <div>
