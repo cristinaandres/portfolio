@@ -7,6 +7,7 @@ import { FaFilePdf } from 'react-icons/fa';
 import { CiImageOn } from "react-icons/ci";
 import { FaFile } from "react-icons/fa";
 import Link from 'next/link';
+import Video from './Video';
 
 const Card = ({ bg_color, logo, name, name_color, complete_name, content, additional_files, content_files }: { bg_color: string, logo: string, name: string, name_color: string, complete_name: string, content: string[], additional_files: boolean, content_files: string[] }) => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -76,17 +77,17 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
         const extension = filename.split('.').pop();
         switch (extension) {
             case 'pdf':
-                return <FaFilePdf size={25}/>;
+                return <FaFilePdf size={25} />;
             case 'png':
-                return <CiImageOn size={25}/>;
+                return <CiImageOn size={25} />;
             case 'jpg':
-                return <CiImageOn size={25}/>;
+                return <CiImageOn size={25} />;
             case 'jpeg':
-                return <CiImageOn size={25}/>;
+                return <CiImageOn size={25} />;
             case 'gif':
-                return <CiImageOn size={25}/>;
+                return <CiImageOn size={25} />;
             default:
-                return <FaFile size={25}/>;
+                return <FaFile size={25} />;
         }
     };
 
@@ -124,14 +125,32 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
 
             <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <div className='flex flex-col'>
-                    {content.map((link, index) => {
+                    {content.map((file, index) => {
+                        const fileParts = file.split('.');
+                        const fileExtension = fileParts.length > 1 ? fileParts.pop() as string : ''; // Safely handling the file extension
+                        const isVideo = ['mp4', 'webm'].includes(fileExtension);
+
+                        return isVideo ? (
+                            <Video key={index} videoSrc={file} />
+                        ) : (
+                            <Image
+                                src={`/images/projets/${file}`}
+                                alt={'Project content'}
+                                key={index}
+                                width={1920}
+                                height={1080}
+                                className="max-w-full h-auto"
+                            />
+                        );
+                    })}
+                    {/* {content.map((link, index) => {
                         return (
                             <Image src={`/images/projets/${link}`} alt={'Project content'} key={index}
                                 width={1920}
                                 height={1080}
                                 className="max-w-full h-auto" />
                         )
-                    })}
+                    })} */}
                     {additional_files && (
                         <div className='bg-black w-full text-white flex flex-col justify-center items-center text-xl gap-3 pt-8'>
                             <p className='font-poppins font-bold'>Attached files</p>

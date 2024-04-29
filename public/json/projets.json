@@ -1,5 +1,4 @@
 [
-    
     {
         "bg_color": "#000",
         "logo": "curefab.png",
@@ -12,8 +11,8 @@
             "curefab_2.png",
             "curefab_3.png"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#91A399",
@@ -29,8 +28,8 @@
             "Portfolio_cristina_page-0012.jpg",
             "Portfolio_cristina_page-0013.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#FFF",
@@ -45,8 +44,8 @@
             "Portfolio_cristina_page-0016.jpg",
             "Portfolio_cristina_page-0017.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#E2E2DB",
@@ -58,8 +57,8 @@
         "content": [
             "Portfolio_Page_Yokohama1.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#EBECEE",
@@ -73,8 +72,10 @@
             "Portfolio_Page_Compak2.jpg",
             "Portfolio_Page_Compak3.jpg"
         ],
-        "additional_files":true,
-        "files":["Compa-k_Cartel.pdf"]
+        "additional_files": true,
+        "files": [
+            "Compa-k_Cartel.pdf"
+        ]
     },
     {
         "bg_color": "#718B75",
@@ -87,8 +88,8 @@
             "Portfolio_cristina_page-0007.jpg",
             "Portfolio_cristina_page-0008.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#FFF",
@@ -103,8 +104,10 @@
             "Portfolio_Page_Smartwatch3.jpg",
             "Portfolio_Page_Smartwatch4.jpg"
         ],
-        "additional_files":true,
-        "files":["Smartwatch_Poster.pdf"]
+        "additional_files": true,
+        "files": [
+            "Smartwatch_Poster.pdf"
+        ]
     },
     {
         "bg_color": "#1D252D",
@@ -118,8 +121,8 @@
             "Portfolio_cristina_page-0005.jpg",
             "Portfolio_cristina_page-0006.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#597177",
@@ -133,8 +136,8 @@
             "Portfolio_cristina_page-0019.jpg",
             "Portfolio_cristina_page-0020.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#000",
@@ -148,8 +151,8 @@
             "Portfolio_Page_Ciclogreen2.jpg",
             "Portfolio_Page_Ciclogreen3.jpg"
         ],
-        "additional_files":false,
-        "files":[]
+        "additional_files": false,
+        "files": []
     },
     {
         "bg_color": "#D9ABBA",
@@ -161,11 +164,13 @@
         "content": [
             "Portfolio_Page_Blossom1.jpg",
             "Portfolio_Page_Blossom2.jpg",
+            "test.mp4",
             "Portfolio_Page_Blossom3.jpg",
             "Portfolio_Page_Blossom4.jpg"
-            
         ],
-        "additional_files":true,
-        "files":["Blossom_Manual_A4.pdf"]
+        "additional_files": true,
+        "files": [
+            "Blossom_Manual_A4.pdf"
+        ]
     }
 ]
