@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import MainLogo from './Logos/MainLogo'
 import { usePathname } from 'next/navigation'
@@ -7,15 +7,24 @@ import { Modal, useDisclosure } from "@nextui-org/react";
 import ModalContentContact from './ModalContentContact'
 import classNames from 'classnames';
 import Menu from './Menu'
+import { useMenu } from './context/MenuContext'
 
 const Header = () => {
     const pathname = usePathname();
     const isActive = (href: string) => pathname === href;
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    
+      const { isMenuOpen,toggleMenu } = useMenu();
+    // const toggleMenu = () => {
+    //     setMenuOpen(!isMenuOpen);
+    //     toggleBodyScroll(!isMenuOpen);
+    //   };
 
-    const [isMenuOpen, setMenuOpen] = useState(false);
-
-    const toggleMenu = () => setMenuOpen(!isMenuOpen);
+    useEffect(() => {
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+        };
+    }, []);
 
     return (
         <>
@@ -70,7 +79,7 @@ const Header = () => {
                     </Modal>
                 </div>
             </div>
-            <Menu isMenuOpen={isMenuOpen} closeMenu={() => setMenuOpen(false)} />
+            
         </>
     )
 }
