@@ -3,7 +3,7 @@ import React from 'react'
 function page() {
     return (
         <>
-            <div className='w-full bg-[#E2E2DB] flex flex-col items-center pt-28 pb-[196px]'>
+            <div className='w-screen bg-[#E2E2DB] flex flex-col items-center py-12 md:py-18 xl:py-28 overflow-x-hidden'>
                 <div className='w-clampBody flex flex-col items-center gap-[78px] '>
                     <div className='flex flex-col gap-4 items-center px-32 '>
                         <h1 className='text-clampTitle font-bold leading-[60px] text-center '>Skills & Services</h1>

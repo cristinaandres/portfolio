@@ -43,6 +43,7 @@ const config: Config = {
     nextui({
       addCommonColors: true,
     }),
+    require('tailwind-hamburgers')
   ],
 };
 export default config;

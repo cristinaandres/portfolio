@@ -5,26 +5,31 @@ import MainLogo from './Logos/MainLogo'
 import { usePathname } from 'next/navigation'
 import { Modal, useDisclosure } from "@nextui-org/react";
 import ModalContentContact from './ModalContentContact'
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
-import { IoMenu } from "react-icons/io5";
-
+import classNames from 'classnames';
+import Menu from './Menu'
 
 const Header = () => {
     const pathname = usePathname();
     const isActive = (href: string) => pathname === href;
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
     return (
         <>
-
-            <div className='font-inter w-full bg-white py-4 xl:py-8 flex xl:flex-col items-center justify-center gap-16 transition-all duration-300'>
+            <div className='font-inter w-full bg-white py-4 xl:py-8 flex xl:flex-col items-center justify-center gap-16 transition-all duration-300 z-40'>
                 <div className='flex items-center justify-between xl:justify-center gap-8 w-full px-4 md:px-8 transition-all duration-300'>
-                    <div className='block xl:hidden'>
-                        <IoMenu size={52} />
+                    <div className='flex flex-col'>
+                        <div className='block xl:hidden z-20'>
+                            <button className={classNames(`tham tham-e-squeeze tham-w-6`, { 'tham-active': isMenuOpen })} onClick={toggleMenu}>
+                                <div className="tham-box">
+                                    <div className="tham-inner" />
+                                </div>
+                            </button>
+                        </div>
                     </div>
-
 
                     <div className='mobile'>
                         <div className='flex items-center justify-between gap-6'>
@@ -53,9 +58,6 @@ const Header = () => {
                             <h2 className='uppercase w-full text-start text-xs md:text-base xl:text-2xl font-bold tracking-[12px] order-2 xl:order-3'>Andrés</h2>
                         </div>
                     </div>
-
-
-
                 </div>
 
                 <div className=' gap-16 hidden xl:flex'>
@@ -67,8 +69,8 @@ const Header = () => {
                         <ModalContentContact />
                     </Modal>
                 </div>
-
             </div>
+            <Menu isMenuOpen={isMenuOpen} closeMenu={() => setMenuOpen(false)} />
         </>
     )
 }

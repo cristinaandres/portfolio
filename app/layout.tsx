@@ -29,19 +29,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <Suspense>
-        <body className={`${inter.variable} ${poppins.variable}`}>
-          <Toaster richColors position="bottom-center" />
-          <div className="flex flex-col justify-between items-stretch h-[100dvh] select-none">
-            <Header />
-            <div>
-              {children}
+          <body className={`${inter.variable} ${poppins.variable}`}>
+            <Toaster richColors position="bottom-center" />
+            <div className="flex flex-col justify-between items-stretch h-[100dvh] select-none">
+              <Header />
+              <div>
+                {children}
+              </div>
+              <Footer />
             </div>
-            <Footer />
-          </div>
-        </body>
+          </body>
       </Suspense>
     </html>
   );
