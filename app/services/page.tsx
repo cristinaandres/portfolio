@@ -4,10 +4,10 @@ function page() {
     return (
         <>
             <div className='w-screen bg-[#E2E2DB] flex flex-col items-center py-12 md:py-18 xl:py-28 overflow-x-hidden'>
-                <div className='w-clampBody flex flex-col items-center gap-[78px] '>
-                    <div className='flex flex-col gap-4 items-center px-32 '>
-                        <h1 className='text-clampTitle font-bold leading-[60px] text-center '>Skills & Services</h1>
-                        <p className='text-clampContent text-center text-[#111827] opacity-50 w-[363px] sm:w-[400px] md:w-[450px] lg:w-[500px] xl:w-[575px] 2xl:w-[654px]'>Leveraging expertise in industrial design, graphic design, and burgeoning proficiency in UX/UI, I offer comprehensive solutions that seamlessly blend form, function, and user-centric design principles to bring your vision to life with creativity.</p>
+                <div className='w-full md:w-clampBody flex flex-col items-center gap-[78px] border'>
+                    <div className='flex flex-col gap-4 items-center px-8 md:px-16 xl:px-32 w-full'>
+                        <h1 className='text-clampTitle font-bold leading-[60px] text-center w-full'>Skills & Services</h1>
+                        <p className='text-clampContent text-center text-[#111827] opacity-50 w-4/5 xl:w-[575px] 2xl:w-[654px]'>Leveraging expertise in industrial design, graphic design, and burgeoning proficiency in UX/UI, I offer comprehensive solutions that seamlessly blend form, function, and user-centric design principles to bring your vision to life with creativity.</p>
                     </div>
 
                     <div className='flex flex-wrap gap-5 px-[280px] justify-center transition-all duration-150'>
