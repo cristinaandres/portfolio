@@ -22,3 +22,30 @@
     background: #555;
 }
 
+
+/* CSS */
+.mobile,
+.desktop,
+.tablet,
+.phablet {
+  display: none; /* By default, all are hidden */
+}
+
+/* Mobile-first approach */
+@media (max-width: 480px) {
+  .mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .tablet {
+    display: block;
+  }
+}
+
+@media (min-width: 1025px) {
+  .desktop {
+    display: block;
+  }
+}

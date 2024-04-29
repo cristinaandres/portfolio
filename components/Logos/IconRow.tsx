@@ -13,7 +13,7 @@ const IconRow = () => {
     const [hoveredIcon, setHoveredIcon] = useState('');
 
     return (
-        <div className='flex gap-6 items-center h-[36px] min-w-[464px]'>
+        <div className='flex gap-4 xl:gap-6 items-center flex-wrap'>
             <div
                 className={`transition-all ${hoveredIcon === 'figma' ? 'scale-105' : 'grayscale'} ${hoveredIcon === '' ? 'grayscale-0' : ''}`}
                 onMouseEnter={() => setHoveredIcon('figma')}

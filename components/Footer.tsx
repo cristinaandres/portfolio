@@ -3,15 +3,15 @@ import MainLogo from './Logos/MainLogo'
 import Link from 'next/link'
 import Image from 'next/image'
 import main_logo from '@/public/images/main_logo.svg'
-import main_log_white from '@/public/images/main_logo_white.svg'
+import main_log_white from '@/public/images/main_logo_soft_white.svg'
 
 const Footer = () => {
     return (
         <>
-            <div className='font-inter flex flex-col w-full bg-[#000] px-16 py-8 gap-4'>
+            <div className='font-inter flex flex-col w-full bg-[#000] p-4 md:p-12 xl:p-16 gap-4'>
                 <div className='w-full flex justify-between items-end'>
                     <div className='h-full'>
-                        <Image src={main_log_white} alt='main logo' width={120} height={120} />
+                        <Image src={main_log_white} alt='main logo' className='scale-80 md:scale-90 xl:scale-100' width={120} height={120} />
                     </div>
 
                     <div className='flex gap-8 h-full  items-end'>
@@ -38,7 +38,7 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                <div className='w-full flex justify-center text-xs items-center text-[#9F9F9F] border-t-[0.5px] border-white/50 py-4'>Designed by Cristina Andrés & Developed by Thomas Moser</div>
+                <div className='w-full flex justify-center text-[8px] md:text-xs xl:text-sm items-center text-[#9F9F9F] border-t-[0.5px] border-white/50 py-4'>Designed by Cristina Andrés & Developed by&nbsp;<Link href={'https://www.thomasmoserdev.com/'} target='_blank' className='hover:underline'>Thomas Moser</Link></div>
             </div>
         </>
     )
