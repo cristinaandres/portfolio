@@ -123,7 +123,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
             </div>
 
             <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <div className='flex flex-col gap-4'>
+                <div className='flex flex-col'>
                     {content.map((link, index) => {
                         return (
                             <Image src={`/images/projets/${link}`} alt={'Project content'} key={index}
@@ -133,7 +133,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
                         )
                     })}
                     {additional_files && (
-                        <div className='bg-black w-full text-white flex flex-col justify-center items-center text-xl gap-3'>
+                        <div className='bg-black w-full text-white flex flex-col justify-center items-center text-xl gap-3 pt-8'>
                             <p className='font-poppins font-bold'>Attached files</p>
                             <div className='flex gap-4'>
                                 {
