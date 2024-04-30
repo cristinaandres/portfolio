@@ -55,7 +55,11 @@
         "name_color": "black",
         "padding_top": 132,
         "content": [
-            "Portfolio_Page_Yokohama1.jpg"
+            "Portfolio_Page_Yokohama1.jpg",
+            "Portfolio_Page_Yokohama2.jpg",
+            "Portfolio_Page_Yokohama3.jpg",
+            "Portfolio_Page_Yokohama4.jpg",
+            "Portfolio_Page_Yokohama5.jpg"
         ],
         "additional_files": false,
         "files": []
