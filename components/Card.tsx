@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { createRef, useCallback, useEffect, useState } from 'react'
 import Modal from "@/components/Modal";
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Image from 'next/image';
@@ -8,6 +8,7 @@ import { CiImageOn } from "react-icons/ci";
 import { FaFile } from "react-icons/fa";
 import Link from 'next/link';
 import Video from './Video';
+import { useMeasure } from 'react-use';
 
 const Card = ({ bg_color, logo, name, name_color, complete_name, content, additional_files, content_files }: { bg_color: string, logo: string, name: string, name_color: string, complete_name: string, content: string[], additional_files: boolean, content_files: string[] }) => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -49,28 +50,23 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
         }
     }, [searchParams, complete_name]);
 
-    let elmnt = null;
+    let elmnt: HTMLElement | null = null;
 
     useEffect(() => {
         elmnt = document.getElementById("cardID");
     })
 
     const [bottomValue, setBottomValue] = useState('92px');
-    const [fontSize, setFontSize] = useState('12px')
+    const [fontSize, setFontSize] = useState<string>('inherit');
+    const [cardRef, { height }] = useMeasure<HTMLDivElement>();
 
     useEffect(() => {
-        const updateBottomValue = () => {
-            const height = elmnt!.offsetHeight;
-            setFontSize(`${0.03 * height}px`);
-            setBottomValue(`${0.2 * height}px`);
-        };
+        const calculatedFontSize: string = `${Math.round(0.07 * height * 100) / 100}px`;
+        const calculatedBottomValue: string = `${Math.round(0.2 * height * 100) / 100}px`;
+        setFontSize(calculatedFontSize);
+        setBottomValue(calculatedBottomValue);
+      }, [height]);
 
-
-        updateBottomValue();
-        window.addEventListener('resize', updateBottomValue);
-
-        return () => window.removeEventListener('resize', updateBottomValue);
-    }, []);
 
     // Function to select an icon based on the file extension
     const getFileIcon = (filename: string) => {
@@ -94,6 +90,8 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
     return (
         <>
             <div
+                ref={cardRef}                
+                id="cardID"
                 style={{
                     paddingTop: bottomValue,
                     paddingBottom: bottomValue,
@@ -101,17 +99,12 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
                 }}
                 className="px-8 relative aspect-square flex flex-col justify-end items-center gap-12 group cursor-pointer size-full sm:size-full md:size-1/2 lg:size-1/3 xl:size-1/4 2xl:size-1/5 3xl:size-1/6 4xl:size-1/7 transition-all duration-250"
                 onClick={openModal}
-                id="cardID"
             >
                 <div className='h-full flex flex-col justify-between'>
                     <div className="flex items-center justify-center h-full scale-[.7]">
                         <img src={`/images/${logo}`} alt='Logo' className='group-hover:scale-110 transition-all duration-200' onContextMenu={e => e.preventDefault()} />
                     </div>
-
-                    <h2
-                        style={{
-                            fontSize: fontSize
-                        }}
+                    <h2 style={{ fontSize }}
                         className={`uppercase tracking-[6px] text-center text-${name_color}`}>{name}</h2>
                 </div>
 
