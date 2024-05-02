@@ -61,7 +61,7 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
     const [cardRef, { height }] = useMeasure<HTMLDivElement>();
 
     useEffect(() => {
-        const calculatedFontSize: string = `${Math.round(0.07 * height * 100) / 100}px`;
+        const calculatedFontSize: string = `${Math.round(0.06 * height * 100) / 100}px`;
         const calculatedBottomValue: string = `${Math.round(0.2 * height * 100) / 100}px`;
         setFontSize(calculatedFontSize);
         setBottomValue(calculatedBottomValue);
