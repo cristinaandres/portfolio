@@ -1,5 +1,5 @@
 'use client'
-import React, { createRef, useCallback, useEffect, useState } from 'react'
+import React, { FC, createRef, useCallback, useEffect, useState } from 'react'
 import Modal from "@/components/Modal";
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Image from 'next/image';
@@ -10,33 +10,55 @@ import Link from 'next/link';
 import Video from './Video';
 import { useMeasure } from 'react-use';
 
-const Card = ({ bg_color, logo, name, name_color, complete_name, content, additional_files, content_files }: { bg_color: string, logo: string, name: string, name_color: string, complete_name: string, content: string[], additional_files: boolean, content_files: string[] }) => {
+interface CardProps {
+    projectProps: {
+        bg_color: string;
+        logo: string;
+        name: string;
+        name_color: string;
+        complete_name: string;
+        content: string[];
+        additional_files: boolean;
+        files: string[];
+
+    };
+    openProject: (index: number|null) => void;
+    closeProject: () => void;
+    index: number;
+}
+
+
+const Card: FC<CardProps> = ({
+    projectProps,
+    openProject,
+    closeProject,
+    index
+}) => {
     const [isModalOpen, setModalOpen] = useState(false);
-    const [contentFiles, setContentFiles] = useState<string[]>(content_files);
-    const [showAdditionalFiles, setShowAdditionalFiles] = useState(false);
 
     const router = useRouter();
     const pathname = usePathname();
-    const searchParams = useSearchParams()
+    const searchParams = useSearchParams();
 
     const createQueryString = useCallback(
         (name: string, value: string) => {
             const params = new URLSearchParams(searchParams.toString())
-            params.set("project", complete_name.toLowerCase());
+            params.set("project", projectProps.complete_name.toLowerCase());
 
             return params.toString()
         },
-        [searchParams, complete_name]
+        [searchParams, projectProps.complete_name]
     )
-
 
     const openModal = () => {
         setModalOpen(true);
+        openProject(null);
         router.push(pathname + '?' + createQueryString('sort', 'asc'))
     };
 
     const closeModal = () => {
         setModalOpen(false);
+        closeProject();
         const params = new URLSearchParams(searchParams.toString())
         params.delete("project");
         const url = `${pathname}`
@@ -45,16 +67,10 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
 
     useEffect(() => {
         const project = searchParams.get('project')
-        if (project && project === complete_name.toLowerCase()) {
+        if (project && project === projectProps.complete_name.toLowerCase()) {
             setModalOpen(true);
         }
-    }, [searchParams, complete_name]);
-
-    let elmnt: HTMLElement | null = null;
-
-    useEffect(() => {
-        elmnt = document.getElementById("cardID");
-    })
+    }, [searchParams, projectProps.complete_name]);
 
     const [bottomValue, setBottomValue] = useState('92px');
     const [fontSize, setFontSize] = useState<string>('inherit');
@@ -65,10 +81,9 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
         const calculatedBottomValue: string = `${Math.round(0.2 * height * 100) / 100}px`;
         setFontSize(calculatedFontSize);
         setBottomValue(calculatedBottomValue);
-      }, [height]);
+    }, [height]);
 
 
-    // Function to select an icon based on the file extension
     const getFileIcon = (filename: string) => {
         const extension = filename.split('.').pop();
         switch (extension) {
@@ -90,36 +105,36 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
     return (
         <>
             <div
-                ref={cardRef}                
+                ref={cardRef}
                 id="cardID"
                 style={{
                     paddingTop: bottomValue,
                     paddingBottom: bottomValue,
-                    backgroundColor: bg_color,
+                    backgroundColor: projectProps.bg_color,
                 }}
                 className="px-8 relative aspect-square flex flex-col justify-end items-center gap-12 group cursor-pointer size-full sm:size-full md:size-1/2 lg:size-1/3 xl:size-1/4 2xl:size-1/5 3xl:size-1/6 4xl:size-1/7 transition-all duration-250"
                 onClick={openModal}
             >
                 <div className='h-full flex flex-col justify-between'>
                     <div className="flex items-center justify-center h-full scale-[.7]">
-                        <img src={`/images/${logo}`} alt='Logo' className='group-hover:scale-110 transition-all duration-200' onContextMenu={e => e.preventDefault()} />
+                        <img src={`/images/${projectProps.logo}`} alt='Logo' className='group-hover:scale-110 transition-all duration-200' onContextMenu={e => e.preventDefault()} />
                     </div>
                     <h2 style={{ fontSize }}
-                        className={`uppercase tracking-[6px] text-center text-${name_color}`}>{name}</h2>
+                        className={`uppercase tracking-[6px] text-center text-${projectProps.name_color}`}>{projectProps.name}</h2>
                 </div>
 
                 <div className="absolute left-0 w-full bottom-0 h-1/3 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-0 w-full p-4 text-white font-extrabold text-center">
-                        <p>{complete_name}</p>
+                        <p>{projectProps.complete_name}</p>
                     </div>
                 </div>
             </div>
 
-            <Modal isOpen={isModalOpen} onClose={closeModal}>
+            <Modal index={index} isOpen={isModalOpen} onClose={closeModal}>
                 <div className='flex flex-col'>
-                    {content.map((file, index) => {
+                    {projectProps.content.map((file, index) => {
                         const fileParts = file.split('.');
-                        const fileExtension = fileParts.length > 1 ? fileParts.pop() as string : ''; // Safely handling the file extension
+                        const fileExtension = fileParts.length > 1 ? fileParts.pop() as string : '';
                         const isVideo = ['mp4', 'webm'].includes(fileExtension);
 
                         return isVideo ? (
@@ -136,12 +151,12 @@ const Card = ({ bg_color, logo, name, name_color, complete_name, content, additi
                         );
                     })}
 
-                    {additional_files && (
+                    {projectProps.additional_files && (
                         <div className='bg-black w-full text-white flex flex-col justify-center items-center text-xl gap-3 pt-8'>
                             <p className='font-poppins font-bold'>Attached files</p>
                             <div className='flex gap-4'>
                                 {
-                                    content_files.map((file, index) => {
+                                    projectProps.files.map((file, index) => {
                                         return (
                                             <Link href={`/attached/${file}`} target='_blank' key={index} className='flex flex-col items-center justify-center gap-2 hover:scale-105 hover:opacity-80 transition-all duration-250'>
                                                 {getFileIcon(file)}
