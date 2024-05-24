@@ -8,6 +8,7 @@ import Lightroom from './Lightroom';
 import Photoshop from './Photoshop';
 import Canva from './Canva';
 import SolidWorks from './SolidWorks';
+import Blender from './Blender';
 
 const IconRow = () => {
     const [hoveredIcon, setHoveredIcon] = useState('');
@@ -49,6 +50,15 @@ const IconRow = () => {
             >
                 <InDesign />
             </div>
+
+            <div
+                className={`transition-all ${hoveredIcon === 'blender' ? 'scale-105' : 'grayscale'} ${hoveredIcon === '' ? 'grayscale-0' : ''}`}
+                onMouseEnter={() => setHoveredIcon('blender')}
+                onMouseLeave={() => setHoveredIcon('')}
+            >
+                <Blender />
+            </div>
+
             <div
                 className={`transition-all ${hoveredIcon === 'canva' ? 'scale-105' : 'grayscale'} ${hoveredIcon === '' ? 'grayscale-0' : ''}`}
                 onMouseEnter={() => setHoveredIcon('canva')}

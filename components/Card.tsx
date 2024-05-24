@@ -1,6 +1,6 @@
 'use client'
 import React, { FC, createRef, useCallback, useEffect, useState } from 'react'
-import Modal from "@/components/Modal";
+import ModalProjects from "@/components/Modal";
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 import Image from 'next/image';
 import { FaFilePdf } from 'react-icons/fa';
@@ -9,6 +9,7 @@ import { FaFile } from "react-icons/fa";
 import Link from 'next/link';
 import Video from './Video';
 import { useMeasure } from 'react-use';
+import ModalMobile from './projects/ModalMobile';
 
 interface CardProps {
     projectProps: {
@@ -22,7 +23,7 @@ interface CardProps {
         files: string[];
 
     };
-    openProject: (index: number|null) => void;
+    openProject: (index: number | null) => void;
     closeProject: () => void;
     index: number;
 }
@@ -130,7 +131,8 @@ const Card: FC<CardProps> = ({
                 </div>
             </div>
 
-            <Modal index={index} isOpen={isModalOpen} onClose={closeModal}>
+
+            <ModalProjects index={index} isOpen={isModalOpen} onClose={closeModal}>
                 <div className='flex flex-col'>
                     {projectProps.content.map((file, index) => {
                         const fileParts = file.split('.');
@@ -169,7 +171,9 @@ const Card: FC<CardProps> = ({
                         </div>
                     )}
                 </div>
-            </Modal>
+            </ModalProjects>
+
+
         </>
 
     )
