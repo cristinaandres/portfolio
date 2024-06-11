@@ -17,7 +17,6 @@ const Header = () => {
 
     const { isMenuOpen, toggleMenu } = useMenu();
     const { nameColor } = useNameColor();
-    console.log(nameColor)
     useEffect(() => {
         return () => {
             document.body.classList.remove('overflow-hidden');
