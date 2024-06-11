@@ -8,6 +8,7 @@ import { Toaster } from 'sonner'
 import { Suspense } from "react";
 import Providers from "@/components/Providers";
 import Menu from "@/components/Menu";
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", '700', '800'],
@@ -34,19 +35,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Suspense>
-
         <body className={`${inter.variable} ${poppins.variable}`}>
           <Providers>
             <Toaster richColors position="bottom-center" />
-            <div className="flex flex-col justify-between items-stretch h-[100dvh] select-none overflow-x-hidden">
+            <div className="flex flex-col items-stretch h-[100dvh] select-none overflow-x-hidden">
               <Header />
               <Menu />
-              <div>
+              <main>
                 {children}
-              </div>
+              </main>
               <Footer />
             </div>
-
           </Providers>
         </body>
       </Suspense>

@@ -13,8 +13,8 @@ const Header = () => {
     const pathname = usePathname();
     const isActive = (href: string) => pathname === href;
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    
-      const { isMenuOpen,toggleMenu } = useMenu();
+
+    const { isMenuOpen, toggleMenu } = useMenu();
     // const toggleMenu = () => {
     //     setMenuOpen(!isMenuOpen);
     //     toggleBodyScroll(!isMenuOpen);
@@ -28,58 +28,65 @@ const Header = () => {
 
     return (
         <>
-            <div className='font-inter w-full bg-white py-4 xl:py-8 flex xl:flex-col items-center justify-center gap-16 transition-all duration-300 z-40'>
-                <div className='flex items-center justify-between xl:justify-center gap-8 w-full px-4 md:px-8 transition-all duration-300'>
-                    <div className='flex flex-col'>
-                        <div className='block xl:hidden z-20'>
-                            <button className={classNames(`tham tham-e-squeeze tham-w-6`, { 'tham-active': isMenuOpen })} onClick={toggleMenu}>
-                                <div className="tham-box">
-                                    <div className="tham-inner" />
+            <div className='font-inter w-full bg-white py-4 xl:py-0 flex items-center justify-center gap-16 px-4 lg:px-12 transition-all duration-300 z-40'>
+                <div className='w-full flex items-end justify-between max-w-[1440px]'>
+                    <div className='flex items-center justify-between xl:justify-start gap-8 h-full py-4 xl:py-8 transition-all duration-300'>
+                        <div className='flex flex-col'>
+                            <div className='block xl:hidden z-20'>
+                                <button className={classNames(`tham tham-e-squeeze tham-w-6`, { 'tham-active': isMenuOpen })} onClick={toggleMenu}>
+                                    <div className="tham-box">
+                                        <div className="tham-inner" />
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div className='mobile'>
+                            <div className='flex items-center justify-between gap-6'>
+                                <h2 className='uppercase w-full text-end text-xs font-bold tracking-[12px] order-1'>Cristina Andrés</h2>
+                                <Link href={'/'} className='order-3 xl:order-2'>
+                                    <MainLogo />
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className='tablet'>
+                            <div className='flex items-center justify-between gap-6'>
+                                <h2 className='uppercase w-full text-end text-base font-bold tracking-[12px] order-1'>Cristina Andrés</h2>
+                                <Link href={'/'} className='order-3 xl:order-2'>
+                                    <MainLogo />
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className='desktop'>
+                            <Link href={'/'} className='flex items-center justify-start gap-6'>
+                                <div className=''>
+                                    <MainLogo />
                                 </div>
-                            </button>
-                        </div>
-                    </div>
+                                <div className='flex flex-col'>
+                                    <h2 className='uppercase w-full text-end text-xs md:text-base xl:text-xl font-bold tracking-[5px]'>Cristina</h2>
+                                    <h2 className='uppercase w-full text-start text-xs md:text-base xl:text-xl font-bold tracking-[5px]'>Andrés</h2>
+                                </div>
 
-                    <div className='mobile'>
-                        <div className='flex items-center justify-between gap-6'>
-                            <h2 className='uppercase w-full text-end text-xs font-bold tracking-[12px] order-1'>Cristina Andrés</h2>
-                            <Link href={'/'} className='order-3 xl:order-2'>
-                                <MainLogo />
+
                             </Link>
                         </div>
                     </div>
 
-                    <div className='tablet'>
-                        <div className='flex items-center justify-between gap-6'>
-                            <h2 className='uppercase w-full text-end text-base font-bold tracking-[12px] order-1'>Cristina Andrés</h2>
-                            <Link href={'/'} className='order-3 xl:order-2'>
-                                <MainLogo />
-                            </Link>
-                        </div>
+                    <div className='gap-16 hidden xl:flex w-full justify-end h-full'>
+                        <Link href={'/'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-all duration-300 ${isActive('/') ? 'border-b-4 border-black font-bold' : 'border-none font-normal'}`}>Work</Link>
+                        <Link href={'/activities'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-all duration-300 ${isActive('/activities') ? 'border-b-4 border-black font-bold' : 'border-none font-normal'}`}>Activities</Link>
+                        <Link href={'/services'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-all duration-300 ${isActive('/services') ? 'border-b-4 border-black font-bold' : 'border-none font-normal'}`}>Services</Link>
+                        <Link href={'/about'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-all duration-300 ${isActive('/about') ? 'border-b-4 border-black font-bold' : ' border-none font-normal'}`}>About me</Link>
+                        <button onClick={onOpen} className='pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-all duration-300 font-normal'>Contact</button>
+                        <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange}>
+                            <ModalContentContact />
+                        </Modal>
                     </div>
-
-                    <div className='desktop'>
-                        <div className='flex items-center justify-between gap-6'>
-                            <h2 className='uppercase w-full text-end text-xs md:text-base xl:text-2xl font-bold tracking-[12px] order-1'>Cristina</h2>
-                            <Link href={'/'} className='order-3 xl:order-2'>
-                                <MainLogo />
-                            </Link>
-                            <h2 className='uppercase w-full text-start text-xs md:text-base xl:text-2xl font-bold tracking-[12px] order-2 xl:order-3'>Andrés</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div className=' gap-16 hidden xl:flex'>
-                    <Link href={'/'} className={`pb-1 uppercase text-xs tracking-[6px] hover:border-b hover:border-black  transition-all duration-300 ${isActive('/') ? 'font-bold' : 'font-normal'}`}>Work</Link>
-                    <Link href={'/services'} className={`pb-1 uppercase text-xs tracking-[6px] hover:border-b hover:border-black transition-all duration-300 ${isActive('/services') ? 'font-bold' : 'font-normal'}`}>Services</Link>
-                    <Link href={'/about'} className={`pb-1 uppercase text-xs tracking-[6px] hover:border-b hover:border-black transition-all duration-300 ${isActive('/about') ? 'font-bold' : 'font-normal'}`}>About me</Link>
-                    <button onClick={onOpen} className='pb-1 uppercase text-xs tracking-[6px] hover:border-b hover:border-black transition-all duration-300 font-normal'>Contact</button>
-                    <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange}>
-                        <ModalContentContact />
-                    </Modal>
                 </div>
             </div>
-            
+
         </>
     )
 }
