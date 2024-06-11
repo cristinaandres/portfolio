@@ -48,11 +48,11 @@
         "files": []
     },
     {
-        "bg_color": "#E2E2DB",
+        "bg_color": "punt_bg.jpeg",
         "logo": "punt.png",
         "complete_name": "Product design for Punt",
         "name": "Product design",
-        "name_color": "black",
+        "name_color": "white",
         "padding_top": 132,
         "content": [
             "Portfolio_Page_Yokohama1.jpg",

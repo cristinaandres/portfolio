@@ -38,14 +38,12 @@ export default function RootLayout({
         <body className={`${inter.variable} ${poppins.variable}`}>
           <Providers>
             <Toaster richColors position="bottom-center" />
-            <div className="flex flex-col items-stretch h-[100dvh] select-none overflow-x-hidden">
-              <Header />
-              <Menu />
-              <main>
-                {children}
-              </main>
-              <Footer />
-            </div>
+            <Menu />
+            <Header />
+            <main>
+              {children}
+            </main>
+            <Footer />
           </Providers>
         </body>
       </Suspense>

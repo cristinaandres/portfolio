@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
- 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 5px;
+  background: #888;
+  border-radius: 5px;
 }
- 
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
 
 
@@ -28,7 +28,8 @@
 .desktop,
 .tablet,
 .phablet {
-  display: none; /* By default, all are hidden */
+  display: none;
+  /* By default, all are hidden */
 }
 
 /* Mobile-first approach */
@@ -48,4 +49,52 @@
   .desktop {
     display: block;
   }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-from-top {
+  animation: slideInFromTop 0.5s ease-in-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  animation: ripple 1s ease-out;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.full-mountain-image {
+  background: url('https://2.bp.blogspot.com/--553C_5SsUw/T7KfsL3BCtI/AAAAAAAA4Ro/WxipXiyxCeE/s1600/gotitas-de-agua-sobre-las-hojas-despues-de-las-lluvias.jpg') center no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }

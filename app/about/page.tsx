@@ -20,7 +20,7 @@ function page() {
             <div className="tablet">
                 <AboutTablet />
             </div>
-            <div className="desktop">
+            <div className="desktop mt-12">
                 <AboutDesktop />
             </div>
         </>
