@@ -7,11 +7,10 @@ import ShareButton from '@/components/ShareButton'
 import IconRow from '@/components/Logos/IconRow'
 import BubbleRow from '@/components/BubbleRow'
 
-
 const AboutDesktop = () => {
     return (
         <>
-            <div className='font-poppins w-full bg-[#E2E2DB] flex flex-col items-center pt-[124px] pb-[197px]'>
+            <div className='font-poppins w-full bg-[#E2E2DB] flex flex-col items-center pt-[124px] pb-[197px]  min-h-[80dvh]'>
                 <div className='w-full max-w-[1440px] flex flex-col items-center gap-10'>
                     <div className='flex px-[152px]'>
                         <div className='flex flex-col justify-between w-full gap-10 border-r border-black pr-4'>

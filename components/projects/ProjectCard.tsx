@@ -142,11 +142,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                                 src={'/images/' + projects[i].logo}
                                 alt='Logo of the project'
                                 fill
-                                objectFit='contain'
                                 style={{
                                     opacity: currentIndex === i ? 0 : 100,
                                 }}
-                                className='scale-80'
+                                className='scale-80 object-contain'
                             />
                         </motion.div>
                     ))}

@@ -1,14 +1,14 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import MainLogo from './Logos/MainLogo'
 import { usePathname } from 'next/navigation'
 import { Modal, useDisclosure } from "@nextui-org/react";
 import ModalContentContact from './ModalContentContact'
 import classNames from 'classnames';
-import Menu from './Menu'
 import { useMenu } from './context/MenuContext'
 import { useNameColor } from '@/context/NameColorContext'
+import TransitionLink from './TransitionLink'
 
 const Header = () => {
     const pathname = usePathname();
@@ -68,10 +68,10 @@ const Header = () => {
                         </div>
                     </div>
                     <div className='gap-16 hidden xl:flex h-full my-auto items-center'>
-                        <Link href={'/'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-[font-weight] duration-300 ${isActive('/') ? `border-b-3 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}>Work</Link>
-                        <Link href={'/activities'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-[font-weight] duration-300 ${isActive('/activities') ? `border-b-3 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}>Activities</Link>
-                        <Link href={'/services'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-[font-weight] duration-300 ${isActive('/services') ? `border-b-3 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}>Services</Link>
-                        <Link href={'/about'} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-[font-weight] duration-300 ${isActive('/about') ? `border-b-3 border-${pathname === '/' ? nameColor : 'black'} font-bold` : ' border-none font-normal'}`}>About me</Link>
+                        <TransitionLink href={'/'} label={'Work'} nameColor={nameColor} />
+                        <TransitionLink href={'/activities'} label={'Activities'} nameColor={nameColor} />
+                        <TransitionLink href={'/services'} label={'Services'} nameColor={nameColor} />
+                        <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} />
                         <button onClick={onOpen} className='pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-[font-weight] duration-300 font-normal'>Contact</button>
                         <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange}>
                             <ModalContentContact />

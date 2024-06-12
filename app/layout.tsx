@@ -7,6 +7,7 @@ import { Toaster } from 'sonner'
 import { Suspense } from "react";
 import Providers from "@/components/Providers";
 import Menu from "@/components/Menu";
+import Template from "./template";
 
 const inter = Inter({
   subsets: ["latin"],
