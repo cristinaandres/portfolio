@@ -106,11 +106,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className={`relative z-10 flex flex-col items-center text-${project.name_color} `}>
                 <div
                     onClick={openModal}
-                    className={`font-bodoni uppercase text-2xl md:text-4xl xl:text-[80px] text-center font-bold cursor-pointer transition-all duration-300 hover:text-[#FF73F9] ${animate ? 'slide-in-from-top' : ''}`}
+                    className={`font-bodoni uppercase text-2xl md:text-4xl xl:text-[80px] text-center font-bold cursor-pointer  hover:text-[#FF73F9] ${animate ? 'slide-in-from-top' : ''}`}
                 >
                     {project.title}
                 </div>
-                <div className='font-poppins mt-10 flex gap-5 justify-center'>
+                <div className={`font-poppins mt-10 flex gap-5 justify-center ${animate ? 'fade-in ' : ''}`}>
                     <p>{project.year}</p>
                     <p className='max-w-[180px]'>{project.description}</p>
                 </div>

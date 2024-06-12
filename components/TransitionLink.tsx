@@ -32,7 +32,7 @@ export default function TransitionLink({
     };
 
     return (
-        <button onClick={handleClick} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-end transition-[font-weight] duration-300 ${isActive(href) ? `border-b-3 border-${pathname === href ? textColor : 'black'} font-bold` : 'border-none font-normal'}`}>
+        <button onClick={handleClick} className={`p-0 uppercase text-xs tracking-[6px] hover:font-bold flex items-center justify-center transition-[font-weight] duration-300 ${isActive(href) ? `border-b-3 border-${pathname === href ? textColor : 'black'} font-bold` : 'border-none font-normal'}`}>
             {label}
         </button>
 

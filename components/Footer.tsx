@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <>
             {pathname !== '/' && (
-                <div className='fixed bottom-0 left-0 z-30 font-inter flex flex-col w-full bg-transparent p-4 md:p-12 xl:p-16 gap-4'>
+                <div className='fixed bottom-0 left-0 z-30 font-inter flex flex-col w-full bg-transparent p-4 md:p-12 xl:px-16 xl:py-6 gap-4'>
                     <div className='w-full flex justify-between items-end'>
                         <div className='flex gap-8 h-full justify-end items-center w-full'>
                             <Link href={'https://www.behance.net/cristinaandrs?tracking_source=userSearchProfilePanel'} target='_blank'>

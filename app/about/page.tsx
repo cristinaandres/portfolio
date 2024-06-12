@@ -1,12 +1,4 @@
-
-import Link from 'next/link'
 import React from 'react'
-import Image from 'next/image'
-import profilePic from '@/public/images/cristina.jpeg'
-
-import ShareButton from '@/components/ShareButton'
-import IconRow from '@/components/Logos/IconRow'
-import BubbleRow from '@/components/BubbleRow'
 import AboutPhone from '@/components/About/AboutPhone'
 import AboutTablet from '@/components/About/AboutTablet'
 import AboutDesktop from '@/components/About/AboutDesktop'
