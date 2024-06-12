@@ -4,7 +4,7 @@ import React from 'react'
 const page = () => {
     return (
         <>
-            <div className='w-screen min-h-[80dvh] bg-[#E2E2DB] px-[148px] py-[92px] flex justify-center items-start mt-12'>
+            <div className='w-screen h-screen bg-[#E2E2DB] px-[148px] flex justify-center items-center'>
                 <div className='w-full max-w-[1144px] flex flex-col justify-center'>
                     <div className='w-full px-[192px] flex flex-col'>
                         <h1 className='font-bold text-center text-xl'>Activities</h1>

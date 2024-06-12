@@ -46,7 +46,7 @@ export default function RootLayout({
             <Toaster richColors position="bottom-center" />
             <Menu />
             <Header />
-            <main>
+            <main className="h-screen overflow-hidden">
               {children}
             </main>
             <Footer />

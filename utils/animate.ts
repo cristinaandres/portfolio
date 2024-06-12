@@ -13,16 +13,16 @@ export const animatePageIn = () => {
       borderBottomRightRadius: "0vh",
     })
       .to(transitionElement, {
-        yPercent: -150,
-        duration: 2,
+        yPercent: 100,
+        duration: 1,
         ease: "power1.out",
       })
       .to(
         transitionElement,
         {
-          borderBottomLeftRadius: "100vh",
-          borderBottomRightRadius: "100vh",
-          duration: 2,
+          borderBottomLeftRadius: "0",
+          borderBottomRightRadius: "0",
+          duration: 1,
           ease: "power1.out",
         },
         "<"
@@ -38,8 +38,8 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
 
     tl.set(animationWrapper, {
       yPercent: 100,
-      borderTopRightRadius: "100vh",
-      borderTopLeftRadius: "100vh",
+      borderTopRightRadius: "0",
+      borderTopLeftRadius: "0",
       borderBottomRightRadius: "0",
       borderBottomLeftRadius: "0",
     })

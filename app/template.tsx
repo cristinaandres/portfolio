@@ -18,8 +18,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <Image src={'/images/logo_white.svg'} alt="Logo Cristina" width={200} height={200}/>
       </div>
       <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{opacity: 0 }}
+        animate={{opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 1 }}
       >
         {children}

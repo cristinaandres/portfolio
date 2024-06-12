@@ -47,7 +47,7 @@
 
 @media (min-width: 1025px) {
   .desktop {
-    display: block;
+    display: flex;
   }
 }
 

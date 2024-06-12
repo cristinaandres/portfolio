@@ -20,7 +20,7 @@ function page() {
             <div className="tablet">
                 <AboutTablet />
             </div>
-            <div className="desktop mt-12">
+            <div className="desktop min-h-[80dvh] h-screen w-full bg-[#E2E2DB] items-center justify-center">
                 <AboutDesktop />
             </div>
         </>

@@ -10,8 +10,8 @@ import BubbleRow from '@/components/BubbleRow'
 const AboutDesktop = () => {
     return (
         <>
-            <div className='font-poppins w-full bg-[#E2E2DB] flex flex-col items-center pt-[124px] pb-[197px]  min-h-[80dvh]'>
-                <div className='w-full max-w-[1440px] flex flex-col items-center gap-10'>
+            <div className='font-poppins w-ful max-w-[1440px] bg-white rounded-xl py-[80px]'>
+                <div className='w-full flex flex-col items-center gap-10'>
                     <div className='flex px-[152px]'>
                         <div className='flex flex-col justify-between w-full gap-10 border-r border-black pr-4'>
                             <div className='flex flex-col gap-5'>
