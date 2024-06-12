@@ -9,8 +9,6 @@ export default function Home() {
   const { canvasRef, addRipple } = useRippleEffect();
   const [activeProjectIndex, setActiveProjectIndex] = useState<number | null>(null);
 
-
-
   const openProject = (index: number | null) => {
     setActiveProjectIndex(index);
   };
@@ -18,6 +16,11 @@ export default function Home() {
   const closeProject = () => {
     setActiveProjectIndex(null);
   };
+
+  const setIndex = (index: number) => {
+    console.log(index)
+    setCurrentIndex(index);
+  }
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
@@ -43,8 +46,6 @@ export default function Home() {
 
   }, []);
 
-  const currentProject = projets[currentIndex];
-
   return (
     <>
       <div className="relative overflow-y-hidden h-screen">
@@ -55,21 +56,10 @@ export default function Home() {
             className="absolute top-0 left-0 w-full h-full pointer-events-none"
           /> */}
         <ProjectCard
-          slug={currentProject.name}
-          bgColor={currentProject.bg_color}
-          logo={currentProject.logo}
-          completeName={currentProject.complete_name}
-          name={currentProject.name}
-          nameColor={currentProject.name_color}
-          paddingTop={currentProject.padding_top}
-          content={currentProject.content}
           currentIndex={currentIndex}
-          totalProjects={projets.length}
           openProject={() => openProject(currentIndex)}
           closeProject={closeProject}
-          additional_files={currentProject.additional_files}
-          files={currentProject.files}
-        />
+          setIndex={setIndex} />
       </div>
     </>
   );

@@ -13,7 +13,7 @@ import ModalMobile from './projects/ModalMobile';
 
 interface CardProps {
     projectProps: {
-        bg_color: string;
+        background: string;
         logo: string;
         name: string;
         name_color: string;
@@ -111,7 +111,7 @@ const Card: FC<CardProps> = ({
                 style={{
                     paddingTop: bottomValue,
                     paddingBottom: bottomValue,
-                    backgroundColor: projectProps.bg_color,
+                    backgroundColor: projectProps.background,
                 }}
                 className="px-8 relative aspect-square flex flex-col justify-end items-center gap-12 group cursor-pointer size-full sm:size-full md:size-1/2 lg:size-1/3 xl:size-1/4 2xl:size-1/5 3xl:size-1/6 4xl:size-1/7 transition-all duration-250"
                 onClick={openModal}

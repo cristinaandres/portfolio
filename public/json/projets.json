@@ -1,6 +1,11 @@
 [
     {
-        "bg_color": "#000",
+        "title": "Curefab",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "#000",
+        "card_color": "#000",
         "logo": "curefab.png",
         "complete_name": "Website for Curefab Technologies GmbH",
         "name": "Website redesign",
@@ -15,7 +20,12 @@
         "files": []
     },
     {
-        "bg_color": "#91A399",
+        "title": "Montezuma",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "#91A399",
+        "card_color": "#91A399",
         "logo": "montezuma.png",
         "complete_name": "Montezuma: a new marketing strategy",
         "name": "Marketing strategy + packaging design",
@@ -32,7 +42,12 @@
         "files": []
     },
     {
-        "bg_color": "#FFF",
+        "title": "Smurfit Kappa",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "#FFF",
+        "card_color": "#FFF",
         "logo": "smurfit.png",
         "complete_name": "Packaging design for Smurfit Kappa",
         "name": "Packaging design",
@@ -48,7 +63,12 @@
         "files": []
     },
     {
-        "bg_color": "punt_bg.jpeg",
+        "title": "Punt",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "punt_bg.jpeg",
+        "card_color": "#E2E2DB",
         "logo": "punt.png",
         "complete_name": "Product design for Punt",
         "name": "Product design",
@@ -65,7 +85,12 @@
         "files": []
     },
     {
-        "bg_color": "#EBECEE",
+        "title": "Compa-K",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "#EBECEE",
+        "card_color": "#EBECEE",
         "logo": "compak.png",
         "complete_name": "Redesign of a Compa-K Product",
         "name": "Product redesign",
@@ -82,7 +107,12 @@
         ]
     },
     {
-        "bg_color": "#718B75",
+        "title": "Moca Studio",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Swiss watch design.",
+        "background": "#718B75",
+        "card_color": "#718B75",
         "logo": "moca.png",
         "complete_name": "Design of a new brand",
         "name": "Brand design",
@@ -96,7 +126,12 @@
         "files": []
     },
     {
-        "bg_color": "#FFF",
+        "title": "Smartwatch",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "#FFF",
+        "card_color": "#FFF",
         "logo": "rosa.png",
         "complete_name": "Smartwatch product design",
         "name": "Product design",
@@ -114,7 +149,12 @@
         ]
     },
     {
-        "bg_color": "#1D252D",
+        "title": "Ares Domus",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "#1D252D",
+        "card_color": "#1D252D",
         "logo": "aresdomus.png",
         "complete_name": "Design of a amazing brand",
         "name": "Brand design",
@@ -129,7 +169,12 @@
         "files": []
     },
     {
-        "bg_color": "#597177",
+        "title": "Sakana",
+        "label": "Product Design",
+        "year": "2022",
+        "description": "Brand design concept for a luxury resort.",
+        "background": "#597177",
+        "card_color": "#597177",
         "logo": "sakana.png",
         "complete_name": "Design for a Swiss watch",
         "name": "Swiss watch design",
@@ -144,7 +189,12 @@
         "files": []
     },
     {
-        "bg_color": "#000",
+        "title": "Ciclogreen",
+        "label": "Product Design",
+        "year": "2021",
+        "description": "Indoor growing system. ",
+        "background": "#000",
+        "card_color": "#000",
         "logo": "ciclogreen.png",
         "complete_name": "Project Ciclogreen",
         "name": "Product design",
@@ -159,7 +209,12 @@
         "files": []
     },
     {
-        "bg_color": "#D9ABBA",
+        "title": "Blossom",
+        "label": "Product Design",
+        "year": "2020",
+        "description": "Flower-shaoed lamp with articulated petals.",
+        "background": "#D9ABBA",
+        "card_color": "#D9ABBA",
         "logo": "blossom.png",
         "complete_name": "Blossom",
         "name": "Product design",
