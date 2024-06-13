@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import React, { useEffect, useState, CSSProperties, useCallback } from 'react';
+import Link from 'next/link';
 import { useNameColor } from '@/context/NameColorContext';
 import projects from '@/public/json/projets.json';
 import ModalProjects from '@/components/Modal';
@@ -8,30 +8,28 @@ import Video from '../Video';
 import Image from 'next/image';
 import { CiImageOn } from 'react-icons/ci';
 import { FaFilePdf, FaFile } from 'react-icons/fa';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ProjectCardProps, ProjectProps } from '@/utils/types';
-
+import AnimatedText from './AnimatedText';
+import AnimatedTextTitle from './AnimatedTextTitle';
 
 const variants = {
-    hidden: { opacity: 1, scale: 0.5, top: '-35px', left: '50%', transform: 'translate(-50%, -50%)' },
+    hidden: { opacity: 0, scale: 0.2, top: '-40px', transform: 'translate(-50%, -50%)' },
     visible: (custom: [number, number]) => {
         const [i, middleIndex] = custom;
-        const xPosition = (i - middleIndex) * 150;
 
         return {
             opacity: 1,
             scale: 1,
             top: '50%',
-            left: `calc(50% + ${xPosition}px)`,
             transform: 'translate(-50%, -50%)',
             transition: {
-                delay: i * 0.1,
-                duration: 0.2,
+                delay: 0.2 + i * 0.1,
+                duration: 0.5,
             },
         };
-    },
+    }
 };
-
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
     currentIndex,
@@ -39,21 +37,30 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     closeProject,
     setIndex,
 }) => {
-    const [animate05, setAnimate05] = useState(false); //Animate 500ms
-    const [animate1, setAnimate1] = useState(false); //Animate 1s
-    const [animate2, setAnimate2] = useState(false); //Animate 2s
+    const [animate, setAnimate] = useState(false);
+    const [animate05, setAnimate05] = useState(false);
+    const [animate01, setAnimate01] = useState(false);
+    const [animate1, setAnimate1] = useState(false);
+    const [animate2, setAnimate2] = useState(false);
     const [middleIndex, setMiddleIndex] = useState<number>(0);
     const [isHovered, setIsHovered] = useState(false);
     const [project, setProject] = useState<ProjectProps>(projects[0]);
     const { setNameColor } = useNameColor();
+    const [animationKey, setAnimationKey] = useState(0);
 
 
     useEffect(() => {
         setMiddleIndex(Math.floor(projects.length / 2));
         setAnimate05(true);
         setAnimate1(true);
+        setAnimate01(true);
         setProject(projects[currentIndex]);
         setNameColor(projects[currentIndex].name_color);
+        setAnimationKey(prevKey => prevKey + 1);
+        const timer = setTimeout(() => {
+            setAnimate01(false);
+        }, 500);
+
         const timer05 = setTimeout(() => {
             setAnimate05(false);
         }, 500);
@@ -65,6 +72,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         return () => {
             clearTimeout(timer05);
             clearTimeout(timer1);
+            clearTimeout(timer);
         };
     }, [currentIndex]);
 
@@ -128,18 +136,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 ></div>
             )}
             {!isColor && <div className="absolute inset-0 bg-black opacity-50"></div>}
-            <div className={`relative z-10 flex flex-col items-center text-${project.name_color} `}>
-                <div
+            <div className={`relative z-10 flex flex-col items-center text-${project.name_color}`}>
+                <AnimatedTextTitle
+                    text={project.title}
+                    animate={animate05}
                     onClick={openModal}
-                    className={`font-bodoni uppercase text-2xl md:text-4xl xl:text-[80px] text-center font-bold cursor-pointer  hover:text-[#FF73F9] ${animate1 ? 'slide-in-from-top' : ''}`}
-                >
-                    {project.title}
+                    animationKey={animationKey}
+                    additionalClassName={''}
+                />
+
+                <div className={`font-poppins mt-10 flex justify-center gap-5 min-w-[400px]`}>
+                    <AnimatedText
+                        text={project.year}
+                        animate={animate05}
+                        animationKey={animationKey}
+                        additionalClassName={'text-base w-1/2 text-end'} />
+                    <AnimatedText
+                        text={project.description}
+                        animationKey={animationKey}
+                        animate={animate05}
+                        additionalClassName={'w-[180px] text-base w-1/2 text-start word-wrap'}
+                    />
                 </div>
-                <div className={`font-poppins mt-10 flex gap-5 justify-center ${animate1 ? 'fade-in' : ''}`}>
-                    <p>{project.year}</p>
-                    <p className='max-w-[180px]'>{project.description}</p>
-                </div>
-                <span className={`w-fit px-5 py-2 mt-24 rounded-full border border-${project.name_color} ${animate1 ? 'fade-in' : ''}`}>{project.label}</span>
+                <AnimatedText
+                    text={project.label}
+                    animationKey={animationKey}
+                    animate={animate05}
+                    additionalClassName={`w-fit px-5 py-2 mt-24 rounded-full text-base border border-${project.name_color} ${animate ? 'fade-in' : ''}`} />
             </div>
 
             <div className="absolute bottom-4 flex flex-col items-center justify-center group z-10 h-20 w-full"
@@ -155,7 +178,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                                 backgroundColor: currentIndex === i ? 'transparent' : projects[i].card_color,
                                 borderColor: currentIndex === i ? '#FF73F9' : 'transparent',
                                 borderWidth: currentIndex === i ? '1px' : '0',
-                                position: 'absolute',
                             }}
                             className={`transition-all duration-300 rounded-md ease-in-out w-[120px] h-20 flex items-center justify-center relative px-4 cursor-pointer`}
                             custom={[i, middleIndex]}

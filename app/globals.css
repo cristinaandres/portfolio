@@ -63,8 +63,14 @@
   }
 }
 
-.slide-in-from-top {
-  animation: slideInFromTop 1s ease-in-out;
+.word {
+  display: inline-block; /* Ensure words are inline blocks */
+}
+
+.letter {
+  display: inline-block; /* Ensure letters are inline blocks */
+  opacity: 0; /* Ensure the initial opacity is set to 0 */
+  animation: slideInFromTop 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
