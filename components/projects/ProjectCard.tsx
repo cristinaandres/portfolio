@@ -8,8 +8,29 @@ import Video from '../Video';
 import Image from 'next/image';
 import { CiImageOn } from 'react-icons/ci';
 import { FaFilePdf, FaFile } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { ProjectCardProps, ProjectProps } from '@/utils/types';
+
+
+const variants = {
+    hidden: { opacity: 1, scale: 0.5, top: '-35px', left: '50%', transform: 'translate(-50%, -50%)' },
+    visible: (custom: [number, number]) => {
+        const [i, middleIndex] = custom;
+        const xPosition = (i - middleIndex) * 150;
+
+        return {
+            opacity: 1,
+            scale: 1,
+            top: '50%',
+            left: `calc(50% + ${xPosition}px)`,
+            transform: 'translate(-50%, -50%)',
+            transition: {
+                delay: i * 0.1,
+                duration: 0.2,
+            },
+        };
+    },
+};
 
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -18,19 +39,33 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     closeProject,
     setIndex,
 }) => {
-    const [animate, setAnimate] = useState(false);
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [animate05, setAnimate05] = useState(false); //Animate 500ms
+    const [animate1, setAnimate1] = useState(false); //Animate 1s
+    const [animate2, setAnimate2] = useState(false); //Animate 2s
+    const [middleIndex, setMiddleIndex] = useState<number>(0);
+    const [isHovered, setIsHovered] = useState(false);
     const [project, setProject] = useState<ProjectProps>(projects[0]);
     const { setNameColor } = useNameColor();
 
+
     useEffect(() => {
-        setAnimate(true);
+        setMiddleIndex(Math.floor(projects.length / 2));
+        setAnimate05(true);
+        setAnimate1(true);
         setProject(projects[currentIndex]);
         setNameColor(projects[currentIndex].name_color);
-        const timer = setTimeout(() => {
-            setAnimate(false);
+        const timer05 = setTimeout(() => {
+            setAnimate05(false);
         }, 500);
-        return () => clearTimeout(timer);
+
+        const timer1 = setTimeout(() => {
+            setAnimate1(false);
+        }, 1000);
+
+        return () => {
+            clearTimeout(timer05);
+            clearTimeout(timer1);
+        };
     }, [currentIndex]);
 
     const [isModalOpen, setModalOpen] = useState(false);
@@ -84,16 +119,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         ? { backgroundColor: project.background }
         : { position: 'relative' };
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeInOut' } },
-    };
-
     return (
         <div className="flex flex-col items-center justify-center h-[100dvh]" style={backgroundStyle}>
             {!isColor && (
@@ -106,37 +131,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className={`relative z-10 flex flex-col items-center text-${project.name_color} `}>
                 <div
                     onClick={openModal}
-                    className={`font-bodoni uppercase text-2xl md:text-4xl xl:text-[80px] text-center font-bold cursor-pointer  hover:text-[#FF73F9] ${animate ? 'slide-in-from-top' : ''}`}
+                    className={`font-bodoni uppercase text-2xl md:text-4xl xl:text-[80px] text-center font-bold cursor-pointer  hover:text-[#FF73F9] ${animate1 ? 'slide-in-from-top' : ''}`}
                 >
                     {project.title}
                 </div>
-                <div className={`font-poppins mt-10 flex gap-5 justify-center ${animate ? 'fade-in ' : ''}`}>
+                <div className={`font-poppins mt-10 flex gap-5 justify-center ${animate1 ? 'fade-in' : ''}`}>
                     <p>{project.year}</p>
                     <p className='max-w-[180px]'>{project.description}</p>
                 </div>
-                <span className={`w-fit px-5 py-2 mt-24 rounded-full border border-${project.name_color} ${animate ? 'slide-in-from-top' : ''}`}>{project.label}</span>
+                <span className={`w-fit px-5 py-2 mt-24 rounded-full border border-${project.name_color} ${animate1 ? 'fade-in' : ''}`}>{project.label}</span>
             </div>
 
-            <div className="absolute bottom-4 flex flex-col items-center justify-center group z-10 h-20">
-                <motion.div
-                    className="hidden group-hover:flex gap-4"
-                    initial="hidden"
-                    animate="visible"
-                    variants={containerVariants}
-                >
+            <div className="absolute bottom-4 flex flex-col items-center justify-center group z-10 h-20 w-full"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}>
+
+                <div className="hidden group-hover:flex gap-4 relative">
                     {Array.from({ length: projects.length }, (_, i) => (
                         <motion.div
                             key={i}
                             onClick={() => setIndex(i)}
-                            onMouseEnter={() => setHoveredIndex(i)}
-                            onMouseLeave={() => setHoveredIndex(null)}
                             style={{
                                 backgroundColor: currentIndex === i ? 'transparent' : projects[i].card_color,
                                 borderColor: currentIndex === i ? '#FF73F9' : 'transparent',
                                 borderWidth: currentIndex === i ? '1px' : '0',
+                                position: 'absolute',
                             }}
                             className={`transition-all duration-300 rounded-md ease-in-out w-[120px] h-20 flex items-center justify-center relative px-4 cursor-pointer`}
-                            variants={itemVariants}
+                            custom={[i, middleIndex]}
+                            initial="hidden"
+                            animate={isHovered ? 'visible' : 'hidden'}
+                            variants={variants}
                         >
                             <Image
                                 src={'/images/' + projects[i].logo}
@@ -149,18 +174,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                             />
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
 
-                <div className="flex items-center space-x-1 gap-4 group-hover:hidden" style={{ color: project.name_color }}>
+                <div className="flex items-center space-x-1 gap-4 group-hover:hidden" style={{ color: projects[currentIndex].name_color }}>
                     <span>{currentIndex + 1}</span>
                     <div className="flex space-x-1 gap-1">
                         {Array.from({ length: projects.length }, (_, i) => (
                             <span
                                 key={i}
                                 onClick={() => setIndex(i)}
-                                className={`block h-4 rounded-sm transition-width duration-[2s] ease-in-out ${i === currentIndex ? 'border-2 border-[#FF73F9] w-6 ' : 'w-0.5'
-                                    }`}
-                                style={{ backgroundColor: i === currentIndex ? '' : project.name_color }}
+                                className={`block h-4 rounded-sm transition-width duration-[2s] ease-in-out ${i === currentIndex ? 'border-2 border-[#FF73F9] w-6 ' : 'w-0.5'}`}
+                                style={{ backgroundColor: i === currentIndex ? '' : projects[currentIndex].name_color }}
                             ></span>
                         ))}
                     </div>
