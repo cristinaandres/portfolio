@@ -145,17 +145,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     additionalClassName={''}
                 />
 
-                <div className={`font-poppins mt-10 flex justify-center gap-5 min-w-[400px]`}>
+                <div className={`transition-all duration-200 font-poppins mt-10 flex flex-col lg:flex-row justify-center items-center lg:items-start min-w-[400px]`}>
                     <AnimatedText
                         text={project.year}
                         animate={animate05}
                         animationKey={animationKey}
-                        additionalClassName={'text-base w-1/2 text-end'} />
+                        additionalClassName={'text-base w-1/2 text-center lg:text-end m-0 lg:mr-2 order-2 lg:order-1'} />
                     <AnimatedText
                         text={project.description}
                         animationKey={animationKey}
                         animate={animate05}
-                        additionalClassName={'w-[180px] text-base w-1/2 text-start word-wrap'}
+                        additionalClassName={'text-base w-1/2 text-center lg:text-start word-wrap m-0 lg:ml-2 order-1 lg:order-2'}
                     />
                 </div>
                 <AnimatedText
@@ -169,7 +169,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
 
-                <div className="hidden group-hover:flex gap-4 relative">
+                <div className="hidden group-hover:hidden group-hover:lg:flex gap-4 relative">
                     {Array.from({ length: projects.length }, (_, i) => (
                         <motion.div
                             key={i}
@@ -198,7 +198,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     ))}
                 </div>
 
-                <div className="flex items-center space-x-1 gap-4 group-hover:hidden" style={{ color: projects[currentIndex].name_color }}>
+                <div className="flex items-center space-x-1 gap-4 group-hover:flex group-hover:lg:hidden" style={{ color: projects[currentIndex].name_color }}>
                     <span>{currentIndex + 1}</span>
                     <div className="flex space-x-1 gap-1">
                         {Array.from({ length: projects.length }, (_, i) => (

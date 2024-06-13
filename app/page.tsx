@@ -23,6 +23,9 @@ export default function Home() {
   }
 
   useEffect(() => {
+    let touchStartY = 0;
+    let touchEndY = 0;
+
     const handleScroll = (event: WheelEvent) => {
       event.preventDefault();
       const canvas = canvasRef.current;
@@ -39,12 +42,44 @@ export default function Home() {
       }
     };
 
-    window.addEventListener('wheel', handleScroll, { passive: false });
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY = event.touches[0].clientY;
     };
 
+    const handleTouchMove = (event: TouchEvent) => {
+      event.preventDefault();
+      touchEndY = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = () => {
+      const canvas = canvasRef.current;
+      if (touchStartY > touchEndY) {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % projets.length);
+      } else {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + projets.length) % projets.length);
+      }
+      if (canvas) {
+        const rect = canvas.getBoundingClientRect();
+        const x = rect.width / 2;
+        const y = rect.height / 2;
+        addRipple(x, y);
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
   }, []);
+
+
 
   return (
     <>
