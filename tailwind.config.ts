@@ -18,7 +18,7 @@ const config: Config = {
       },
       fontSize: {
         'clampTitle': 'clamp(32px, 3.8889vw, 56px)',
-        'clampProject': 'clamp(24px, 5.5555vw, 80px)',
+        'clampProject': 'clamp(32px, 5.5555vw, 80px)',
         'clampContent': 'clamp(12px, 1.111vw, 16px)',
         'clampBody': 'clamp(360px, 1vw, 1380px)',
         'clampTextBox': 'clamp(12px, 1.111vw, 16px)',

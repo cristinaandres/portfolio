@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Modal, useDisclosure } from "@nextui-org/react";
 import ModalContentContact from './ModalContentContact'
 import classNames from 'classnames';
-import { useMenu } from './context/MenuContext'
+import { useMenu } from '../context/MenuContext'
 import { useNameColor } from '@/context/NameColorContext'
 import TransitionLink from './TransitionLink'
 
@@ -29,9 +29,9 @@ const Header = () => {
                     <div className='flex items-center xl:justify-start gap-8 h-full py-4 xl:py-2'>
                         <div className='flex flex-col'>
                             <div className='block xl:hidden z-20'>
-                                <button className={classNames(`tham tham-e-squeeze tham-w-6`, { 'tham-active': isMenuOpen })} onClick={toggleMenu}>
-                                    <div className="tham-box">
-                                        <div className="tham-inner" />
+                                <button className={classNames(`tham tham-e-squeeze tham-w-6 `, { 'tham-active': isMenuOpen })} onClick={toggleMenu}>
+                                    <div className={`tham-box `}>
+                                        <div className={`tham-inner  ${isMenuOpen ? 'bg-white' : `bg-${nameColor}`}`} />
                                     </div>
                                 </button>
                             </div>
@@ -70,7 +70,7 @@ const Header = () => {
                         <TransitionLink href={'/'} label={'Work'} nameColor={nameColor} />
                         <TransitionLink href={'/activities'} label={'Activities'} nameColor={nameColor} />
                         <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} />
-                        <button onClick={onOpen} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-center justify-center text-center transition-[font-weight] duration-300 font-normal p-2 rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white':'bg-white text-black') : 'bg-black text-white'} `}>Contact</button>
+                        <button onClick={onOpen} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-center justify-center text-center transition-[font-weight] duration-300 font-normal p-2 rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}>Contact</button>
 
                         <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange}>
                             <ModalContentContact />

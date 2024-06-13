@@ -128,7 +128,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         : { position: 'relative' };
 
     return (
-        <div className="flex flex-col items-center justify-center h-[100dvh]" style={backgroundStyle}>
+        <div className="flex flex-col items-center justify-center h-[100dvh] relative" style={backgroundStyle}>
             {!isColor && (
                 <div
                     className="absolute inset-0 bg-cover bg-center"
@@ -145,27 +145,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     additionalClassName={''}
                 />
 
-                <div className={`transition-all duration-200 font-poppins mt-10 flex flex-col lg:flex-row justify-center items-center lg:items-start min-w-[400px]`}>
+                <div className={`transition-all text-[14px] lg:text-base duration-200 font-poppins mt-4 lg:mt-10 flex flex-col lg:flex-row justify-center items-center lg:items-start min-w-[400px]`}>
                     <AnimatedText
                         text={project.year}
                         animate={animate05}
                         animationKey={animationKey}
-                        additionalClassName={'text-base w-1/2 text-center lg:text-end m-0 lg:mr-2 order-2 lg:order-1'} />
+                        additionalClassName={'w-1/2 text-center lg:text-end m-0 lg:mr-2 order-2 lg:order-1'} />
                     <AnimatedText
                         text={project.description}
                         animationKey={animationKey}
                         animate={animate05}
-                        additionalClassName={'text-base w-1/2 text-center lg:text-start word-wrap m-0 lg:ml-2 order-1 lg:order-2'}
+                        additionalClassName={'w-1/2 text-center lg:text-start word-wrap m-0 lg:ml-2 order-1 lg:order-2'}
                     />
                 </div>
                 <AnimatedText
                     text={project.label}
                     animationKey={animationKey}
                     animate={animate05}
-                    additionalClassName={`w-fit px-5 py-2 mt-24 rounded-full text-base border border-${project.name_color} ${animate ? 'fade-in' : ''}`} />
+                    additionalClassName={`w-fit px-5 py-2 mt-4 lg:mt-24 rounded-full text-[14px] lg:text-base border border-${project.name_color} ${animate ? 'fade-in' : ''}`} />
             </div>
 
-            <div className="absolute bottom-4 flex flex-col items-center justify-center group z-10 h-20 w-full"
+            <div className="absolute bottom-8 flex flex-col items-center justify-center group z-10 h-20 w-full"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
 

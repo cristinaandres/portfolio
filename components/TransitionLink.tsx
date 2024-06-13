@@ -4,7 +4,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { animatePageOut } from "@/utils/animate";
-import Link from "next/link";
+import { useState } from "react";
 
 export default function TransitionLink({
     href,
@@ -15,14 +15,11 @@ export default function TransitionLink({
     label: string;
     nameColor: string;
 }) {
-    let textColor: string;
+
+    const [textColor, setTextColor] = useState<string>('');
     const pathname = usePathname();
-    if (pathname !== '/') {
-        textColor = 'black;'
-    }
-    else {
-        textColor = nameColor;
-    }
+
+
     const isActive = (href: string) => pathname === href;
 
     const router = useRouter();
@@ -32,7 +29,7 @@ export default function TransitionLink({
     };
 
     return (
-        <button onClick={handleClick} className={`p-0 uppercase text-xs tracking-[6px] hover:font-bold flex items-center justify-center transition-[font-weight] duration-300 ${isActive(href) ? `border-b-3 border-${pathname === href ? textColor : 'black'} font-bold` : 'border-none font-normal'}`}>
+        <button disabled={isActive(href)} onClick={handleClick} className={`cursor-pointer disabled:cursor-default p-0 uppercase text-xs tracking-[6px] hover:font-bold flex items-center justify-center transition-[font-weight] duration-300 ${isActive(href) ? `border-b-3 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}>
             {label}
         </button>
 

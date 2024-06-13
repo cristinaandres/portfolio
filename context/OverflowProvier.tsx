@@ -1,5 +1,5 @@
 'use client'
-import { useMenu } from "./MenuContext"
+import { useMenu } from "./MenuContext";
 
 export function OverflowProvider({ children }: { children: React.ReactNode }) {
     const { isMenuOpen } = useMenu();

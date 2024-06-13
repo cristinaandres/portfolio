@@ -2,7 +2,7 @@
 import { Modal, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 import ModalContentContact from "./ModalContentContact";
-import { useMenu } from "./context/MenuContext";
+import { useMenu} from "@/context/MenuContext";
 
 interface MenuContextType {
     isMenuOpen: boolean;
@@ -14,9 +14,9 @@ export function Menu() {
     if (!isMenuOpen) return null;
 
     return (
-        <div className=" fixed h-screen w-screen overflow-hidden bg-black bg-opacity-95 text-white text-2xl z-10 p-8 flex flex-col items-center justify-center gap-[8.6dvh]">
-            <Link href={'/'} onClick={toggleMenu}>Project</Link>
-            <Link href={'/services'} onClick={toggleMenu}>Services</Link>
+        <div className="fixed h-screen w-screen overflow-hidden bg-black bg-opacity-95 text-white text-2xl p-8 flex flex-col items-center justify-center gap-[8.6dvh] z-30">
+            <Link href={'/'} onClick={toggleMenu}>Work</Link>
+            <Link href={'/activities'} onClick={toggleMenu}>Activities</Link>
             <Link href={'/about'} onClick={toggleMenu}>About Me</Link>
             <button onClick={onOpen}>Contact</button>
             <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange}>
