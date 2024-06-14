@@ -8,10 +8,10 @@ const MainLogo: React.FC<SVGProps> = ({ nameColor }) => {
     return (
         <>
             {nameColor === 'black' && (
-                <Image src={'/images/logo.svg'} alt='Logo Cristina' width={63} height={63} />
+                <Image src={'/images/logo_no_text.svg'} alt='Logo Cristina' width={63} height={63} />
             )}
             {nameColor === 'white' && (
-                <Image src={'/images/logo_white.svg'} alt='Logo Cristina' width={63} height={63} />
+                <Image src={'/images/logo_no_text_white.svg'} alt='Logo Cristina' width={63} height={63} />
             )}
         </>
     )
