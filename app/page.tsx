@@ -27,6 +27,7 @@ export default function Home() {
     let touchEndY = 0;
 
     const handleScroll = (event: WheelEvent) => {
+      if (activeProjectIndex !== null) return;
       event.preventDefault();
       const canvas = canvasRef.current;
       if (event.deltaY > 0) {
@@ -52,6 +53,7 @@ export default function Home() {
     };
 
     const handleTouchEnd = () => {
+      if (activeProjectIndex !== null) return; // Prevent scroll if modal is open
       const canvas = canvasRef.current;
       if (touchStartY > touchEndY) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projets.length);
@@ -77,19 +79,13 @@ export default function Home() {
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, []);
+  }, [activeProjectIndex, canvasRef, addRipple, projets.length]);
 
 
 
   return (
     <>
-      <div className="relative overflow-y-hidden h-screen">
-        {/* <canvas
-            ref={canvasRef}
-            width={window.innerWidth}
-            height={window.innerHeight}
-            className="absolute top-0 left-0 w-full h-full pointer-events-none"
-          /> */}
+      <div className="relative overflow-y-hidden h-screen">        
         <ProjectCard
           currentIndex={currentIndex}
           openProject={() => openProject(currentIndex)}
