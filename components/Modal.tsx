@@ -23,6 +23,7 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
     const [indexProject, setIndexProject] = useState<number | null>(index)
     const [secondRender, setSecondRender] = useState<boolean>(false)
 
+
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
@@ -75,32 +76,19 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
         <AnimatePresence>
             {isOpen && (
                 <div>
-                    <div className="mobile">
-                        <Modal className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center px-4 z-50 overflow-y-auto">
-                            <ModalBody>
-                                <div className="relative">
-                                    <div className="bg-transparent text-5xl rounded-lg 2xl:w-[1300px] xl:w-[1100px] lg:w-[900px] md:w-[700px] overflow-y-auto transition-all duration-300" style={{ maxHeight: '90vh' }} onClick={(e) => e.stopPropagation()}>
-                                        TEST
-                                    </div>                                    
-                                    <ShareIcon />
-                                </div>
-                            </ModalBody>
-                            <ModalFooter>
-                                Coucou
-                            </ModalFooter>
-                        </Modal>
-                        
-                    </div>
-
-                    <div className="desktop">
-                        <motion.div initial={{ opacity: 0 }}
+                    <div className="">
+                        <motion.div
+                            initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }} id="modal-overlay" className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center px-4 z-50 overflow-y-auto" onClick={handleOverlayClick}>
-                            <div className="relative">
+                            exit={{ opacity: 0 }}
+                            id="modal-overlay"
+                            className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center px-4 z-50 overflow-y-auto"
+                            onClick={handleOverlayClick}>
+                            <div className="relative flex flex-col border border-red-500">
                                 <div className="bg-transparent rounded-lg 2xl:w-[1300px] xl:w-[1100px] lg:w-[900px] md:w-[700px] overflow-y-auto transition-all duration-300" style={{ maxHeight: '90vh' }} onClick={(e) => e.stopPropagation()}>
                                     {children}
                                 </div>
-                                <button onClick={onClose} className="text-xl font-bold absolute top-0 right-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg">
+                                <button onClick={onClose} className="text-xl font-bold absolute top-[-60px] right-0 lg:top-0 lg:right-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg">
                                     &times;
                                 </button>
                                 {/* <button
