@@ -29,7 +29,7 @@ export default function TransitionLink({
     };
 
     return (
-        <button disabled={isActive(href)} onClick={handleClick} className={`cursor-pointer disabled:cursor-default p-0 uppercase text-xs tracking-[6px] hover:font-bold flex items-center justify-center transition-[font-weight] duration-300 ${isActive(href) ? `border-b-3 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}>
+        <button disabled={isActive(href)} onClick={handleClick} className={`h-full cursor-pointer disabled:cursor-default px-0 py-2 uppercase text-xs tracking-[6px] hover:font-bold flex items-start gap-3 justify-center transition-[font-weight] duration-300 text-center ${isActive(href) ? `border-b-4 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}>
             {label}
         </button>
 

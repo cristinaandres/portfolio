@@ -60,7 +60,7 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
             const params = new URLSearchParams(searchParams.toString())
             params.delete("project");
             if (indexProject != null) {
-                params.set("project", projets[indexProject].complete_name.toLowerCase());
+                params.set("project", projets[indexProject].title.toLowerCase());
             }
 
             router.push(pathname + '?' + params.toString())
@@ -89,29 +89,7 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
                                 Coucou
                             </ModalFooter>
                         </Modal>
-                        <motion.div initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }} id="modal-overlay" className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center px-4 z-50 overflow-y-auto" onClick={handleOverlayClick}>
-                            <div className="relative">
-                                <div className="bg-transparent rounded-lg 2xl:w-[1300px] xl:w-[1100px] lg:w-[900px] md:w-[700px] overflow-y-auto transition-all duration-300" style={{ maxHeight: '90vh' }} onClick={(e) => e.stopPropagation()}>
-                                    {children}
-                                </div>
-                                <button onClick={onClose} className="text-xl font-bold absolute top-0 right-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg">
-                                    &times;
-                                </button>
-                                <button
-                                    className="text-xl font-bold absolute bottom-16 left-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg flex items-center justify-center"
-                                    onClick={goToPreviousProject}>
-                                    <FaArrowLeft />
-                                </button>
-                                <button
-                                    className="text-xl font-bold absolute bottom-16 right-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg flex items-center justify-center"
-                                    onClick={goToNextProject}>
-                                    <FaArrowRight />
-                                </button>
-                                <ShareIcon />
-                            </div>
-                        </motion.div>
+                        
                     </div>
 
                     <div className="desktop">
@@ -125,7 +103,7 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
                                 <button onClick={onClose} className="text-xl font-bold absolute top-0 right-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg">
                                     &times;
                                 </button>
-                                <button
+                                {/* <button
                                     className="text-xl font-bold absolute bottom-16 left-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg flex items-center justify-center"
                                     onClick={goToPreviousProject}>
                                     <FaArrowLeft />
@@ -134,7 +112,7 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
                                     className="text-xl font-bold absolute bottom-16 right-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg flex items-center justify-center"
                                     onClick={goToNextProject}>
                                     <FaArrowRight />
-                                </button>
+                                </button> */}
                                 <ShareIcon />
                             </div>
                         </motion.div>

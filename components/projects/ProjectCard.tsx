@@ -85,16 +85,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     const createQueryString = useCallback(
         (name: string, value: string) => {
             const params = new URLSearchParams(searchParams.toString());
-            params.set('project', project.complete_name.toLowerCase());
-
+            params.set('project', project.title.toLowerCase());
             return params.toString();
         },
-        [searchParams, project.complete_name]
+        [searchParams, project.title]
     );
 
     const openModal = () => {
         setModalOpen(true);
-        openProject(null);
+        openProject(3);
         router.push(pathname + '?' + createQueryString('sort', 'asc'));
     };
 
@@ -136,7 +135,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 ></div>
             )}
             {!isColor && <div className="absolute inset-0 bg-black opacity-50"></div>}
-            <div className={`relative z-10 flex flex-col items-center text-${project.name_color}`}>
+            <div className={`relative z-10 flex flex-col items-center leading-none justify-start text-${project.name_color}`}>
                 <AnimatedTextTitle
                     text={project.title}
                     animate={animate05}
@@ -145,7 +144,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     additionalClassName={''}
                 />
 
-                <div className={`transition-all text-[14px] lg:text-base duration-200 font-poppins mt-4 lg:mt-10 flex flex-col lg:flex-row justify-center items-center lg:items-start min-w-[400px]`}>
+                <div className={`transition-all text-[14px] lg:text-base duration-200 font-poppins mt-4 flex flex-col lg:flex-row justify-center items-center lg:items-start min-w-[400px]`}>
                     <AnimatedText
                         text={project.year}
                         animate={animate05}

@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <>
             <nav className={`fixed top-0 left-0 w-full z-30 font-inter py-4 xl:py-0 flex items-center justify-center gap-16 px-4 lg:px-12 bg-transparent ${pathname === '/' ? `text-${nameColor}` : ' text-black'}`}>
-                <div className='w-full flex items-end justify-between max-w-[1440px] h-full'>
+                <div className='w-full flex items-center justify-between max-w-[1440px] h-full'>
                     <div className='flex items-center xl:justify-start gap-8 h-full py-4 xl:py-2'>
                         <div className='flex flex-col'>
                             <div className='block xl:hidden z-20'>
@@ -66,11 +66,11 @@ const Header = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className='gap-16 hidden xl:flex h-full my-auto items-center'>
+                    <div className='gap-10 hidden xl:flex h-[100%] justify-end items-center'>
                         <TransitionLink href={'/'} label={'Work'} nameColor={nameColor} />
                         <TransitionLink href={'/activities'} label={'Activities'} nameColor={nameColor} />
                         <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} />
-                        <button onClick={onOpen} className={`pb-1 uppercase text-xs tracking-[6px] hover:font-bold flex items-center justify-center text-center transition-[font-weight] duration-300 font-normal p-2 rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}>Contact</button>
+                        <button onClick={onOpen} className={`p-2 uppercase text-xs tracking-[6px] hover:font-bold flex items-start gap-2 justify-center text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}>Contact</button>
 
                         <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange}>
                             <ModalContentContact />

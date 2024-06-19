@@ -53,7 +53,7 @@ export default function Home() {
     };
 
     const handleTouchEnd = () => {
-      if (activeProjectIndex !== null) return; // Prevent scroll if modal is open
+      if (activeProjectIndex !== null) return;
       const canvas = canvasRef.current;
       if (touchStartY > touchEndY) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % projets.length);
