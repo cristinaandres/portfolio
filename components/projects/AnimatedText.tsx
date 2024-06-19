@@ -14,7 +14,7 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, animate, animationKey
     useEffect(() => {
         if (containerRef.current) {
             const container = containerRef.current;
-            container.innerHTML = ''; // Clear the existing text
+            container.innerHTML = '';
 
             text.split(' ').forEach((word, index) => {
                 const wordSpan = document.createElement('span');

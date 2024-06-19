@@ -162,6 +162,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     animationKey={animationKey}
                     animate={animate05}
                     additionalClassName={`w-fit px-5 py-2 mt-4 lg:mt-24 rounded-full text-[14px] lg:text-base border border-${project.name_color} ${animate ? 'fade-in' : ''}`} />
+
+                <button className={`mobile w-fit px-4 py-1 mt-4 lg:mt-24 rounded-full text-[14px] lg:text-base ${project.name_color === 'black' ? 'bg-black text-white' : 'bg-white text-black'}  ${animate ? 'fade-in' : ''}`}>
+                    <AnimatedText
+                        text="Explore"
+                        animationKey={animationKey}
+                        animate={animate05}
+                        additionalClassName={``} /></button>
             </div>
 
             <div className="absolute bottom-8 flex flex-col items-center justify-center group z-10 h-20 w-full"
