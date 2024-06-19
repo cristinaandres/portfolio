@@ -84,7 +84,7 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
                             id="modal-overlay"
                             className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center px-4 z-50 overflow-y-auto"
                             onClick={handleOverlayClick}>
-                            <div className="relative flex flex-col border border-red-500">
+                            <div className="relative flex flex-col">
                                 <div className="bg-transparent rounded-lg 2xl:w-[1300px] xl:w-[1100px] lg:w-[900px] md:w-[700px] overflow-y-auto transition-all duration-300" style={{ maxHeight: '90vh' }} onClick={(e) => e.stopPropagation()}>
                                     {children}
                                 </div>
