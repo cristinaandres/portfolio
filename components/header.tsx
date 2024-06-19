@@ -68,7 +68,7 @@ const Header = () => {
                     </div>
                     <div className='gap-10 hidden xl:flex h-[100%] justify-end items-center'>
                         <TransitionLink href={'/'} label={'Work'} nameColor={nameColor} />
-                        <TransitionLink href={'/activities'} label={'Activities'} nameColor={nameColor} />
+                        {/* <TransitionLink href={'/activities'} label={'Activities'} nameColor={nameColor} /> */}
                         <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} />
                         <button onClick={onOpen} className={`p-2 uppercase text-xs tracking-[6px] hover:font-bold flex items-start gap-2 justify-center text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}>Contact</button>
 
