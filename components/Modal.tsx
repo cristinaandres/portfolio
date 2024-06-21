@@ -54,8 +54,6 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
     };
 
     useEffect(() => {
-        console.log('Index après décrémentation:', indexProject);
-        console.log(secondRender)
         if (secondRender) {
             onClose();
             const params = new URLSearchParams(searchParams.toString())
