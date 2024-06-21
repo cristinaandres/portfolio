@@ -49,7 +49,7 @@ const ImagesGallery = () => {
                 <div className='absolute top-1/5 z-20'>
                     <Image src={'/images/activities/animal-crossing/logo.png'} alt='Logo Animal Crossing' width={294} height={202} />
                 </div>
-                <div className='w-2/3 my-40'>
+                <div className='w-4/5 lg:w-2/3 max-w-[1440px] my-40 border border-transparent'>
                     <PhotoAlbum photos={images} layout="rows" targetRowHeight={200} spacing={16} onClick={({ index }) => setIndex(index)} />
                 </div>
 
