@@ -85,25 +85,6 @@
         "files": []
     },
     {
-        "title": "Moca Studio",
-        "label": "Product Design",
-        "year": "2022",
-        "description": "Swiss watch design.",
-        "background": "#718B75",
-        "card_color": "#718B75",
-        "logo": "moca.png",
-        "complete_name": "Design of a new brand",
-        "name": "Brand design",
-        "name_color": "white",
-        "padding_top": 140,
-        "content": [
-            "Portfolio_cristina_page-0007.jpg",
-            "Portfolio_cristina_page-0008.jpg"
-        ],
-        "additional_files": false,
-        "files": []
-    },
-    {
         "title": "Ares Domus",
         "label": "Product Design",
         "year": "2022",
