@@ -2,8 +2,8 @@
     {
         "title": "Curefab",
         "label": "Website Design",
-        "year": "2022",
-        "description": "Website design for medical technology company.",
+        "year": "2024",
+        "description": "Website design for a german company.",
         "background": "#000",
         "card_color": "#000",
         "logo": "curefab.png",
@@ -15,6 +15,28 @@
             "curefab_1.png",
             "curefab_2.png",
             "curefab_3.png"
+        ],
+        "additional_files": false,
+        "files": []
+    },
+    {
+        "title": "Punt",
+        "label": "Product Design",
+        "year": "2023",
+        "description": "Design of a wooden sideboard.",
+        "background": "punt_bg.jpeg",
+        "card_color": "#E2E2DB",
+        "logo": "punt.png",
+        "complete_name": "Product design for Punt",
+        "name": "Product design",
+        "name_color": "white",
+        "padding_top": 132,
+        "content": [
+            "Portfolio_Page_Yokohama1.jpg",
+            "Portfolio_Page_Yokohama2.jpg",
+            "Portfolio_Page_Yokohama3.jpg",
+            "Portfolio_Page_Yokohama4.jpg",
+            "Portfolio_Page_Yokohama5.jpg"
         ],
         "additional_files": false,
         "files": []
@@ -58,28 +80,6 @@
             "Portfolio_cristina_page-0015.jpg",
             "Portfolio_cristina_page-0016.jpg",
             "Portfolio_cristina_page-0017.jpg"
-        ],
-        "additional_files": false,
-        "files": []
-    },
-    {
-        "title": "Punt",
-        "label": "Product Design",
-        "year": "2022",
-        "description": "Design of a wooden sideboard.",
-        "background": "punt_bg.jpeg",
-        "card_color": "#E2E2DB",
-        "logo": "punt.png",
-        "complete_name": "Product design for Punt",
-        "name": "Product design",
-        "name_color": "white",
-        "padding_top": 132,
-        "content": [
-            "Portfolio_Page_Yokohama1.jpg",
-            "Portfolio_Page_Yokohama2.jpg",
-            "Portfolio_Page_Yokohama3.jpg",
-            "Portfolio_Page_Yokohama4.jpg",
-            "Portfolio_Page_Yokohama5.jpg"
         ],
         "additional_files": false,
         "files": []
