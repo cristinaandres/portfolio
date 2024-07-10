@@ -19,10 +19,11 @@ const Header = () => {
     const [color, setColor] = useState<string>('white');
     useEffect(() => {
         setColor(pathname === '/' ? (nameColor === 'black' ? 'white' : 'black') : 'white');
+        console.log(pathname)
         return () => {
             document.body.classList.remove('overflow-hidden');
         };
-    }, [nameColor]);
+    }, [nameColor, pathname]);
 
     return (
         <>
