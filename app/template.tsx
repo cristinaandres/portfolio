@@ -3,7 +3,7 @@
 import { animatePageIn } from "@/utils/animate"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { useEffect, useRef } from "react"
+import React from 'react';
 import LogoIntegrated from "@/components/Logos/LogoIntegrated"
 
 export default function Template({ children }: { children: React.ReactNode }) {
