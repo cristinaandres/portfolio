@@ -74,7 +74,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             clearTimeout(timer1);
             clearTimeout(timer);
         };
-    }, [currentIndex]);
+    }, [currentIndex, setNameColor]);
 
     const [isModalOpen, setModalOpen] = useState(false);
 

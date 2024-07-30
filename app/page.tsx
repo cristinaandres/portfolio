@@ -69,7 +69,7 @@ export default function Home() {
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [activeProjectIndex, projets.length]);
+  }, [activeProjectIndex]);
 
 
   return (
