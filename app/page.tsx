@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import projets from '@/public/json/projets.json';
 import ProjectCard from "@/components/projects/ProjectCard";
 
