@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from "react";
 
 type AnimatedTextProps = {
     text: string;
