@@ -1,8 +1,8 @@
+'use client';
+
 import React from 'react';
 import projets from '@/public/json/projets.json';
 import ProjectCard from "@/components/projects/ProjectCard";
-
-'use client';
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
