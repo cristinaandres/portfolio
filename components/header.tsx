@@ -86,7 +86,7 @@ const Header = () => {
                         </button>
                         <button onClick={onOpen} className={`px-3 py-1 uppercase text-xs hover:font-bold flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}>
                             <span>Contact</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill={nameColor}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9" fill={color}>
                                 <g clipPath="url(#clip0_269_1850)">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M8.4375 5.625V7.875C8.4375 8.49632 7.93382 9 7.3125 9H1.125C0.50368 9 0 8.49632 0 7.875V1.6875C0 1.06618 0.50368 0.5625 1.125 0.5625H3.375V1.6875H1.125V7.875H7.3125V5.625H8.4375ZM7.87337 1.9205L4.33362 5.46025L3.53812 4.66475L7.07787 1.125H5.06087V0H8.99837V3.9375H7.87337V1.9205Z" fill={color} />
                                 </g>
