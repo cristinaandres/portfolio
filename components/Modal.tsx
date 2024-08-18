@@ -66,7 +66,7 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
             console.log(params.toString())
         }
         setSecondRender(true)
-    }, [indexProject, onClose, pathname, router, searchParams, secondRender]);
+    }, [indexProject]);
 
     if (!isOpen) return null;
 
