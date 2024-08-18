@@ -94,7 +94,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     const openModal = () => {
         setModalOpen(true);
         openProject(currentIndex);
-        console.log('coucou')
         router.push(pathname + '?' + createQueryString('sort', 'asc'));
     };
 
