@@ -71,7 +71,6 @@ export default function Home() {
     };
   }, [activeProjectIndex]);
 
-
   return (
     <>
       <div className="relative overflow-y-hidden h-screen">
