@@ -26,7 +26,7 @@ const ImagesGallery = ({ image }: { image: string })=> {
                 const response = await fetch(`/api/images?folder=${image}`);
                 const data = await response.json();
                 const imagePaths = data.images.map((filename: string) => ({
-                    src: filename,
+                    src: filename.src,
                     width: 720,
                     height: 405
                 }));
