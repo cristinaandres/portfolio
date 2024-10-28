@@ -14,7 +14,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import PhotoAlbum from 'react-photo-album';
 
 
-const ImagesGallery = () => {
+const ImagesGallery = ( {image}) => {
     const [open, setOpen] = useState(false);
     const [images, setImages] = useState([]);
     const [index, setIndex] = useState(-1);
@@ -23,13 +23,14 @@ const ImagesGallery = () => {
         const fetchImages = async () => {
             try {
                 const folderName = 'showcase';
-                const response = await fetch(`/api/images?folder=${folderName}`);
+                const response = await fetch(`/api/images?folder=${image}`);
+                debugger;
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
                 const imagePaths = data.map((filename: string) => ({
-                    src: `/images/activities/animal-crossing/showcase/${filename}`,
+                    src: `/images/activities/${image}/showcase/${filename}`,
                     width: 720,
                     height: 405
                 }));
@@ -45,10 +46,7 @@ const ImagesGallery = () => {
 
     return (
         <>
-            <div className='min-h-screen bg-animalcrossing-background bg-cover relative flex flex-col justify-start items-center mt-20 pt-12'>
-                <div className='absolute top-1/5 z-20'>
-                    <Image src={'/images/activities/animal-crossing/logo.png'} alt='Logo Animal Crossing' width={294} height={202} />
-                </div>
+
                 <div className='w-4/5 lg:w-2/3 max-w-[1440px] my-40 border border-transparent'>
                     <PhotoAlbum photos={images} layout="rows" targetRowHeight={200} spacing={16} onClick={({ index }) => setIndex(index)} />
                 </div>
@@ -60,7 +58,7 @@ const ImagesGallery = () => {
                     close={() => setIndex(-1)}
                     plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
                 />
-            </div>
+
         </>
     )
 }

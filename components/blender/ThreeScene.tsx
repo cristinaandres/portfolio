@@ -7,7 +7,7 @@ import {
     OrbitControls,
     PerspectiveCamera,
 } from "@react-three/drei";
-import { Platform } from './Platform';
+import { Model } from './Deskroom5';
 
 
 const ThreeScene: React.FC = () => {
@@ -19,7 +19,7 @@ const ThreeScene: React.FC = () => {
                     <Environment preset="studio" />
                     <PerspectiveCamera makeDefault position={[2, 3.9, 4.1]} />
                     <OrbitControls />
-                    <Platform position={[0, 0.1, 0]} />
+                    <Model position={[0, 0.1, 0]} />
                     {/* <ContactShadows /> */}
                 </Canvas>
             </div>

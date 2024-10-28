@@ -30,6 +30,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "animal": "url('/images/activities/animal_crossing.png')",
         "animalcrossing-background": "url('/images/activities/animal-crossing/background.png')",
+        "blender-background": "url('/images/activities/blender/background.png')",
       },
       screens: {
         'sm': '320px',

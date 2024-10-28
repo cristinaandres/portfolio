@@ -20,7 +20,15 @@ export default function TransitionLink({
     const pathname = usePathname();
 
 
-    const isActive = (href: string) => pathname === href;
+    const isActive = (href: string): boolean => {
+        const firstElementMenu = href.split('/')[1];  // Obtiene el primer elemento después de la primera "/"
+
+        if (firstElementMenu !== "") {  // Verifica que firstElementMenu no esté vacío
+            return pathname.includes(`/${firstElementMenu}`);
+        } else {
+            return pathname === href;
+        }
+    };
 
     const router = useRouter();
 
