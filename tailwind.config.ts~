@@ -31,7 +31,6 @@ const config: Config = {
         "animal": "url('/images/activities/animal_crossing.png')",
         "animalcrossing-background": "url('/images/activities/animal-crossing/background.png')",
         "blender-background": "url('/images/activities/blender/background.png')",
-        "blender": "url('/images/activities/blender.png')",
       },
       screens: {
         'sm': '320px',
