@@ -14,7 +14,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import PhotoAlbum from 'react-photo-album';
 
 
-const ImagesGallery = ( {image}) => {
+const ImagesGallery = ({ image }: { image: string })=> {
     const [open, setOpen] = useState(false);
     const [images, setImages] = useState([]);
     const [index, setIndex] = useState(-1);
