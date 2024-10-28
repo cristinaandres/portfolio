@@ -44,8 +44,25 @@ const ImagesGallery = ({ image }: { image: string })=> {
         <>
 
                 <div className='w-4/5 lg:w-2/3 max-w-[1440px] my-40 border border-transparent'>
-                    <PhotoAlbum photos={images} layout="rows" targetRowHeight={200} spacing={16} onClick={({ index }) => setIndex(index)} />
-                </div>
+                                {images.length === 1 ? (
+                                    <Image
+                                        src={images[0].src}
+                                        width="400"
+                                        height={images[0].height}
+                                        alt="Single Image"
+                                        onClick={() => setIndex(0)} // Abre el lightbox al hacer clic
+                                        style={{ cursor: 'pointer' }}
+                                    />
+                                ) : (
+                                    <PhotoAlbum
+                                        photos={images}
+                                        layout="rows"
+                                        targetRowHeight={200}
+                                        spacing={16}
+                                        onClick={({ index }) => setIndex(index)}
+                                    />
+                                )}
+                            </div>
 
                 <Lightbox
                     slides={images}
