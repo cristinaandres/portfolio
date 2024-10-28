@@ -46,9 +46,8 @@ const ImagesGallery = ({ image }: { image: string })=> {
                 <div className='w-4/5 lg:w-2/3 max-w-[1440px] my-40 border border-transparent'>
                                 {images.length === 1 ? (
                                     <Image
-                                        src={images[0].src}
+                                        src={images[0]}
                                         width="400"
-                                        height={images[0].height}
                                         alt="Single Image"
                                         onClick={() => setIndex(0)} // Abre el lightbox al hacer clic
                                         style={{ cursor: 'pointer' }}
