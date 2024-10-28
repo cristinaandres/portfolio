@@ -14,7 +14,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import PhotoAlbum from 'react-photo-album';
 
 
-const ImagesGallery = ( {image}) => {
+const ImagesGallery = ({ image }: { image: string })=> {
     const [open, setOpen] = useState(false);
     const [images, setImages] = useState([]);
     const [index, setIndex] = useState(-1);
@@ -24,12 +24,9 @@ const ImagesGallery = ( {image}) => {
             try {
                 const folderName = 'showcase';
                 const response = await fetch(`/api/images?folder=${image}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
                 const data = await response.json();
-                const imagePaths = data.map((filename: string) => ({
-                    src: `/images/activities/${image}/showcase/${filename}`,
+                const imagePaths = data.images.map((filename: string) => ({
+                    src: filename,
                     width: 720,
                     height: 405
                 }));

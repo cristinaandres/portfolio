@@ -24,12 +24,9 @@ const ImagesGallery = ({ image }: { image: string })=> {
             try {
                 const folderName = 'showcase';
                 const response = await fetch(`/api/images?folder=${image}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
                 const data = await response.json();
-                const imagePaths = data.map((filename: string) => ({
-                    src: `/images/activities/${image}/showcase/${filename}`,
+                const imagePaths = data.images.map((filename: string) => ({
+                    src: filename.src,
                     width: 720,
                     height: 405
                 }));
