@@ -10,7 +10,6 @@ import Providers from "@/components/Providers";
 import Menu from "@/components/Menu";
 import Template from "./template";
 
-
 const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", '700', '800'],
