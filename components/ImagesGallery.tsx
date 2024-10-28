@@ -23,6 +23,7 @@ const ImagesGallery = ({ image }: { image: string })=> {
             try {
                 const folderName = 'showcase';
                 const response = await fetch(`/api/images?folder=${image}`);
+                console.log(response);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
