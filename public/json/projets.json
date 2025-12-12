@@ -1,4 +1,22 @@
 [
+     {
+        "title": "Aqualung",
+        "label": "UX/UI Designer",
+        "year": "2025",
+        "description": "Worked as the UX/UI Designer at a diving equipment company.",
+        "background": "#002260",
+        "card_color": "#002260",
+        "logo": "aqualung.png",
+        "complete_name": "UI Designs for Aqualung Group",
+        "name": "UX/UI Designer",
+        "name_color": "white",
+        "padding_top": 192,
+        "content": [
+            "aqualung.pdf"
+        ],
+        "additional_files": false,
+        "files": []
+    },
     {
         "title": "Curefab",
         "label": "Website Design",
