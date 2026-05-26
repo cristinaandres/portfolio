@@ -1,11 +1,7 @@
-import React from 'react';
+import { notFound } from 'next/navigation';
 
 const page = () => {
-  return (
-    <>
-      <div className="min-h-[90dvh]"></div>
-    </>
-  );
+  notFound();
 };
 
 export default page;

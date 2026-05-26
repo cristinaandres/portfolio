@@ -22,7 +22,7 @@ const AboutPhone = () => {
         </div>
 
         <div className="flex flex-col gap-5 pt-8">
-          <h2 className="uppercase font-bold text-base tracking-[4px] w-1/2">
+          <h2 className="uppercase font-bold text-base tracking-[4px] max-w-prose">
             Hello, I&apos;m Cristina Andrés
           </h2>
           <p className="text-xs font-medium">

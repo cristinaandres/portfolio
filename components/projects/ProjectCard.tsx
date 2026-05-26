@@ -149,7 +149,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         />
 
         <div
-          className={`transition-all text-[14px] lg:text-base duration-200 font-poppins mt-4 flex flex-col lg:flex-row justify-center items-center lg:items-start min-w-[400px]`}
+          className={`transition-all text-[14px] lg:text-base duration-200 font-poppins mt-4 flex flex-col lg:flex-row justify-center items-center lg:items-start w-full max-w-[400px] lg:min-w-[400px] px-4 lg:px-0`}
         >
           <AnimatedText
             text={project.year}
@@ -190,18 +190,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         className="absolute bottom-8 flex flex-col items-center justify-center group z-10 h-20 w-full"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onFocus={() => setIsHovered(true)}
+        onBlur={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+            setIsHovered(false);
+          }
+        }}
       >
-        <div className="hidden group-hover:hidden group-hover:lg:flex gap-4 relative">
+        <div className="hidden lg:flex gap-4 relative">
           {Array.from({ length: projects.length }, (_, i) => (
-            <motion.div
+            <motion.button
               key={i}
+              type="button"
               onClick={() => setIndex(i)}
+              aria-label={`Go to project ${i + 1}`}
               style={{
                 backgroundColor: currentIndex === i ? 'transparent' : projects[i].card_color,
                 borderColor: currentIndex === i ? '#FF73F9' : 'transparent',
                 borderWidth: currentIndex === i ? '1px' : '0',
               }}
-              className={`transition-all duration-300 rounded-md ease-in-out w-[120px] h-20 flex items-center justify-center relative px-4 cursor-pointer`}
+              className={`transition-all duration-300 rounded-md ease-in-out w-[120px] h-20 flex items-center justify-center relative px-4 cursor-pointer focus-visible:outline-2 focus-visible:outline-[#FF73F9]`}
               custom={[i, middleIndex]}
               initial="hidden"
               animate={isHovered ? 'visible' : 'hidden'}
@@ -211,30 +219,34 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 src={'/images/' + projects[i].logo}
                 alt="Logo of the project"
                 fill
+                sizes="120px"
                 style={{
                   opacity: currentIndex === i ? 0 : 100,
                 }}
                 className="scale-80 object-contain"
               />
-            </motion.div>
+            </motion.button>
           ))}
         </div>
 
         <div
-          className="flex items-center space-x-1 gap-4 group-hover:flex group-hover:lg:hidden"
+          className="flex items-center space-x-1 gap-4 lg:hidden"
           style={{ color: projects[currentIndex].name_color }}
         >
           <span>{currentIndex + 1}</span>
           <div className="flex space-x-1 gap-1">
             {Array.from({ length: projects.length }, (_, i) => (
-              <span
+              <button
                 key={i}
+                type="button"
                 onClick={() => setIndex(i)}
-                className={`block h-4 rounded-sm transition-width duration-[2s] ease-in-out ${i === currentIndex ? 'border-2 border-[#FF73F9] w-6 ' : 'w-0.5'}`}
+                aria-label={`Go to project ${i + 1}`}
+                aria-current={i === currentIndex ? 'true' : undefined}
+                className={`relative block h-4 rounded-sm transition-all duration-300 ease-in-out before:content-[''] before:absolute before:-inset-3 ${i === currentIndex ? 'border-2 border-[#FF73F9] w-6 ' : 'w-0.5'}`}
                 style={{
                   backgroundColor: i === currentIndex ? '' : projects[currentIndex].name_color,
                 }}
-              ></span>
+              />
             ))}
           </div>
           <span>{projects.length}</span>

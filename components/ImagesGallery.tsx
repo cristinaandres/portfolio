@@ -15,14 +15,12 @@ import { RowsPhotoAlbum } from 'react-photo-album';
 import 'react-photo-album/rows.css';
 
 const ImagesGallery = ({ image }: { image: string }) => {
-  const [open, setOpen] = useState(false);
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<{ src: string; width: number; height: number }[]>([]);
   const [index, setIndex] = useState(-1);
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const folderName = 'showcase';
         const response = await fetch(`/api/images?folder=${image}`);
         const data = await response.json();
         const imagePaths = data.images.map((filename: string) => ({
@@ -37,18 +35,20 @@ const ImagesGallery = ({ image }: { image: string }) => {
     };
 
     fetchImages();
-  }, []);
+  }, [image]);
 
   return (
     <>
-      <div className="w-4/5 lg:w-2/3 max-w-[1440px] my-40 border border-transparent">
+      <div className="w-4/5 lg:w-2/3 max-w-[1440px] my-16 md:my-24 lg:my-40 border border-transparent">
         {images.length === 1 ? (
           <Image
-            src={images[0]}
-            width="400"
-            alt="Single Image"
-            onClick={() => setIndex(0)} // Abre el lightbox al hacer clic
-            style={{ cursor: 'pointer' }}
+            src={images[0].src}
+            width={images[0].width}
+            height={images[0].height}
+            sizes="(min-width: 1440px) 960px, (min-width: 768px) 66vw, 80vw"
+            alt="Project image"
+            onClick={() => setIndex(0)}
+            className="cursor-pointer w-full h-auto"
           />
         ) : (
           <RowsPhotoAlbum

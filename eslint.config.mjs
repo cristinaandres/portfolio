@@ -21,7 +21,7 @@ const config = [
     ignores: ['.next/**', 'node_modules/**', 'public/**', 'out/**'],
   },
   ...patched,
-  ...prettierConfig,
+  prettierConfig,
 ];
 
 export default config;

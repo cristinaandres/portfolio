@@ -29,7 +29,7 @@ const Video: React.FC<VideoBackgroundProps> = ({ videoSrc }) => {
         muted={isMuted}
       />
       <button
-        className="absolute bottom-4 left-4 z-10 p-2 text-white bg-black bg-opacity-50 rounded-full"
+        className="absolute bottom-4 left-4 z-10 p-2 text-white bg-black/50 hover:bg-black/70 focus-visible:outline-2 focus-visible:outline-white rounded-full min-w-11 min-h-11 flex items-center justify-center"
         onClick={toggleMute}
         aria-label={isMuted ? 'Unmute' : 'Mute'}
       >
