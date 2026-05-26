@@ -30,7 +30,7 @@ export const MenuProvider: FunctionComponent<MenuProviderProps> = ({ children })
 
   const value = {
     isMenuOpen,
-    toggleMenu
+    toggleMenu,
   };
 
   return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>;

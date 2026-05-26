@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import projets from '@/public/json/projets.json';
-import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectCard from '@/components/projects/ProjectCard';
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,9 +17,9 @@ export default function Home() {
   };
 
   const setIndex = (index: number) => {
-    console.log(index)
+    console.log(index);
     setCurrentIndex(index);
-  }
+  };
 
   useEffect(() => {
     let touchStartY = 0;
@@ -78,7 +78,8 @@ export default function Home() {
           currentIndex={currentIndex}
           openProject={() => openProject(currentIndex)}
           closeProject={closeProject}
-          setIndex={setIndex} />
+          setIndex={setIndex}
+        />
       </div>
     </>
   );

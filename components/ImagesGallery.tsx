@@ -1,78 +1,74 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen';
+import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
+import Zoom from 'yet-another-react-lightbox/plugins/zoom';
+import 'yet-another-react-lightbox/plugins/thumbnails.css';
 
-import PhotoAlbum from 'react-photo-album';
+import { RowsPhotoAlbum } from 'react-photo-album';
+import 'react-photo-album/rows.css';
 
+const ImagesGallery = ({ image }: { image: string }) => {
+  const [open, setOpen] = useState(false);
+  const [images, setImages] = useState([]);
+  const [index, setIndex] = useState(-1);
 
-const ImagesGallery = ({ image }: { image: string })=> {
-    const [open, setOpen] = useState(false);
-    const [images, setImages] = useState([]);
-    const [index, setIndex] = useState(-1);
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const folderName = 'showcase';
+        const response = await fetch(`/api/images?folder=${image}`);
+        const data = await response.json();
+        const imagePaths = data.images.map((filename: string) => ({
+          src: filename,
+          width: 720,
+          height: 405,
+        }));
+        setImages(imagePaths);
+      } catch (error) {
+        console.error('Failed to fetch images:', error);
+      }
+    };
 
-    useEffect(() => {
-        const fetchImages = async () => {
-            try {
-                const folderName = 'showcase';
-                const response = await fetch(`/api/images?folder=${image}`);
-                const data = await response.json();
-                const imagePaths = data.images.map((filename: string) => ({
-                    src: filename,
-                    width: 720,
-                    height: 405
-                }));
-                setImages(imagePaths);
-            } catch (error) {
-                console.error('Failed to fetch images:', error);
-            }
-        };
+    fetchImages();
+  }, []);
 
-        fetchImages();
-    }, []);
+  return (
+    <>
+      <div className="w-4/5 lg:w-2/3 max-w-[1440px] my-40 border border-transparent">
+        {images.length === 1 ? (
+          <Image
+            src={images[0]}
+            width="400"
+            alt="Single Image"
+            onClick={() => setIndex(0)} // Abre el lightbox al hacer clic
+            style={{ cursor: 'pointer' }}
+          />
+        ) : (
+          <RowsPhotoAlbum
+            photos={images}
+            targetRowHeight={200}
+            spacing={16}
+            onClick={({ index }) => setIndex(index)}
+          />
+        )}
+      </div>
 
+      <Lightbox
+        slides={images}
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+      />
+    </>
+  );
+};
 
-    return (
-        <>
-
-                <div className='w-4/5 lg:w-2/3 max-w-[1440px] my-40 border border-transparent'>
-                                {images.length === 1 ? (
-                                    <Image
-                                        src={images[0]}
-                                        width="400"
-                                        alt="Single Image"
-                                        onClick={() => setIndex(0)} // Abre el lightbox al hacer clic
-                                        style={{ cursor: 'pointer' }}
-                                    />
-                                ) : (
-                                    <PhotoAlbum
-                                        photos={images}
-                                        layout="rows"
-                                        targetRowHeight={200}
-                                        spacing={16}
-                                        onClick={({ index }) => setIndex(index)}
-                                    />
-                                )}
-                            </div>
-
-                <Lightbox
-                    slides={images}
-                    open={index >= 0}
-                    index={index}
-                    close={() => setIndex(-1)}
-                    plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-                />
-
-        </>
-    )
-}
-
-export default ImagesGallery
+export default ImagesGallery;
