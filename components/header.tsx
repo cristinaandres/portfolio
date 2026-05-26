@@ -89,7 +89,7 @@ const Header = () => {
             <TransitionLink href={'/activities'} label={'Activities'} nameColor={nameColor} />
             {/* <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} /> */}
             <button
-              onClick={() => window.open('/pdf/CV.pdf', '_blank')}
+              onClick={() => window.open('/pdf/CV.pdf', '_blank', 'noopener,noreferrer')}
               className={`px-4 py-1 uppercase text-xs hover:font-bold focus-visible:outline-2 focus-visible:outline-current flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}
             >
               <span>CV</span>

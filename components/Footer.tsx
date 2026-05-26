@@ -16,6 +16,8 @@ const Footer = () => {
                   'https://www.behance.net/cristinaandrs?tracking_source=userSearchProfilePanel'
                 }
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cristina Andrés on Behance"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +45,12 @@ const Footer = () => {
                 </svg>
               </Link>
 
-              <Link href={'https://www.linkedin.com/in/cristinaandrs/'} target="_blank">
+              <Link
+                href={'https://www.linkedin.com/in/cristinaandrs/'}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Cristina Andrés on LinkedIn"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="28"
@@ -73,6 +80,7 @@ const Footer = () => {
             <Link
               href={'https://www.thomasmoserdev.com/'}
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:underline"
             >
               Thomas Moser

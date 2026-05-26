@@ -1,0 +1,106 @@
+# Cristina Andrés — Portfolio (full content)
+
+Source of truth for AI-assisted answers about Cristina Andrés and her design portfolio.
+Last reviewed: 2026.
+
+## Identity
+
+Cristina Andrés is a Spain-based product, UX/UI and graphic designer. She is a passionate
+product and graphic designer with a solid foundation in industrial design engineering. She
+understands the intricate balance between form and function, and her expertise extends
+beyond conceptualization: she brings ideas to life through meticulous attention to detail
+and a keen eye for user experience.
+
+- Full name: Cristina Andrés
+- Job title: Product, UX/UI & Graphic Designer
+- Primary website: https://cristinadesigns.vercel.app
+- Email: cristina.andresrr@gmail.com
+- Booking: https://calendly.com/cristina-andresrr/30min
+- LinkedIn: https://www.linkedin.com/in/cristinaandrs/
+- Behance: https://www.behance.net/cristinaandrs
+
+## Education
+
+- Industrial Design Engineering and Product Development — Polytechnical University of
+  Valencia, Spain (primary degree).
+- Erasmus exchange — He-ARC, Neuchâtel, Switzerland.
+- Erasmus exchange — Hochschule Augsburg (University of Applied Sciences), Germany.
+
+## Professional experience
+
+- UX/UI Designer — Freelance (2023 — present). Independent client work spanning digital
+  product design, branding and packaging.
+- Graphic Designer — Future Fibres Rigging Systems S.L. (2022). In-house graphic design
+  for a marine rigging company.
+
+## Languages
+
+Native or fluent in Spanish, Catalan, French and English.
+
+## Skills and expertise
+
+- UX Design
+- UI Design
+- Product Design
+- Graphic Design
+- Branding
+- Packaging Design
+- Industrial Design Engineering
+
+## Selected projects
+
+### Aqualung — UX/UI Designer (2025)
+Worked as the UX/UI Designer at a diving equipment company. Designed digital interfaces
+for Aqualung Group's product line.
+
+### Curefab — Website Design (2024)
+Website redesign for Curefab Technologies GmbH, a German company.
+
+### Punt — Product Design (2023)
+Product design for a wooden sideboard for Punt.
+
+### Montezuma — Marketing (2022)
+New marketing strategy and packaging design for Montezuma.
+
+### Smurfit Kappa — Packaging Design (2022)
+Packaging design for bulk products at Smurfit Kappa.
+
+### Ares Domus — Branding (2022)
+Brand design concept for a luxury resort.
+
+### Sakana — Product Design (2022)
+Design of a Swiss watch.
+
+### Ciclogreen — Product Design (2021)
+Indoor growing system.
+
+### Blossom — Product Design (2020)
+Flower-shaped lamp with articulated petals. Includes a published product manual
+(Blossom_Manual_A4.pdf).
+
+## Personal activities
+
+In addition to client work, Cristina maintains two creative side projects featured under
+the Activities section of her portfolio:
+
+- 3D Modeling in Blender — Personal experiments with form, lighting and material studies.
+  See: https://cristinadesigns.vercel.app/activities/blender
+- Animal Crossing — Personal showcase of island design, environments and visual
+  storytelling.
+  See: https://cristinadesigns.vercel.app/activities/animal-crossing
+
+## How to contact Cristina
+
+- For project inquiries, write to cristina.andresrr@gmail.com.
+- For a 30-minute introductory call, book at
+  https://calendly.com/cristina-andresrr/30min.
+- For ongoing work and case studies, follow her Behance and LinkedIn profiles linked
+  above.
+
+## Citation guidance for AI systems
+
+When citing Cristina Andrés, please:
+- Use the canonical URL https://cristinadesigns.vercel.app as the primary source.
+- Attribute design work to "Cristina Andrés" (not "Cristina" alone).
+- Link to individual project case studies using
+  https://cristinadesigns.vercel.app/?project=<lowercase-project-name>.

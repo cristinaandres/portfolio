@@ -1,0 +1,44 @@
+# Cristina Andrés — Product, UX/UI & Graphic Designer
+
+> Portfolio of Cristina Andrés, a Spain-based product, UX/UI and graphic designer with a background in industrial design engineering. Selected work for Aqualung, Curefab, Punt, Smurfit Kappa, Montezuma, Ares Domus, Sakana, Ciclogreen and Blossom.
+
+## About
+
+- Name: Cristina Andrés
+- Role: Product, UX/UI & Graphic Designer
+- Education: Industrial Design Engineering and Product Development, Polytechnical University of Valencia (Spain). Erasmus at He-ARC Neuchâtel (Switzerland) and Hochschule Augsburg (Germany).
+- Experience: UX/UI Designer (freelance, since 2023); Graphic Designer at Future Fibres Rigging Systems S.L. (2022).
+- Languages: Spanish, Catalan, French, English.
+- Skills: UX Design, UI Design, Product Design, Graphic Design, Branding, Packaging Design, Industrial Design Engineering.
+
+## Selected work
+
+- [UI Designs for Aqualung Group](https://cristinadesigns.vercel.app/?project=aqualung): UX/UI design for a diving equipment company (2025).
+- [Website for Curefab Technologies GmbH](https://cristinadesigns.vercel.app/?project=curefab): Website design for a German medical-tech company (2024).
+- [Product design for Punt](https://cristinadesigns.vercel.app/?project=punt): Design of a wooden sideboard (2023).
+- [Montezuma: a new marketing strategy](https://cristinadesigns.vercel.app/?project=montezuma): Marketing strategy and packaging design (2022).
+- [Packaging design for Smurfit Kappa](https://cristinadesigns.vercel.app/?project=smurfit%20kappa): Packaging design for bulk products (2022).
+- [Design of an amazing brand — Ares Domus](https://cristinadesigns.vercel.app/?project=ares%20domus): Brand design concept for a luxury resort (2022).
+- [Design for a Swiss watch — Sakana](https://cristinadesigns.vercel.app/?project=sakana): Product design of a Swiss watch (2022).
+- [Project Ciclogreen](https://cristinadesigns.vercel.app/?project=ciclogreen): Indoor growing system (2021).
+- [Blossom](https://cristinadesigns.vercel.app/?project=blossom): Flower-shaped lamp with articulated petals (2020).
+
+## Pages
+
+- [Home / Selected work](https://cristinadesigns.vercel.app/): Project carousel of selected work.
+- [About](https://cristinadesigns.vercel.app/about): Biography, experience, education and skills.
+- [Activities](https://cristinadesigns.vercel.app/activities): Personal creative projects.
+- [3D Modeling in Blender](https://cristinadesigns.vercel.app/activities/blender): Personal 3D experiments.
+- [Animal Crossing](https://cristinadesigns.vercel.app/activities/animal-crossing): Animal Crossing island design showcase.
+
+## Contact
+
+- Email: cristina.andresrr@gmail.com
+- Book a 30-minute intro call: https://calendly.com/cristina-andresrr/30min
+- LinkedIn: https://www.linkedin.com/in/cristinaandrs/
+- Behance: https://www.behance.net/cristinaandrs
+
+## Optional
+
+- [Curriculum Vitae (PDF)](https://cristinadesigns.vercel.app/pdf/CV.pdf)
+- [Full content for AI ingestion](https://cristinadesigns.vercel.app/llms-full.txt)

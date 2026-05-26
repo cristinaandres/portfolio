@@ -36,7 +36,7 @@ export function Menu() {
       </Link>
       <button
         type="button"
-        onClick={() => window.open('/pdf/CV.pdf', '_blank')}
+        onClick={() => window.open('/pdf/CV.pdf', '_blank', 'noopener,noreferrer')}
         className="min-h-[44px] focus-visible:underline"
       >
         About Me
