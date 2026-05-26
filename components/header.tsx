@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-30 font-inter py-4 xl:py-0 flex items-center justify-center gap-16 px-4 lg:px-12 bg-transparent ${pathname === '/' ? `text-${nameColor}` : ' text-black'}`}
+        className={`fixed top-0 left-0 w-full z-30 font-inter pt-[max(env(safe-area-inset-top),1rem)] pb-4 xl:pb-0 xl:pt-[env(safe-area-inset-top)] flex items-center justify-center gap-16 px-4 lg:px-12 bg-transparent ${pathname === '/' ? `text-${nameColor}` : ' text-black'}`}
       >
         <div className="w-full flex items-center justify-between max-w-[1440px] h-full">
           <div className="flex items-center xl:justify-start gap-8 h-full py-4 xl:py-2">
@@ -90,7 +90,7 @@ const Header = () => {
             {/* <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} /> */}
             <button
               onClick={() => window.open('/pdf/CV.pdf', '_blank')}
-              className={`px-4 py-1 uppercase text-xs hover:font-bold flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}
+              className={`px-4 py-1 uppercase text-xs hover:font-bold focus-visible:outline-2 focus-visible:outline-current flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}
             >
               <span>CV</span>
 
@@ -113,7 +113,7 @@ const Header = () => {
             </button>
             <button
               onClick={onOpen}
-              className={`px-3 py-1 uppercase text-xs hover:font-bold flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}
+              className={`px-3 py-1 uppercase text-xs hover:font-bold focus-visible:outline-2 focus-visible:outline-current flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}
             >
               <span>Contact</span>
               <svg

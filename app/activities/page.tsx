@@ -4,10 +4,10 @@ import React from 'react';
 const page = () => {
   return (
     <>
-      <div className="w-screen min-h-screen bg-[#E2E2DB] py-32 px-2 md:px-16 lg:px-24 xl:px-36 flex justify-center items-center">
+      <div className="w-full min-h-[100dvh] bg-[#E2E2DB] py-16 lg:py-32 px-4 md:px-16 lg:px-24 xl:px-36 flex justify-center items-center">
         <div className="w-full max-w-[1144px] flex flex-col justify-center">
           <div className="w-full px-8 md:px-[64px] lg:px-[124px] xl:px-[192px] flex flex-col">
-            <h1 className="font-bold text-center text-xl">Activities</h1>
+            <h1 className="font-bold text-center text-2xl md:text-3xl">Activities</h1>
             <p className="mt-5 text-center">
               This is the space where I show a little bit of who I am, my passions and my tastes.
               What follows is a collection of projects that I do during my free time. Some of them

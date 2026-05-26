@@ -14,15 +14,36 @@ export function Menu() {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="fixed h-screen w-screen overflow-hidden bg-black bg-opacity-95 text-white text-2xl p-8 flex flex-col items-center justify-center gap-[8.6dvh] z-30">
-      <Link href={'/'} onClick={toggleMenu}>
+    <div
+      className="fixed inset-0 h-[100dvh] w-[100dvw] overflow-hidden bg-black/95 text-white text-2xl px-8 pt-[max(env(safe-area-inset-top),2rem)] pb-[max(env(safe-area-inset-bottom),2rem)] flex flex-col items-center justify-center gap-[8.6dvh] z-40"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Main menu"
+    >
+      <Link
+        href={'/'}
+        onClick={toggleMenu}
+        className="min-h-[44px] flex items-center focus-visible:underline"
+      >
         Work
       </Link>
-      <Link href={'/activities'} onClick={toggleMenu}>
+      <Link
+        href={'/activities'}
+        onClick={toggleMenu}
+        className="min-h-[44px] flex items-center focus-visible:underline"
+      >
         Activities
       </Link>
-      <button onClick={() => window.open('/pdf/CV.pdf', '_blank')}>About Me</button>
-      <button onClick={onOpen}>Contact</button>
+      <button
+        type="button"
+        onClick={() => window.open('/pdf/CV.pdf', '_blank')}
+        className="min-h-[44px] focus-visible:underline"
+      >
+        About Me
+      </button>
+      <button type="button" onClick={onOpen} className="min-h-[44px] focus-visible:underline">
+        Contact
+      </button>
       <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContentContact />
       </Modal>

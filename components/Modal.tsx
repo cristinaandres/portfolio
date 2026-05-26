@@ -1,12 +1,9 @@
 'use client';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ShareIcon from './ShareIcon';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import { useStartTyping } from 'react-use';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import projets from '@/public/json/projets.json';
-import { Modal, ModalBody, ModalFooter, Button } from '@heroui/react';
 
 interface ModalProps {
   children: React.ReactNode;
@@ -78,20 +75,20 @@ const ModalProjects: React.FC<ModalProps> = ({ children, isOpen, onClose, index 
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               id="modal-overlay"
-              className="fixed inset-0 bg-black bg-opacity-90 flex justify-center items-center px-4 z-50 overflow-y-auto"
+              className="fixed inset-0 bg-black/90 flex justify-center items-center px-4 z-50 overflow-y-auto"
               onClick={handleOverlayClick}
             >
               <div className="relative flex flex-col">
                 <div
-                  className="bg-transparent rounded-lg 2xl:w-[1300px] xl:w-[1100px] lg:w-[900px] md:w-[700px] overflow-y-auto transition-all duration-300"
-                  style={{ maxHeight: '90vh' }}
+                  className="bg-transparent rounded-lg w-[calc(100vw-2rem)] md:w-[700px] lg:w-[900px] xl:w-[1100px] 2xl:w-[1300px] max-h-[90dvh] overflow-y-auto transition-[height,width] duration-300"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {children}
                 </div>
                 <button
                   onClick={onClose}
-                  className="text-xl font-bold absolute top-[-60px] right-0 lg:top-0 lg:right-[-80px] bg-[#343434] hover:bg-[#696969] transition-all duration-300 text-white rounded-full w-10 h-10 shadow-lg"
+                  aria-label="Close project"
+                  className="text-2xl font-bold absolute top-2 right-2 lg:top-0 lg:right-[-80px] bg-[#343434] hover:bg-[#696969] focus-visible:outline-2 focus-visible:outline-white transition-colors duration-300 text-white rounded-full w-11 h-11 shadow-lg flex items-center justify-center"
                 >
                   &times;
                 </button>

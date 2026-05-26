@@ -10,9 +10,9 @@ import BubbleRow from '@/components/BubbleRow';
 const AboutTablet = () => {
   return (
     <>
-      <div className="font-poppins w-[100dvw] bg-[#E2E2DB] flex flex-col items-center py-[72px] overflow-x-hidden">
-        <div className="flex flex-col gap-8 w-full mx-8">
-          <div className="flex gap-4 w-full px-[144px]">
+      <div className="font-poppins w-full bg-[#E2E2DB] flex flex-col items-center py-[72px] overflow-x-hidden">
+        <div className="flex flex-col gap-8 w-full max-w-[840px] mx-auto px-8">
+          <div className="flex gap-4 w-full">
             <div className="flex flex-col w-1/3 gap-4">
               <Image
                 src={profilePic}
@@ -52,7 +52,7 @@ const AboutTablet = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-between w-full text-xs pl-4 gap-6 border-l border-black mx-[144px]">
+          <div className="flex flex-col justify-between w-full text-xs pl-4 gap-6 border-l border-black">
             <div className="flex flex-col gap-2">
               <h2 className="uppercase font-bold tracking-[6px]">Experience</h2>
               <div className="flex flex-col gap-2 mt-3">
