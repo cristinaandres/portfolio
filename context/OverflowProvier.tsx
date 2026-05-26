@@ -1,8 +1,8 @@
-'use client'
-import { useMenu } from "./MenuContext";
+'use client';
+import { useMenu } from './MenuContext';
 
 export function OverflowProvider({ children }: { children: React.ReactNode }) {
-    const { isMenuOpen } = useMenu();
+  const { isMenuOpen } = useMenu();
 
-    return <div className={isMenuOpen ? 'overflow-hidden' : 'overflow-auto'}>{children}</div >;
+  return <div className={isMenuOpen ? 'overflow-hidden' : 'overflow-auto'}>{children}</div>;
 }

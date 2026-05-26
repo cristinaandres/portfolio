@@ -1,15 +1,15 @@
-"use client"
+'use client';
 
-import { animatePageIn } from "@/utils/animate"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import React, { useEffect, useState } from "react";
-import LogoIntegrated from "@/components/Logos/LogoIntegrated"
+import { animatePageIn } from '@/utils/animate';
+import { motion } from 'motion/react';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import LogoIntegrated from '@/components/Logos/LogoIntegrated';
 
 export default function Template({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    animatePageIn()
-  }, [])
+    animatePageIn();
+  }, []);
 
   return (
     <div>
@@ -20,7 +20,11 @@ export default function Template({ children }: { children: React.ReactNode }) {
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
-        <path className="path w-[3000px] h-screen" d="M 0 100 V 0 Q 50 0 100 0 V 100 z" fill="black" />
+        <path
+          className="path w-[3000px] h-screen"
+          d="M 0 100 V 0 Q 50 0 100 0 V 100 z"
+          fill="black"
+        />
 
         <foreignObject
           x="50"
@@ -39,10 +43,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 1 }}
+        transition={{ ease: 'easeInOut', duration: 1 }}
       >
         {children}
       </motion.div>
     </div>
-  )
+  );
 }

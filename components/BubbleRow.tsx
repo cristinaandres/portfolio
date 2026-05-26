@@ -1,17 +1,16 @@
-import React from 'react'
-import Bubble from './Bubble'
+import React from 'react';
+import Bubble from './Bubble';
 
 const BubbleRow = ({ amount }: { amount: number }) => {
-    return (
-        <>
-            <div className='flex gap-1'>
-                {Array.from({ length: amount }, (_, index) => (
-                    <Bubble key={index} />
-                ))}
+  return (
+    <>
+      <div className="flex gap-1">
+        {Array.from({ length: amount }, (_, index) => (
+          <Bubble key={index} />
+        ))}
+      </div>
+    </>
+  );
+};
 
-            </div>
-        </>
-    )
-}
-
-export default BubbleRow
+export default BubbleRow;

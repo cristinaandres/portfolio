@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config "../tailwind.config.ts";
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -21,7 +20,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
 
 /* CSS */
 .mobile,
@@ -112,17 +110,16 @@
 }
 
 .full-mountain-image {
-  background: url('https://2.bp.blogspot.com/--553C_5SsUw/T7KfsL3BCtI/AAAAAAAA4Ro/WxipXiyxCeE/s1600/gotitas-de-agua-sobre-las-hojas-despues-de-las-lluvias.jpg') center no-repeat;
+  background: url('https://2.bp.blogspot.com/--553C_5SsUw/T7KfsL3BCtI/AAAAAAAA4Ro/WxipXiyxCeE/s1600/gotitas-de-agua-sobre-las-hojas-despues-de-las-lluvias.jpg')
+    center no-repeat;
   background-size: cover;
   position: relative;
   overflow: hidden;
 }
 
 curve {
-
   svg,
   .background {
-
     position: fixed;
 
     height: calc(100vh + 600px);
@@ -134,19 +131,15 @@ curve {
     left: 0;
 
     top: 0;
-
   }
 
   .background {
-
     background-color: black;
 
     transition: opacity 0s linear 0.1s;
-
   }
 
   .route {
-
     position: absolute;
 
     left: 50%;
@@ -162,7 +155,5 @@ curve {
     transform: translateX(-50%);
 
     text-align: center;
-
   }
-
 }

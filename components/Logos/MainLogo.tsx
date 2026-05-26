@@ -1,20 +1,20 @@
-import React from 'react'
+import React from 'react';
 import Image from 'next/image';
 type SVGProps = {
-    nameColor: string;
+  nameColor: string;
 };
 
 const MainLogo: React.FC<SVGProps> = ({ nameColor }) => {
-    return (
-        <>
-            {nameColor === 'black' && (
-                <Image src={'/images/logo_no_text.svg'} alt='Logo Cristina' width={63} height={63} />
-            )}
-            {nameColor === 'white' && (
-                <Image src={'/images/logo_no_text_white.svg'} alt='Logo Cristina' width={63} height={63} />
-            )}
-        </>
-    )
-}
+  return (
+    <>
+      {nameColor === 'black' && (
+        <Image src={'/images/logo_no_text.svg'} alt="Logo Cristina" width={63} height={63} />
+      )}
+      {nameColor === 'white' && (
+        <Image src={'/images/logo_no_text_white.svg'} alt="Logo Cristina" width={63} height={63} />
+      )}
+    </>
+  );
+};
 
-export default MainLogo
+export default MainLogo;
