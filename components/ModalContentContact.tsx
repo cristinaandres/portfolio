@@ -32,6 +32,7 @@ const ModalContentContact = () => {
                 <a
                   href="https://calendly.com/cristina-andresrr/30min"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex gap-4 px-4 py-3 items-center rounded-lg hover:bg-black/5 transition-all duration-300"
                 >
                   <div className="scale-90">

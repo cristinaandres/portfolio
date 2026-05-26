@@ -217,9 +217,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             >
               <Image
                 src={'/images/' + projects[i].logo}
-                alt="Logo of the project"
+                alt={`${projects[i].complete_name} logo`}
                 fill
                 sizes="120px"
+                priority={i === 0}
                 style={{
                   opacity: currentIndex === i ? 0 : 100,
                 }}
@@ -265,10 +266,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             ) : (
               <Image
                 src={`/images/projets/${file}`}
-                alt={'Project content'}
+                alt={`${project.complete_name} — visual ${index + 1}`}
                 key={index}
                 width={1920}
                 height={1080}
+                sizes="(min-width: 1536px) 1300px, (min-width: 1280px) 1100px, (min-width: 1024px) 900px, (min-width: 768px) 700px, calc(100vw - 2rem)"
                 className="max-w-full h-auto"
               />
             );
@@ -282,6 +284,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   <Link
                     href={`/attached/${file}`}
                     target="_blank"
+                    rel="noopener noreferrer"
                     key={index}
                     className="flex flex-col items-center justify-center gap-2 hover:scale-105 hover:opacity-80 transition-all duration-250"
                   >

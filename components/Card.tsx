@@ -112,7 +112,7 @@ const Card: FC<CardProps> = ({ projectProps, openProject, closeProject, index })
           <div className="flex items-center justify-center h-full scale-[.7]">
             <img
               src={`/images/${projectProps.logo}`}
-              alt="Logo"
+              alt={`${projectProps.complete_name} logo`}
               className="group-hover:scale-110 transition-all duration-200"
               onContextMenu={(e) => e.preventDefault()}
             />
@@ -144,10 +144,11 @@ const Card: FC<CardProps> = ({ projectProps, openProject, closeProject, index })
             ) : (
               <Image
                 src={`/images/projets/${file}`}
-                alt={'Project content'}
+                alt={`${projectProps.complete_name} — visual ${index + 1}`}
                 key={index}
                 width={1920}
                 height={1080}
+                sizes="(min-width: 1536px) 1300px, (min-width: 1280px) 1100px, (min-width: 1024px) 900px, (min-width: 768px) 700px, calc(100vw - 2rem)"
                 className="max-w-full h-auto"
               />
             );
@@ -162,6 +163,7 @@ const Card: FC<CardProps> = ({ projectProps, openProject, closeProject, index })
                     <Link
                       href={`/attached/${file}`}
                       target="_blank"
+                      rel="noopener noreferrer"
                       key={index}
                       className="flex flex-col items-center justify-center gap-2 hover:scale-105 hover:opacity-80 transition-all duration-250"
                     >

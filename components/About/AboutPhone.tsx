@@ -14,7 +14,7 @@ const AboutPhone = () => {
         <div className="w-full flex justify-center">
           <Image
             src={profilePic}
-            alt="Profile pic"
+            alt="Portrait of Cristina Andrés"
             width={189}
             height={210}
             className="rounded-[16px] grayscale hover:grayscale-0 transition-all duration-250"
@@ -37,6 +37,7 @@ const AboutPhone = () => {
           <Link
             href={'/pdf/CV.pdf'}
             target="_blank"
+            rel="noopener noreferrer"
             className="uppercase text-white text-center text-xs md:text-[8px] xl:text-xs bg-black rounded-lg px-2 py-1 hover:bg-black/75"
           >
             Download CV

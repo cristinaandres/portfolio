@@ -18,7 +18,7 @@ const AboutDesktop = () => {
                 <div className="flex gap-4">
                   <Image
                     src={profilePic}
-                    alt="Profile pic"
+                    alt="Portrait of Cristina Andrés"
                     width={176}
                     height={195}
                     className="rounded-[16px] grayscale hover:grayscale-0 transition-all duration-250"
@@ -43,6 +43,7 @@ const AboutDesktop = () => {
                   <Link
                     href={'/pdf/CV.pdf'}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="uppercase text-white text-xs bg-black rounded-lg px-2 py-1 hover:bg-black/75"
                   >
                     Download CV
