@@ -1,7 +1,18 @@
-import { neutralViews } from '../neutral';
 import type { VariantViews } from '../types';
+import About from './About';
+import { PlanimetriaActivities, PlanimetriaActivity } from './Activities';
+import CaseStudy from './CaseStudy';
+import Home from './Home';
+import NotFound from './NotFound';
+import Shell from './Shell';
 
-// Variant A (Planimetría). Replace neutral views one by one with this variant's own.
+// Variant A (Planimetría): each project reads like her engineering documentation.
 export const views: VariantViews = {
-  ...neutralViews,
+  Shell,
+  Home,
+  CaseStudy,
+  About,
+  Activities: PlanimetriaActivities,
+  Activity: PlanimetriaActivity,
+  NotFound,
 };

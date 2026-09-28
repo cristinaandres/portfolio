@@ -1,0 +1,97 @@
+/* Variant A, Planimetría: her technical sheets as the site. Everything is scoped to
+   body[data-variant='a'] because every variant's stylesheet is loaded on every page. */
+
+body[data-variant='a'] {
+  background: #e2e2db;
+  color: #23261f;
+}
+
+body[data-variant='a'] .a-root {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  background-color: #e2e2db;
+  background-image:
+    linear-gradient(rgba(35, 38, 31, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 38, 31, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: #23261f;
+}
+
+@media (max-width: 767px) {
+  body[data-variant='a'] .a-root {
+    background-size: 16px 16px;
+  }
+}
+
+body[data-variant='a'] .a-mono {
+  font-family: var(--font-a-mono), ui-monospace, 'SFMono-Regular', monospace;
+}
+
+body[data-variant='a'] :focus-visible {
+  outline: 2px solid #23261f;
+  outline-offset: 2px;
+}
+
+body[data-variant='a'] .a-dark:focus-visible {
+  outline-color: #4e6558;
+  outline-offset: 3px;
+}
+
+/* The shared contact dialog, drawn as a title block. */
+body[data-variant='a'] dialog[aria-labelledby='contact-title'] {
+  border: 1.5px solid #23261f;
+  border-radius: 0;
+  background: #edede6;
+  color: #23261f;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+body[data-variant='a'] dialog[aria-labelledby='contact-title']::backdrop {
+  background: rgba(35, 38, 31, 0.55);
+}
+
+body[data-variant='a'] dialog[aria-labelledby='contact-title'] h2 {
+  font-family: var(--font-a-mono), ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+body[data-variant='a'] dialog[aria-labelledby='contact-title'] ul {
+  gap: 0;
+  border: 1px solid #23261f;
+}
+
+body[data-variant='a'] dialog[aria-labelledby='contact-title'] li + li {
+  border-top: 1px solid #23261f;
+}
+
+body[data-variant='a'] dialog[aria-labelledby='contact-title'] a,
+body[data-variant='a'] dialog[aria-labelledby='contact-title'] button {
+  border-radius: 0;
+}
+
+body[data-variant='a'] dialog[aria-labelledby='contact-title'] a span:first-child {
+  font-family: var(--font-a-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4b5046;
+}
+
+/* The phone menu: a full-height native dialog (see PhoneMenu.tsx). */
+body[data-variant='a'] dialog.a-menu {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #23261f;
+}
+
+body[data-variant='a'] dialog.a-menu::backdrop {
+  background: rgba(35, 38, 31, 0.4);
+}
