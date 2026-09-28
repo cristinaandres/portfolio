@@ -50,111 +50,14 @@ html {
   }
 }
 
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.word {
-  display: inline-block; /* Ensure words are inline blocks */
-}
-
-.letter {
-  display: inline-block; /* Ensure letters are inline blocks */
-  opacity: 0; /* Ensure the initial opacity is set to 0 */
-  animation: slideInFromTop 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes ripple {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-.ripple-effect {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  pointer-events: none;
-  animation: ripple 1s ease-out;
-  width: 200px;
-  height: 200px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.full-mountain-image {
-  background: url('https://2.bp.blogspot.com/--553C_5SsUw/T7KfsL3BCtI/AAAAAAAA4Ro/WxipXiyxCeE/s1600/gotitas-de-agua-sobre-las-hojas-despues-de-las-lluvias.jpg')
-    center no-repeat;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-}
-
-curve {
-  svg,
-  .background {
-    position: fixed;
-
-    height: calc(100vh + 600px);
-
-    width: 100vw;
-
-    pointer-events: none;
-
-    left: 0;
-
-    top: 0;
-  }
-
-  .background {
-    background-color: black;
-
-    transition: opacity 0s linear 0.1s;
-  }
-
-  .route {
-    position: absolute;
-
-    left: 50%;
-
-    top: 40%;
-
-    color: white;
-
-    font-size: 46px;
-
-    z-index: 3;
-
-    transform: translateX(-50%);
-
-    text-align: center;
+/* Honour reduced motion everywhere, whatever a component forgets. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

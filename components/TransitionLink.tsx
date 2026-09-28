@@ -1,11 +1,9 @@
-// FILE: /components/TransitionLink.tsx
-
 'use client';
 
-import { useRouter, usePathname } from 'next/navigation';
-import { animatePageOut } from '@/utils/animate';
-import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
+/** A navigation link that marks the current section. (The page-transition curtain is gone.) */
 export default function TransitionLink({
   href,
   label,
@@ -15,33 +13,17 @@ export default function TransitionLink({
   label: string;
   nameColor: string;
 }) {
-  const [textColor, setTextColor] = useState<string>('');
   const pathname = usePathname();
-
-  const isActive = (href: string): boolean => {
-    const firstElementMenu = href.split('/')[1]; // Obtiene el primer elemento después de la primera "/"
-
-    if (firstElementMenu !== '') {
-      // Verifica que firstElementMenu no esté vacío
-      return pathname.includes(`/${firstElementMenu}`);
-    } else {
-      return pathname === href;
-    }
-  };
-
-  const router = useRouter();
-
-  const handleClick = () => {
-    animatePageOut(href, router);
-  };
+  const section = href.split('/')[1];
+  const active = section ? pathname.startsWith(`/${section}`) : pathname === href;
 
   return (
-    <button
-      disabled={isActive(href)}
-      onClick={handleClick}
-      className={`h-full cursor-pointer disabled:cursor-default px-0 py-2 uppercase text-xs tracking-[6px] hover:font-bold flex items-start gap-3 justify-center transition-[font-weight] duration-300 text-center ${isActive(href) ? `border-b-4 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}
+    <Link
+      href={href}
+      aria-current={active ? 'page' : undefined}
+      className={`h-full px-0 py-2 uppercase text-xs tracking-[6px] hover:font-bold flex items-start gap-3 justify-center text-center ${active ? `border-b-4 border-${pathname === '/' ? nameColor : 'black'} font-bold` : 'border-none font-normal'}`}
     >
       {label}
-    </button>
+    </Link>
   );
 }
