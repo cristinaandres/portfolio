@@ -1,0 +1,95 @@
+# Design brief: Cristina Andrés
+
+The single source of truth about Cristina for anyone designing or writing this site. Every claim cites her own material; paths are relative to the repository root. Colour values are estimated from her images.
+
+_Last updated 2026-09-28: initial analysis for the redesign._
+
+## Who she is
+
+- **Name:** Cristina Andrés Serra (`public/attached/Smartwatch_Poster.pdf`).
+- **Positioning:** the site says "Product, UX/UI & Graphic Designer" (`lib/site.config.ts`); her CV (September 2025) says "UX/UI Designer… user-first perspective" (`public/pdf/CV.pdf`); Behance, older, says "Diseñadora Gráfica" with a furniture and product focus.
+- **Studies (CV):** Industrial Design Engineering, UPV Valencia (2019–2023); Erasmus at HE-Arc Neuchâtel (2021, industrial design) and Hochschule Augsburg (2023, UX/UI); Máster en Diseño Web, ESDESIGN Barcelona (2024–2025).
+- **Experience (CV):** UX/UI internship at Aqualung Group, Sophia Antipolis (February–August 2025; `public/images/projets/aqualung1.png` says internship); freelance designer, Strasbourg (October 2023–October 2024), including the Curefab Technologies website.
+- **Based in:** Antibes (CV).
+- **Languages (CV):** Spanish, Catalan and French native; English advanced; German elementary. The site is English only.
+- **Tools:** Figma, Photoshop, Lightroom, Illustrator, InDesign, Blender, Canva, SolidWorks (`components/Logos/IconRow.tsx`); Adobe XD, Sketch (CV); Lumion (render watermark in `public/images/projets/backgrounds/punt_bg.jpeg`).
+- **Audience:** recruiters and freelance clients (confirmed by Thomas), across Spain, France, Switzerland and Germany.
+- **Contact:** email, Calendly (30 min), LinkedIn, Behance (`lib/site.config.ts`). The phone number is only in the CV and is not published.
+
+## How she thinks
+
+- **Honest and reflective; she names her constraints.** "I worked in Adobe XD — a tool more limited compared to Figma… requirements changed frequently"; "Due to confidentiality… only a limited selection of images can be shown" (`aqualung3.png`).
+- **Grateful and modest.** "I am very grateful to this company for trusting in my abilities even though I was just starting out" (`curefab_1.png`).
+- **Respects the client's brand and systems.** "Make sure that their brand identity is present", with the palette and type (Avenir) documented as a system (`curefab_2.png`); "followed the existing design system" (`aqualung2.png`).
+- **An engineer's process.** Sketches, then dimensioned drawings, prototypes and renders (Yokohama 2–5); Ciclogreen's "design methodology… analysis (market, flows, forces) within 60 days"; Blossom delivered with a 5-page exploded-view assembly manual (`public/attached/Blossom_Manual_A4.pdf`); a technical sheet for Sakana (`Portfolio_cristina_page-0020.jpg`).
+- **Personal, playful voice.** "A curious fact about me is that I like pandas a lot, like… a lot" (`page-0008`); "I thought that such a rare lamp needed an identity of its own" (Blossom); the Activities pages: "all of them have a little piece of my heart" (`app/activities/page.tsx`).
+- **Collaborative.** She credits teammates (the Blossom manual lists five names; Sakana credits "my classmate and friend, Latifa Qatrani", `page-0018`).
+- **Nature as a source** (inferred): Ciclogreen "reminiscent of a tree", the Blossom flower lamp, the Sakana koi.
+
+## What she likes visually (from her work)
+
+- **Muted, desaturated palettes, each with one warm accent.** Sage `#91A399` and olive `#7E8C6E` (Montezuma); teal-slate `#597177` and deep teal `#33535A` (Sakana); charcoal navy `#1D252D` with brass `#E0A04A` (Ares Domus); dusty rose `#D9ABBA` (Blossom); apricot `#F79E50` (Montezuma); cream `#F3E9C6` and warm greige `#E2E2DB` (the site's base); periwinkle `#A7B4CF` (old "Hello!" slide); aubergine `#321A2B` (`public/images/logo.svg`). Client brand colours (Aqualung navy, Curefab green) are not her own taste.
+- **Type:** Poppins in her slides and the site; Libre Bodoni for the site's project titles (`app/layout.tsx`); an outlined retro slab for "Hello!" and "PORTFOLIO" (`page-0001`, `page-0002`); wide-tracked uppercase labels throughout.
+- **Illustration:** her logo is a self-portrait line drawing with bangs, round glasses and freckles (`public/images/logo.svg`); the Montezuma mask mascot; MOCA panda patterns; the koi line drawing; technical line drawings.
+- **3D and renders:** SolidWorks and Lumion product renders; a cozy isometric pastel desk room in Blender (`public/images/activities/blender/showcase/Deskroom.png`): pink chair, plants, pale wood.
+- **Patterns:** pandas and dots (`page-0008`), Art Deco vertical bars (`page-0004`), seigaiha waves (`page-0019`), a Celtic knot (Smartwatch poster).
+- **Layout grammar in her slides:** 2:1 landscape spreads with a centred text column (logo, year, bold title, "● tag ● tag", short paragraph) beside a hero visual; numbered section badges in circles; a thin vertical colour bar before small-over-bold headings (Aqualung, Curefab).
+- **Personal world:** Animal Crossing islands (cafés, topiary, a pastel shop) in `public/images/activities/`; the site already uses the leaf pattern and pink cloud backgrounds.
+
+## Content inventory
+
+Projects in `public/json/projets.json`, in the site's order:
+
+| # | Project | Sector | Year | Her role | Assets |
+|---|---|---|---|---|---|
+| 1 | Aqualung Group (Aquasense app, dive computer UI, two web pages) | diving gear; product awarded at CES 2025 | 2025 | sole UI designer, internship | `aqualung1-3.png`, `aqualung.pdf` |
+| 2 | Curefab Technologies GmbH | German medtech | 2023–2024 | website redesign, UX/UI (built by Thomas) | `curefab_1-3.png` |
+| 3 | Punt, "Yokohama" sideboard | furniture | 2023 | product design, prototyping, self-set brief | `Yokohama1-5.jpg`, `punt_bg.jpeg` |
+| 4 | Montezuma (Dreamland) | clothing start-up, class competition | 2022 | marketing, packaging, web survey, campaign | `page-0009` to `page-0013` |
+| 5 | Smurfit Kappa, "Pipas" bulk dispenser | packaging | 2022 | packaging and graphic design, competition | `page-0014` to `page-0017` |
+| 6 | Ares Domus | invented luxury resort on Mars | 2022 | logo, branding, merchandise | `page-0004` to `page-0006` |
+| 7 | Sakana | Swiss watch, HE-Arc | 2022 | product, graphic design, technical drawing | `page-0018` to `page-0020` |
+| 8 | Ciclogreen | indoor farming, UPV team of five | 2021 | product design, methodology | `Ciclogreen1-3.jpg` |
+| 9 | Blossom | laser-cut flower lamp, team of five | 2020 | product design, prototyping, logo | `Blossom1-4.jpg`, `Blossom_Manual_A4.pdf` |
+
+Available but not listed: MOCA Studio (her personal panda brand, `page-0007`, `page-0008`), Compa-k / Klindo steam iron (`Compak1-3`, `Compa-k_Cartel.pdf`), Rituals smartwatch (`Smartwatch1-4`, `Smartwatch_Poster.pdf`).
+
+- **About** (currently hidden, see below): bio, CV button, software icons, experience, studies, languages, grayscale photo (`components/About/*`, `public/images/cristina.jpeg`). Its text predates Aqualung and the master's.
+- **Activities:** Blender (one render) and Animal Crossing (seven screenshots).
+
+## What's wrong with the current site
+
+- **Broken:** `/about` is a soft 404 (`proxy.ts` still rewrites it; it's in the sitemap and linked from the 404 page); `?project=` deep links advertised in `llms.txt` open nothing; the Aqualung case renders a PDF through `<Image>` (broken image, HTTP 400).
+- **Content:** Punt slides 2–5 are headed "SmartWatch"; typos ("Flower-shaoed", "Design of a amazing brand"); a MOCA slide headed "2 Ares Domus"; case-study text is baked into slide JPEGs (not selectable, not indexable).
+- **UX:** the home page is one full-screen colour card per project with only a title, so recruiters see no work until they click; thumbnails appear only when hovering the bottom 80 px; no visible navigation at 768 px; the GSAP curtain delays every navigation by about 1.8 s; the fixed footer covers content on Activities.
+- **Accessibility:** reduced motion is ignored; the project title is an `onClick` div filled with innerHTML; sr-only links get focus without a visible ring; Animal Crossing images lack alt text; the modal doesn't close with Escape or trap focus; the hamburger has no label.
+- **Performance and tech debt:** `public/` weighs 109 MB, slide JPEGs are 1–8 MB, `punt_bg.jpeg` (9.4 MB) is a CSS background; about 1.7 MB of JS per page; three/R3F/drei unused; `console.log` calls; backup files (`*~`), a committed `.idea/`, unused `Card.tsx`, `utils/photos.ts`, `useRippleEffect`; a hotlinked image in `globals.css`; boilerplate README.
+- **Already fixed in May 2026:** dependencies, trackpad scrolling, responsiveness overflow, 404 page, metadata, JSON-LD, sitemap, `llms.txt`, alt text on project images.
+
+## Design directions
+
+Three directions with different structures, each grounded in her work. All three share: a real `/about` from the current CV, case studies at `/work/[slug]`, Aqualung and Curefab first, recompressed images.
+
+- **A. "Planimetría", the technical sheet as case study.** Each project reads like her engineering documentation: brief, sketches, dimensioned drawing, prototype, render, result. Greige drafting-paper grid, thin rules, numbered section badges, Poppins with a monospace for specs, one sage accent; the Blossom exploded view as a hero motif. _Evidence:_ Yokohama planimetry, the Sakana technical sheet, the Blossom manual, Ciclogreen's method, Aqualung's frank constraints. _Best for:_ recruiters who want process.
+- **B. "Isla", a cozy pastel world.** The home page is a small isometric room in her Blender and Animal Crossing aesthetic; projects are objects in it (lamp = Blossom, sideboard = Punt, watch = Sakana, dive computer = Aqualung), with a plain "all work" list always one click away. Dusty rose, cream, sage and pale wood; rounded cards; her self-portrait as the guide. _Evidence:_ `Deskroom.png`, the Animal Crossing islands, pandas, pink clouds, "a little piece of my heart". The one direction where a 3D scene earns its place (compressed model, static poster, reduced-motion fallback). _Risk:_ whimsy can crowd out the work for recruiters.
+- **C. "Muestrario", a colour-swatch index with an editorial serif.** Her habit of giving each project its own muted palette becomes the navigation: the home page is a grid of swatch tiles (sage, teal-slate, charcoal and brass, rose, apricot) under her logo; each opens a long-scroll case study with one palette strip, like her Curefab palette slide. Libre Bodoni display with Poppins. _Evidence:_ the per-project colours in `projets.json`, the Curefab palette slide, her patterns as tile textures. _Keeps:_ the current site's best idea (per-project colour cards and Bodoni titles) and makes it a visible grid.
+
+Claude Design board: _link added when published._
+
+## Open questions
+
+For Thomas:
+
+1. Was hiding `/about` intentional (for example because it's outdated) or a leftover?
+2. Positioning: UX/UI first (CV) or product plus graphic design (site, Behance)?
+
+For Cristina:
+
+3. Aqualung: which images can be shown (she noted confidentiality)?
+4. Should MOCA, Compa-k and the Rituals smartwatch come back?
+5. Languages: English only, or also Spanish and French?
+
+## Decisions
+
+- 2026-09-28 (Thomas): redesign with three variants on `dev` for Cristina to choose; directions sketched on a Claude Design board first.
+- 2026-09-28 (Thomas): branches and PRs into `dev` are free; nothing reaches `main` without Cristina's go-ahead.
