@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import MainLogo from './Logos/MainLogo';
 import { usePathname } from 'next/navigation';
-import { Modal, useDisclosure } from '@heroui/react';
-import ModalContentContact from './ModalContentContact';
+import { useOpenContact } from './contact/ContactDialog';
 import classNames from 'classnames';
 import { useMenu } from '../context/MenuContext';
 import { useNameColor } from '@/context/NameColorContext';
@@ -12,7 +11,7 @@ import TransitionLink from './TransitionLink';
 
 const Header = () => {
   const pathname = usePathname();
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const openContact = useOpenContact();
 
   const { isMenuOpen, toggleMenu } = useMenu();
   const { nameColor } = useNameColor();
@@ -88,9 +87,11 @@ const Header = () => {
           <div className="gap-10 hidden xl:flex h-[100%] justify-end items-center">
             <TransitionLink href={'/'} label={'Work'} nameColor={nameColor} />
             <TransitionLink href={'/activities'} label={'Activities'} nameColor={nameColor} />
-            {/* <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} /> */}
-            <button
-              onClick={() => window.open('/pdf/CV.pdf', '_blank', 'noopener,noreferrer')}
+            <TransitionLink href={'/about'} label={'About me'} nameColor={nameColor} />
+            <a
+              href="/pdf/CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`px-4 py-1 uppercase text-xs hover:font-bold focus-visible:outline-2 focus-visible:outline-current flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}
             >
               <span>CV</span>
@@ -111,9 +112,10 @@ const Header = () => {
                   fill={color}
                 />
               </svg>
-            </button>
+            </a>
             <button
-              onClick={onOpen}
+              type="button"
+              onClick={openContact}
               className={`px-3 py-1 uppercase text-xs hover:font-bold focus-visible:outline-2 focus-visible:outline-current flex items-center gap-2 justify-between text-center transition-[font-weight] duration-300 font-normal rounded-md ${pathname === '/' ? (nameColor === 'black' ? 'bg-black text-white' : 'bg-white text-black') : 'bg-black text-white'} `}
             >
               <span>Contact</span>
@@ -139,10 +141,6 @@ const Header = () => {
                 </defs>
               </svg>
             </button>
-
-            <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
-              <ModalContentContact />
-            </Modal>
           </div>
         </div>
       </nav>

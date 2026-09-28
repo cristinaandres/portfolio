@@ -1,15 +1,10 @@
 'use client';
-import { Modal, useDisclosure } from '@heroui/react';
 import Link from 'next/link';
-import ModalContentContact from './ModalContentContact';
 import { useMenu } from '@/context/MenuContext';
+import { useOpenContact } from './contact/ContactDialog';
 
-interface MenuContextType {
-  isMenuOpen: boolean;
-  closeMenu: () => void;
-}
 export function Menu() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const openContact = useOpenContact();
   const { isMenuOpen, toggleMenu } = useMenu();
   if (!isMenuOpen) return null;
 
@@ -34,19 +29,23 @@ export function Menu() {
       >
         Activities
       </Link>
+      <Link
+        href={'/about'}
+        onClick={toggleMenu}
+        className="min-h-[44px] flex items-center focus-visible:underline"
+      >
+        About me
+      </Link>
       <button
         type="button"
-        onClick={() => window.open('/pdf/CV.pdf', '_blank', 'noopener,noreferrer')}
+        onClick={() => {
+          toggleMenu();
+          openContact();
+        }}
         className="min-h-[44px] focus-visible:underline"
       >
-        About Me
-      </button>
-      <button type="button" onClick={onOpen} className="min-h-[44px] focus-visible:underline">
         Contact
       </button>
-      <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContentContact />
-      </Modal>
     </div>
   );
 }

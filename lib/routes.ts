@@ -1,5 +1,5 @@
 // The site's static pages, shared by the sitemap and the llms files. Case studies come from
-// the content module. Tickets add their pages here (/about in #12).
+// the content module.
 
 export interface StaticPage {
   path: string;
@@ -18,6 +18,13 @@ export const staticPages: readonly StaticPage[] = [
     description: 'All projects with covers.',
     priority: 1,
     changeFrequency: 'monthly',
+  },
+  {
+    path: '/about',
+    name: 'About',
+    description: 'Biography, experience, education, languages, tools and CV.',
+    priority: 0.9,
+    changeFrequency: 'yearly',
   },
   {
     path: '/activities',
