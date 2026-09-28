@@ -1,12 +1,11 @@
 'use client';
 
 import { animatePageIn } from '@/utils/animate';
-import { motion } from 'motion/react';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import LogoIntegrated from '@/components/Logos/LogoIntegrated';
+import { motion, useReducedMotion } from 'motion/react';
+import React, { useEffect } from 'react';
 
 export default function Template({ children }: { children: React.ReactNode }) {
+  const reduceMotion = useReducedMotion();
   useEffect(() => {
     animatePageIn();
   }, []);
@@ -35,13 +34,11 @@ export default function Template({ children }: { children: React.ReactNode }) {
             transform: 'translate(-50%, -50%)',
           }}
         >
-          <div className="w-1/12 h-1/6 flex items-center justify-center">
-            {/* <LogoIntegrated /> */}
-          </div>
+          <div className="w-1/12 h-1/6 flex items-center justify-center" />
         </foreignObject>
       </svg>
       <motion.div
-        initial={{ opacity: 0 }}
+        initial={reduceMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ ease: 'easeInOut', duration: 1 }}
       >

@@ -19,7 +19,6 @@ const Header = () => {
   const [color, setColor] = useState<string>('white');
   useEffect(() => {
     setColor(pathname === '/' ? (nameColor === 'black' ? 'white' : 'black') : 'white');
-    console.log(pathname);
     return () => {
       document.body.classList.remove('overflow-hidden');
     };
@@ -39,6 +38,8 @@ const Header = () => {
                     'tham-active': isMenuOpen,
                   })}
                   onClick={toggleMenu}
+                  aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                  aria-expanded={isMenuOpen}
                 >
                   <div className={`tham-box `}>
                     <div className={`tham-inner  ${isMenuOpen ? 'bg-white' : `bg-${nameColor}`}`} />
