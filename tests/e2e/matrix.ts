@@ -33,5 +33,22 @@ export async function scrollThrough(page: import('@playwright/test').Page) {
     }
     window.scrollTo(0, 0);
   });
-  await page.waitForLoadState('networkidle');
+  await settle(page, { includeLazy: true });
+}
+
+/**
+ * Waits for the page and its images to finish loading. Not 'networkidle': a Vercel preview keeps
+ * a prefetch request open, so the network never goes idle there. Lazy images count only once
+ * the page has been scrolled through.
+ */
+export async function settle(
+  page: import('@playwright/test').Page,
+  { includeLazy = false }: { includeLazy?: boolean } = {}
+) {
+  await page.waitForLoadState('load');
+  await page.waitForFunction(
+    (lazy) =>
+      Array.from(document.images).every((img) => img.complete || (!lazy && img.loading === 'lazy')),
+    includeLazy
+  );
 }

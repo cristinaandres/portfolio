@@ -53,7 +53,13 @@ function Cover({ project }: { project: Project }) {
         alt={image.alt}
         sizes="(min-width: 1440px) 1312px, 100vw"
         preload
-        className="h-auto max-h-[70vh] w-auto max-w-full object-contain"
+        // Reserve the box before the image loads (no layout shift): its aspect ratio, as wide as
+        // fits, but never taller than 70 % of the screen.
+        style={{
+          aspectRatio: `${image.width} / ${image.height}`,
+          width: `min(100%, calc(70vh * ${image.width} / ${image.height}))`,
+        }}
+        className="h-auto object-contain"
       />
     </figure>
   );
