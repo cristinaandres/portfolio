@@ -12,13 +12,9 @@ export function proxy(request: NextRequest) {
     if (project) return NextResponse.redirect(new URL(workPath(project), request.url), 308);
   }
 
-  if (pathname === '/about') {
-    return NextResponse.rewrite(new URL('/404', request.url));
-  }
-
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/', '/about'],
+  matcher: '/',
 };

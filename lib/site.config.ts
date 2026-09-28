@@ -16,12 +16,12 @@ export const siteConfig = {
   url: normalizeUrl(process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL),
   name: 'Cristina Andrés',
   shortName: 'Cristina Andrés Portfolio',
-  jobTitle: 'Product, UX/UI & Graphic Designer',
+  jobTitle: 'UX/UI & Product Designer',
   tagline:
-    'Product, UX/UI and graphic designer building thoughtful brands and digital experiences.',
+    'UX/UI and product designer with a foundation in industrial design engineering, from dimensioned drawings to dive-computer interfaces.',
   description:
-    'Portfolio of Cristina Andrés — product, UX/UI and graphic designer. Selected work for Aqualung, Curefab, Punt, Smurfit Kappa, Ares Domus, Sakana, Ciclogreen, Blossom and Montezuma.',
-  bio: 'Passionate product and graphic designer with a solid foundation in industrial design engineering. Cristina balances form and function, bringing ideas to life with meticulous attention to detail and a keen eye for user experience.',
+    'Portfolio of Cristina Andrés — UX/UI and product designer based in Antibes, France, with a background in industrial design engineering. Selected work for Aqualung, Curefab, Punt, Smurfit Kappa, Ares Domus, Sakana, Ciclogreen, Blossom and Montezuma.',
+  bio: 'UX/UI and product designer with a solid foundation in industrial design engineering. Cristina balances form and function, bringing ideas to life with meticulous attention to detail and a keen eye for user experience.',
   locale: 'en_US',
   language: 'en',
   email: 'cristina.andresrr@gmail.com',
@@ -41,8 +41,13 @@ export const siteConfig = {
     'Packaging Design',
     'Industrial Design Engineering',
   ],
-  alumniOf: ['Polytechnical University of Valencia', 'He-ARC Neuchâtel', 'Hochschule Augsburg'],
-  languages: ['Spanish', 'Catalan', 'French', 'English'],
+  alumniOf: [
+    'ESDESIGN Barcelona',
+    'Universidad Politécnica de Valencia',
+    'HE-Arc Neuchâtel',
+    'Hochschule Augsburg',
+  ],
+  languages: ['Spanish', 'Catalan', 'French', 'English', 'German'],
   keywords: [
     'Cristina Andrés',
     'Cristina Andres',
