@@ -9,7 +9,7 @@ Before any design or content work, read [`docs/brief.md`](docs/brief.md): who Cr
 ## Stack
 
 - Next.js 16 App Router, React 19, TypeScript; `proxy.ts` (Next 16's name for middleware).
-- Tailwind CSS 4 (`@tailwindcss/postcss`), HeroUI 2 for modals, `motion` 12, GSAP 3 (page-transition curtain only, `utils/animate.ts`).
+- Tailwind CSS 4 (`@tailwindcss/postcss`), a native `<dialog>` for contact (ADR 0001), `motion` 12, GSAP 3 (page-transition curtain only, `utils/animate.ts`).
 - `three`, `@react-three/fiber`, `@react-three/drei` are installed but unused since the 3D scene was removed (Oct 2024).
 - Content: `public/json/projets.json` (order, colours, tags, image lists), `lib/site.config.ts` (site-wide SEO/GEO metadata, contact, socials), `public/llms.txt` / `llms-full.txt`.
 - Hosting: Vercel, on **Cristina's** account (`cristinadesigns.vercel.app`).

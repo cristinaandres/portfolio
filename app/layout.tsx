@@ -4,7 +4,6 @@ import { Inter, Poppins, Libre_Bodoni } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
 import Footer from '@/components/Footer';
-import { Toaster } from 'sonner';
 import Providers from '@/components/Providers';
 import Menu from '@/components/Menu';
 import { siteConfig } from '@/lib/site.config';
@@ -113,7 +112,6 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${poppins.variable} ${bodoni.variable}`}>
         <Providers>
-          <Toaster richColors position="bottom-center" />
           <Menu />
           <Header />
           <main className="min-h-screen overflow-hidden">{children}</main>
