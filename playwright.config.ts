@@ -4,8 +4,14 @@ import { defineConfig, devices } from '@playwright/test';
 const PORT = Number(process.env.PORT ?? 3100);
 
 // Drives the production build (`npm run test:e2e` builds first) like a visitor would.
+// A production build (VERCEL_ENV=production) runs only the @production checks; any other build
+// runs everything else.
+const production = process.env.VERCEL_ENV === 'production';
+
 export default defineConfig({
   testDir: 'tests/e2e',
+  grep: production ? /@production/ : undefined,
+  grepInvert: production ? undefined : /@production/,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
