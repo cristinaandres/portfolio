@@ -2,17 +2,17 @@
 
 The single source of truth about Cristina for anyone designing or writing this site. Every claim cites her own material; paths are relative to the repository root. Colour values are estimated from her images.
 
-_Last updated 2026-09-28: initial analysis for the redesign; plan for step 4 (variants) settled with Thomas._
+_Last updated 2026-09-28: initial analysis; plan for step 4 settled with Thomas; findings from transcribing all nine case studies. Slide originals now live in `assets/slides/`, activity originals in `assets/activities/`._
 
 ## Who she is
 
 - **Name:** Cristina Andrés Serra (`public/attached/Smartwatch_Poster.pdf`).
 - **Positioning:** the site says "Product, UX/UI & Graphic Designer" (`lib/site.config.ts`); her CV (September 2025) says "UX/UI Designer… user-first perspective" (`public/pdf/CV.pdf`); Behance, older, says "Diseñadora Gráfica" with a furniture and product focus.
 - **Studies (CV):** Industrial Design Engineering, UPV Valencia (2019–2023); Erasmus at HE-Arc Neuchâtel (2021, industrial design) and Hochschule Augsburg (2023, UX/UI); Máster en Diseño Web, ESDESIGN Barcelona (October 2024–October 2025).
-- **Experience (CV):** UX/UI internship at Aqualung Group, Sophia Antipolis (February–August 2025; `public/images/projets/aqualung1.png` says internship); freelance UX/UI designer, Strasbourg (October 2023–October 2024), including the Curefab Technologies website; graphic designer at Future Fibres Rigging Systems, Valencia (January–December 2022), marketing material for the racing industry. The site never mentioned Future Fibres; the CV also spells Sophia Antipolis "Sophie Antipolis".
+- **Experience (CV):** UX/UI internship at Aqualung Group, Sophia Antipolis (February–August 2025; `assets/slides/aqualung1.png` says internship); freelance UX/UI designer, Strasbourg (October 2023–October 2024), including the Curefab Technologies website; graphic designer at Future Fibres Rigging Systems, Valencia (January–December 2022), marketing material for the racing industry. The site never mentioned Future Fibres; the CV also spells Sophia Antipolis "Sophie Antipolis".
 - **Based in:** Antibes (CV).
 - **Languages (CV):** Spanish, Catalan and French native; English advanced; German elementary. The site is English only.
-- **Tools:** Figma, Photoshop, Lightroom, Illustrator, InDesign, Blender, Canva, SolidWorks (`components/Logos/IconRow.tsx`); Adobe XD, Sketch (CV); Lumion (render watermark in `public/images/projets/backgrounds/punt_bg.jpeg`).
+- **Tools:** Figma, Photoshop, Lightroom, Illustrator, InDesign, Blender, Canva, SolidWorks (`components/Logos/IconRow.tsx`); Adobe XD, Sketch (CV); Lumion (render watermark in `assets/slides/backgrounds/punt_bg.jpeg`).
 - **Audience:** recruiters and freelance clients (confirmed by Thomas), across Spain, France, Switzerland and Germany.
 - **Contact:** email, Calendly (30 min), LinkedIn, Behance (`lib/site.config.ts`). The phone number is only in the CV and is not published.
 
@@ -23,18 +23,18 @@ _Last updated 2026-09-28: initial analysis for the redesign; plan for step 4 (va
 - **Respects the client's brand and systems.** "Make sure that their brand identity is present", with the palette and type (Avenir) documented as a system (`curefab_2.png`); "followed the existing design system" (`aqualung2.png`).
 - **An engineer's process.** Sketches, then dimensioned drawings, prototypes and renders (Yokohama 2–5); Ciclogreen's "design methodology… analysis (market, flows, forces) within 60 days"; Blossom delivered with a 5-page exploded-view assembly manual (`public/attached/Blossom_Manual_A4.pdf`); a technical sheet for Sakana (`Portfolio_cristina_page-0020.jpg`).
 - **Personal, playful voice.** "A curious fact about me is that I like pandas a lot, like… a lot" (`page-0008`); "I thought that such a rare lamp needed an identity of its own" (Blossom); the Activities pages: "all of them have a little piece of my heart" (`app/activities/page.tsx`).
-- **Collaborative.** She credits teammates (the Blossom manual lists five names; Sakana credits "my classmate and friend, Latifa Qatrani", `page-0018`).
+- **Collaborative.** She credits teammates by name: Sakana, "my classmate and friend, Latifa Qatrani" (`page-0018`); Ciclogreen, Irene Badía, Remei Barber, Daniel Albero and Carmen Amorós (`Portfolio_Page_Ciclogreen3.jpg`); Blossom, Francisco Gómez, Esther Killeen, Noelia Montrós and Aitana Sánchez (`Portfolio_Page_Blossom3.jpg`, and the manual). Punt was a group project too ("chosen by the group").
 - **Nature as a source** (inferred): Ciclogreen "reminiscent of a tree", the Blossom flower lamp, the Sakana koi.
 
 ## What she likes visually (from her work)
 
 - **Muted, desaturated palettes, each with one warm accent.** Sage `#91A399` and olive `#7E8C6E` (Montezuma); teal-slate `#597177` and deep teal `#33535A` (Sakana); charcoal navy `#1D252D` with brass `#E0A04A` (Ares Domus); dusty rose `#D9ABBA` (Blossom); apricot `#F79E50` (Montezuma); cream `#F3E9C6` and warm greige `#E2E2DB` (the site's base); periwinkle `#A7B4CF` (old "Hello!" slide); aubergine `#321A2B` (`public/images/logo.svg`). Client brand colours (Aqualung navy, Curefab green) are not her own taste.
-- **Type:** Poppins in her slides and the site; Libre Bodoni for the site's project titles (`app/layout.tsx`); an outlined retro slab for "Hello!" and "PORTFOLIO" (`page-0001`, `page-0002`); wide-tracked uppercase labels throughout.
+- **Type:** Poppins in her slides and the site; Libre Bodoni for the site's project titles (`app/layout.tsx`); an outlined retro slab for "Hello!" and "PORTFOLIO" (`page-0001`, `page-0002`); wide-tracked uppercase labels throughout. Brand work names its type: Avenir for Curefab (the client's), Geometria and Addington in the Ares Domus brand book (`page-0005`).
 - **Illustration:** her logo is a self-portrait line drawing with bangs, round glasses and freckles (`public/images/logo.svg`); the Montezuma mask mascot; MOCA panda patterns; the koi line drawing; technical line drawings.
-- **3D and renders:** SolidWorks and Lumion product renders; a cozy isometric pastel desk room in Blender (`public/images/activities/blender/showcase/Deskroom.png`): pink chair, plants, pale wood.
+- **3D and renders:** SolidWorks and Lumion product renders; a cozy isometric pastel desk room in Blender (`assets/activities/deskroom.png`): pink chair, plants, pale wood.
 - **Patterns:** pandas and dots (`page-0008`), Art Deco vertical bars (`page-0004`), seigaiha waves (`page-0019`), a Celtic knot (Smartwatch poster).
 - **Layout grammar in her slides:** 2:1 landscape spreads with a centred text column (logo, year, bold title, "● tag ● tag", short paragraph) beside a hero visual; numbered section badges in circles; a thin vertical colour bar before small-over-bold headings (Aqualung, Curefab).
-- **Personal world:** Animal Crossing islands (cafés, topiary, a pastel shop) in `public/images/activities/`; the site already uses the leaf pattern and pink cloud backgrounds.
+- **Personal world:** Animal Crossing islands (cafés, topiary, a pastel shop) in `assets/activities/`; the site already uses the leaf pattern and pink cloud backgrounds.
 
 ## Content inventory
 
@@ -47,8 +47,8 @@ Projects in `public/json/projets.json`, in the site's order:
 | 3 | Punt, "Yokohama" sideboard | furniture | 2022–2023 (slide; `projets.json` said 2023) | product design, prototyping, self-set brief | `Yokohama1-5.jpg`, `punt_bg.jpeg` |
 | 4 | Montezuma (Dreamland) | clothing start-up, class competition | 2022 | marketing, packaging, web survey, campaign | `page-0009` to `page-0013` |
 | 5 | Smurfit Kappa, "Pipas" bulk dispenser | packaging | 2022 | packaging and graphic design, competition | `page-0014` to `page-0017` |
-| 6 | Ares Domus | invented luxury resort on Mars | 2022 | logo, branding, merchandise | `page-0004` to `page-0006` |
-| 7 | Sakana | Swiss watch, HE-Arc | 2022 | product, graphic design, technical drawing | `page-0018` to `page-0020` |
+| 6 | Ares Domus | invented luxury resort on Mars ("an invented brand for a luxurious resort in Mars", `page-0005`) | 2022 | logo, branding, merchandise | `page-0004` to `page-0006` |
+| 7 | Sakana | Swiss watch, HE-Arc (slides headed "Swiss Watch"; Sakana is the name on her logo; the affiche is signed "Andrés Cristina 09.02.2022") | 2022 | product, graphic design, technical drawing | `page-0018` to `page-0020` |
 | 8 | Ciclogreen | indoor farming, UPV team of five | 2021 | product design, methodology | `Ciclogreen1-3.jpg` |
 | 9 | Blossom | laser-cut flower lamp, team of five | 2020 | product design, prototyping, logo | `Blossom1-4.jpg`, `Blossom_Manual_A4.pdf` |
 
@@ -58,6 +58,9 @@ Available but not listed: MOCA Studio (her personal panda brand, `page-0007`, `p
 - **Activities:** Blender (one render) and Animal Crossing (seven screenshots).
 
 ## What's wrong with the current site
+
+_Status, 2026-09-28: everything below is fixed on `dev` by the redesign foundation (#9–#14): case studies are pages, `/about` is back, the carousel, curtain, HeroUI, three.js and gallery libraries are gone, `public/` went from 110 MB to 6 MB, and a Playwright + axe suite guards the quality bar._
+
 
 - **Broken:** `/about` is a soft 404 (`proxy.ts` still rewrites it; it's in the sitemap and linked from the 404 page); `?project=` deep links advertised in `llms.txt` open nothing; the Aqualung case renders a PDF through `<Image>` (broken image, HTTP 400).
 - **Content:** Punt slides 2–5 are headed "SmartWatch"; typos ("Flower-shaoed", "Design of a amazing brand"); a MOCA slide headed "2 Ares Domus"; case-study text is baked into slide JPEGs (not selectable, not indexable).
@@ -78,12 +81,19 @@ Claude Design board (private to Thomas; share it from its Share menu): https://c
 
 ## Copy she didn't write
 
-Text on the site that is ours, not hers, to list in the message to Cristina. Case-study body text is always her own words from the slides.
+Text on the site that is ours, not hers, to list in the message to Cristina. Case-study body text is always her own words from the slides (typos fixed).
 
-- Project names used as case-study titles where her slide has none: "Yokohama sideboard for Punt", "Curefab Technologies website", "Sakana, a Swiss watch".
-- The one-line summary of each project (lists, metadata, `llms.txt`), condensed from her slide intros.
-- Section headings where her slide has none (Punt: "The brief").
-- Figure captions (Punt: "Concept sketches around the selected design."; "Aparador Punt 1: 190 × 76.5 cm, scale 1:10.", read off her drawing).
+- **Titles** where her slide has none: "Yokohama sideboard for Punt", "Curefab Technologies website", "Sakana, a Swiss watch", "Ciclogreen, an indoor farming system" (from her logo's "Indoor farming system"), "Blossom, a flower-shaped lamp".
+- **Summaries:** the one-line summary of each project (lists, metadata, `llms.txt`), condensed from her slide intros.
+- **Section headings** where her slide has none: "The brief" (Punt, Montezuma, Smurfit Kappa, Ares Domus, Sakana, Ciclogreen, Blossom), "The internship" (Aqualung), "The project", "Brand identity", "The result" (Curefab, whose slides all say "Website Redesign"), "Merchandise" (Ares Domus).
+- **Captions:**
+  - Punt: "Concept sketches around the selected design."; "Aparador Punt 1: 190 × 76.5 cm, scale 1:10.", read off her drawing.
+  - Aqualung: "The two new pages on desktop.", "And on mobile.", "Dive computer screens.", "Aquasense app: profile and home."
+  - Curefab: "Brand colours and typography.", "The home page on tablet and phone."
+  - Sakana: "Technical sheet: Ø 41.8 mm case, 7 mm high.", read off her sheet.
+- **Alt text:** all of it.
+- **/about:** the bio (adapted from her CV summary and the old site bio); the note under the freelance role ("Including the website redesign for Curefab Technologies, working closely with developers"); the tagline "…from dimensioned drawings to dive-computer interfaces"; the labels "Download my CV (PDF)", "Contact me", "Share this page".
+- **Variant headlines:** listed in the variant PRs (#15–#17), gathered here in #18.
 
 ## Open questions
 
@@ -92,7 +102,9 @@ For Cristina (to ask with the variants link):
 3. Aqualung: which images can be shown (she noted confidentiality)?
 4. Should MOCA, Compa-k and the Rituals smartwatch come back?
 5. Languages: English only, or also Spanish and French?
-6. The variants' headlines are placeholder copy, not her words (A "Designing where form meets function.", B "Hi, I'm Cristina. Come in!", C "Every project has its own colour."): keep, edit or replace?
+6. Smurfit Kappa's text starts "Last year, I was lucky enough…" for a 2022 project: keep, or change to "In 2022"?
+7. Sakana's technical specifications are in French, as on her sheet: keep, or translate?
+8. The variants' headlines are placeholder copy, not her words (A "Designing where form meets function.", B "Hi, I'm Cristina. Come in!", C "Every project has its own colour."): keep, edit or replace?
 
 Resolved with Thomas: hiding `/about` was a leftover (it gets rebuilt from the CV); positioning is "UX/UI & Product Designer" (see Decisions).
 
