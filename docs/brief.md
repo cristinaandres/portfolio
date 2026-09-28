@@ -2,7 +2,7 @@
 
 The single source of truth about Cristina for anyone designing or writing this site. Every claim cites her own material; paths are relative to the repository root. Colour values are estimated from her images.
 
-_Last updated 2026-09-28: initial analysis; plan for step 4 settled with Thomas; findings from transcribing all nine case studies. Slide originals now live in `assets/slides/`, activity originals in `assets/activities/`._
+_Last updated 2026-09-28: initial analysis; plan for step 4 settled with Thomas; findings from transcribing all nine case studies; the three variants built on `dev` and ready for Cristina. Slide originals now live in `assets/slides/`, activity originals in `assets/activities/`._
 
 ## Who she is
 
@@ -79,6 +79,44 @@ Three directions with different structures, each grounded in her work. All three
 
 Claude Design board (private to Thomas; share it from its Share menu): https://claude.ai/artifact/LJH7JdQYud8MbWBd1ZbvRr. One row per direction: desktop home and a phone case study (A: Punt, B: Blossom, C: Curefab), built from her own slides and words. In C, the chip colours for Punt (`#B89B7A`), Smurfit Kappa (`#E8DCC4`) and Ciclogreen (`#3F5A3A`) were picked from their images; the others come from `projets.json` or the client brand.
 
+## The variants on `dev` (step 4)
+
+Preview: https://portfolio-git-dev-cristinaandres-projects.vercel.app. Add `?variant=a`, `?variant=b` or `?variant=c` to any page, or use the switcher in the bottom-right corner. The choice is remembered from page to page. Production ignores both and would show A.
+
+All three share the same routes, content, case studies, /about and contact dialog. They differ in structure, not just colour:
+
+- **A, Planimetría** (her engineering documentation):
+  - Greige drafting-paper grid, 1.5 px rules, a monospace for labels, one sage accent.
+  - Home is a title block, a spec table of her CV and a numbered "project register" with thumbnails: the whole portfolio on one screen, like a drawing index.
+  - Case studies are "sheets" with a spec grid and numbered section badges; measurements get dimension-line captions.
+  - The most sober option, and the quickest to scan for recruiters.
+- **B, Isla** (her own world):
+  - Dusty rose, cream and a rounded display face.
+  - Home is her Blender desk room with links placed over the objects (screen → UX/UI, shelf → products, wall → brands, console → activities, window → about), plus an "All work" grid always on the page.
+  - Case studies are soft cards with her quotes beside her self-portrait.
+  - The most personal option; the work is one scroll further down.
+- **C, Muestrario** (her palettes):
+  - Warm off-white and Libre Bodoni.
+  - Home is a swatch book: one colour tile per project with its cover, number and hex.
+  - Each case study opens in the project's colour, with one of her own sentences as a pull-quote.
+  - The most editorial option; it keeps the current site's best idea (per-project colour, Bodoni titles).
+
+Measured on 2026-09-28 (Lighthouse, mobile profile, deployed preview, home and /work/punt):
+
+| | A | B | C |
+|---|---|---|---|
+| Performance | 98 / 91 | 97 / 97 | 95 / 96 |
+| Accessibility | 100 / 100 | 100 / 100 | 100 / 100 |
+| Best practices | 100 | 100 | 100 |
+
+A's case study scored 91 because of a layout shift (0.116) under its cover; that is fixed (0). SEO shows 69 on previews only, because Vercel sends `noindex` there. The Playwright suite (211 checks: every route × variant × 390/768/1440, axe, reduced motion, content, redirects, and a production-mode run) is green locally and against the deployed preview.
+
+**For step 6** (after she chooses):
+- Delete the losing variants' folders and CSS, the switcher, and `variants/neutral` pieces nobody uses. Every variant's CSS and fonts load on every page today.
+- Self-host the chosen variant's fonts with `next/font/local`. Google Fonts failed to download twice during local builds.
+- Collapse the header, menu and footer into the chosen variant's shell.
+- If she picks C, add Curefab's palette as data so the swatch strip can show it.
+
 ## Copy she didn't write
 
 Text on the site that is ours, not hers, to list in the message to Cristina. Case-study body text is always her own words from the slides (typos fixed).
@@ -93,7 +131,9 @@ Text on the site that is ours, not hers, to list in the message to Cristina. Cas
   - Sakana: "Technical sheet: Ø 41.8 mm case, 7 mm high.", read off her sheet.
 - **Alt text:** all of it.
 - **/about:** the bio (adapted from her CV summary and the old site bio); the note under the freelance role ("Including the website redesign for Curefab Technologies, working closely with developers"); the tagline "…from dimensioned drawings to dive-computer interfaces"; the labels "Download my CV (PDF)", "Contact me", "Share this page".
-- **Variant headlines:** listed in the variant PRs (#15–#17), gathered here in #18.
+- **Variant A:** the headline "Designing where form meets function.", "See the work ↓", and the sheet and spec labels ("Sheet 00 / Index", "Project register", "Fig. NN"…).
+- **Variant B:** the headline "Hi, I'm Cristina. Come in!", the room intro ("Every object in my room opens a part of my work…"), the five hotspot labels, the grid headings ("On the screen: interfaces"…), "From the shelf/screen/wall", "The window", "The console", "Skip the tour", "Back to the room", "Say hi".
+- **Variant C:** the headline "Every project has its own colour.", "Swatch book · 2020–2025", "Selected work · 9 projects", "Personal projects".
 
 ## Open questions
 
@@ -105,6 +145,7 @@ For Cristina (to ask with the variants link):
 6. Smurfit Kappa's text starts "Last year, I was lucky enough…" for a 2022 project: keep, or change to "In 2022"?
 7. Sakana's technical specifications are in French, as on her sheet: keep, or translate?
 8. The variants' headlines are placeholder copy, not her words (A "Designing where form meets function.", B "Hi, I'm Cristina. Come in!", C "Every project has its own colour."): keep, edit or replace?
+9. Which variant, or which mix ("B's home with C's case studies")? And, in B, is grouping the work by the room's corners fine, or should it stay newest first?
 
 Resolved with Thomas: hiding `/about` was a leftover (it gets rebuilt from the CV); positioning is "UX/UI & Product Designer" (see Decisions).
 
@@ -122,3 +163,4 @@ Resolved with Thomas: hiding `/about` was a leftover (it gets rebuilt from the C
   - Stack trimmed: no GSAP curtain, HeroUI, three/R3F, share and lightbox libraries; one native `<dialog>` for contact ([ADR 0001](adr/0001-lean-stack-for-the-redesign.md)). Isla uses the static `Deskroom.png` with real links over it.
   - Quality checks: Playwright + axe suite over every route × variant × 390/768/1440 px, run before each merge and in a GitHub Action on PRs into `dev`.
   - The `dev` preview is public (Vercel SSO disabled by Thomas; previews stay `noindex`): https://portfolio-git-dev-cristinaandres-projects.vercel.app
+- 2026-09-28: the three variants are on `dev` (#15–#17) and the final pass is done (#18); next is Cristina's choice (playbook step 5).
