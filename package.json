@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "images": "node scripts/images/build.ts",
-    "test:e2e": "next build && playwright test"
+    "test:e2e": "next build && playwright test",
+    "test:e2e:prod": "VERCEL_ENV=production next build && VERCEL_ENV=production playwright test"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",

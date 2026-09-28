@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import AboutPage from '@/components/about/AboutPage';
 import { JsonLd, breadcrumbSchema, faqSchema } from '@/components/seo/JsonLd';
 import { profile } from '@/content/profile';
 import { siteConfig } from '@/lib/site.config';
+import { getViews } from '@/variants/server';
 
 const faqItems: Array<{ question: string; answer: string }> = [
   {
@@ -43,12 +43,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const { About } = await getViews();
   return (
     <>
       <JsonLd id="ld-faq" data={faqSchema(faqItems)} />
       <JsonLd id="ld-breadcrumb" data={breadcrumbSchema([{ name: 'About', path: '/about' }])} />
-      <AboutPage />
+      <About />
     </>
   );
 }

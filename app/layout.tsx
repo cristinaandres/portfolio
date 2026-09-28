@@ -2,12 +2,12 @@ import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins, Libre_Bodoni } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/header';
-import Footer from '@/components/Footer';
 import Providers from '@/components/Providers';
-import Menu from '@/components/Menu';
 import { siteConfig } from '@/lib/site.config';
 import { JsonLd, personSchema, websiteSchema } from '@/components/seo/JsonLd';
+import VariantSwitcher from '@/variants/Switcher';
+import { variantsEnabled } from '@/variants/config';
+import { getVariant, getViews } from '@/variants/server';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -99,23 +99,32 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const variant = await getVariant();
+  const { Shell } = await getViews();
   return (
     <html lang={siteConfig.language}>
       <head>
         <JsonLd id="ld-person" data={personSchema()} />
         <JsonLd id="ld-website" data={websiteSchema()} />
       </head>
-      <body className={`${inter.variable} ${poppins.variable} ${bodoni.variable}`}>
+      <body
+        data-variant={variant}
+        className={`${inter.variable} ${poppins.variable} ${bodoni.variable}`}
+      >
         <Providers>
-          <Menu />
-          <Header />
-          <main className="min-h-screen overflow-hidden">{children}</main>
-          <Footer />
+          <Shell>{children}</Shell>
+          {variantsEnabled() && (
+            <>
+              {/* Room at the end of every page so the floating switcher never hides the footer. */}
+              <div aria-hidden="true" className="h-16" />
+              <VariantSwitcher current={variant} />
+            </>
+          )}
         </Providers>
       </body>
     </html>
