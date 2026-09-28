@@ -1,4 +1,56 @@
 {
+  "/images/activities/animal-crossing-01.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "/images/activities/animal-crossing-02.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "/images/activities/animal-crossing-03.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "/images/activities/animal-crossing-04.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "/images/activities/animal-crossing-05.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "/images/activities/animal-crossing-06.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "/images/activities/animal-crossing-07.webp": {
+    "width": 1280,
+    "height": 720
+  },
+  "/images/activities/animal-crossing-card.webp": {
+    "width": 600,
+    "height": 338
+  },
+  "/images/activities/animal-crossing-landscape.webp": {
+    "width": 1440,
+    "height": 760
+  },
+  "/images/activities/animal-crossing-logo.webp": {
+    "width": 600,
+    "height": 411
+  },
+  "/images/activities/blender-card.webp": {
+    "width": 600,
+    "height": 612
+  },
+  "/images/activities/deskroom.webp": {
+    "width": 1080,
+    "height": 1080
+  },
+  "/images/activities/pink-clouds.webp": {
+    "width": 2560,
+    "height": 1440
+  },
   "/images/work/aqualung/app.webp": {
     "width": 598,
     "height": 638

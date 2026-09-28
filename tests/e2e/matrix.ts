@@ -5,7 +5,9 @@ export const widths = [390, 768, 1440] as const;
 
 export const workRoutes = getProjects().map((p) => workPath(p));
 
-export const routes = ['/', '/about', ...workRoutes];
+export const activityRoutes = ['/activities', '/activities/blender', '/activities/animal-crossing'];
+
+export const routes = ['/', '/about', ...workRoutes, ...activityRoutes];
 
 export function viewport(width: number) {
   return { width, height: width < 768 ? 844 : 900 };

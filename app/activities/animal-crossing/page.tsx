@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import ImagesGallery from '@/components/ImagesGallery';
+import ActivityGallery from '@/components/activities/ActivityGallery';
+import { activityImage, animalCrossingLogo, getActivity } from '@/content';
 import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd';
 import { siteConfig } from '@/lib/site.config';
 
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
+  const animalCrossing = getActivity('animal-crossing')!;
+  const backdrop = activityImage(animalCrossing.backdrop);
+  const logo = activityImage(animalCrossingLogo);
   return (
     <>
       <JsonLd
@@ -34,19 +38,29 @@ const page = () => {
           { name: 'Animal Crossing', path: '/activities/animal-crossing' },
         ])}
       />
-      <h1 className="sr-only">{siteConfig.name}&apos;s Animal Crossing creative space</h1>
-      <div className="min-h-[100dvh] bg-animalcrossing-background bg-cover relative flex flex-col justify-start items-center pt-24 lg:pt-32">
-        <div className="relative w-[60vw] max-w-[294px] aspect-[294/202] z-20 mb-8 lg:absolute lg:top-1/5 lg:mb-0">
+      <div className="relative flex min-h-[100dvh] flex-col items-center gap-10 overflow-hidden bg-[#6E9A8A] px-4 pb-40 pt-28 lg:px-12 lg:pt-36">
+        <Image
+          src={backdrop.src}
+          alt=""
+          width={backdrop.width}
+          height={backdrop.height}
+          sizes="100vw"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-bottom"
+        />
+        <h1 className="relative">
           <Image
-            src={'/images/activities/animal-crossing/logo.png'}
-            alt="Animal Crossing logo"
-            fill
+            src={logo.src}
+            width={logo.width}
+            height={logo.height}
+            alt={`${siteConfig.name}'s Animal Crossing creative space`}
             sizes="(min-width: 1024px) 294px, 60vw"
-            className="object-contain"
-            priority
+            className="h-auto w-[60vw] max-w-[294px]"
+            preload
           />
+        </h1>
+        <div className="relative flex w-full justify-center">
+          <ActivityGallery images={animalCrossing.images} />
         </div>
-        <ImagesGallery image={'animal-crossing'} />
       </div>
     </>
   );

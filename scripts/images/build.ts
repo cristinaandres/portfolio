@@ -1,13 +1,16 @@
-// Crops every figure and cover declared in the content module out of her slides,
-// recompresses it to WebP under public/images/work/<slug>/, and records its size in
-// content/image-manifest.json so pages can give next/image real dimensions.
+// Crops every figure and cover declared in the content module out of her slides
+// (assets/slides/), recompresses it to WebP under public/images/work/<slug>/, does the
+// same for the activity images (assets/activities/ → public/images/activities/), and
+// records every size in content/image-manifest.json so pages give next/image real dimensions.
 // Deterministic: same slides and crops in, same files out. Run with `npm run images`.
 import { mkdir, writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
+import { activities, animalCrossingLogo, type ActivityImage } from '../../content/activities.ts';
 import { projects } from '../../content/projects/index.ts';
 import type { Figure } from '../../content/types.ts';
 
-const SLIDES_DIR = 'public/images/projets';
+const SLIDES_DIR = 'assets/slides';
+const ACTIVITIES_DIR = 'assets/activities';
 const OUT_DIR = 'public/images/work';
 const MAX_WIDTH = 1600;
 const QUALITY = 66;
@@ -38,6 +41,15 @@ async function build(slug: string, figure: Figure) {
   return info.size;
 }
 
+async function buildActivityImage(image: ActivityImage) {
+  const info = await sharp(`${ACTIVITIES_DIR}/${image.source}`)
+    .resize({ width: image.maxWidth ?? MAX_WIDTH, withoutEnlargement: true })
+    .webp({ quality: QUALITY + 10, effort: 6, alphaQuality: 90 })
+    .toFile(`public/images/activities/${image.id}.webp`);
+  manifest[`/images/activities/${image.id}.webp`] = { width: info.width, height: info.height };
+  return info.size;
+}
+
 let total = 0;
 for (const project of projects) {
   await mkdir(`${OUT_DIR}/${project.slug}`, { recursive: true });
@@ -49,6 +61,13 @@ for (const project of projects) {
     total += await build(project.slug, figure);
   }
 }
+
+await mkdir('public/images/activities', { recursive: true });
+const activityImages = [
+  animalCrossingLogo,
+  ...activities.flatMap((a) => [a.card, a.backdrop, ...a.images]),
+];
+for (const image of activityImages) total += await buildActivityImage(image);
 
 const sorted = Object.fromEntries(Object.entries(manifest).sort(([a], [b]) => a.localeCompare(b)));
 await writeFile('content/image-manifest.json', JSON.stringify(sorted, null, 2) + '\n');

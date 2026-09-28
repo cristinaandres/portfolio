@@ -9,12 +9,12 @@ Before any design or content work, read [`docs/brief.md`](docs/brief.md): who Cr
 ## Stack
 
 - Next.js 16 App Router, React 19, TypeScript; `proxy.ts` (Next 16's name for middleware).
-- Tailwind CSS 4 (`@tailwindcss/postcss`), a native `<dialog>` for contact (ADR 0001), `motion` 12, GSAP 3 (page-transition curtain only, `utils/animate.ts`).
-- `three`, `@react-three/fiber`, `@react-three/drei` are installed but unused since the 3D scene was removed (Oct 2024).
-- Content: `public/json/projets.json` (order, colours, tags, image lists), `lib/site.config.ts` (site-wide SEO/GEO metadata, contact, socials), `public/llms.txt` / `llms-full.txt`.
+- Tailwind CSS 4 (`@tailwindcss/postcss`), a native `<dialog>` for contact, `motion` 12. No HeroUI, GSAP, three.js or gallery libraries ([ADR 0001](docs/adr/0001-lean-stack-for-the-redesign.md)).
+- Content: the typed module in `content/` (projects, case studies, activities, CV facts; [ADR 0002](docs/adr/0002-typed-content-module.md)), `lib/site.config.ts` (site-wide SEO/GEO metadata, contact, socials). `llms.txt`, `llms-full.txt` and the sitemap are generated from them.
+- Images: originals live outside `public/` in `assets/slides/` and `assets/activities/`; `npm run images` crops and recompresses them into `public/images/` and records their sizes.
 - Hosting: Vercel, on **Cristina's** account (`cristinadesigns.vercel.app`).
 
-Commands: `npm run dev`, `npm run build`, `npm run lint` (ESLint 9 flat config), `npm run format` (Prettier: single quotes, width 100).
+Commands: `npm run dev`, `npm run build`, `npm run lint` (ESLint 9 flat config), `npm run format` (Prettier: single quotes, width 100), `npm run images`, `npm run test:e2e` (Playwright + axe over the production build).
 
 ## Branches and releases
 
@@ -27,7 +27,7 @@ Commands: `npm run dev`, `npm run build`, `npm run lint` (ESLint 9 flat config),
 
 How a redesign (or any sizeable visual change) is done here. Each step leaves an artefact the next one builds on.
 
-1. **Analyse before designing.** Read `docs/brief.md`, the live site at 390 / 768 / 1440 px, her work in `public/images/` (look at the images, they are her own design), her CV (`public/pdf/CV.pdf`) and the attached PDFs (`public/attached/`). Facts come from her material, never from assumptions. Update the brief with anything new.
+1. **Analyse before designing.** Read `docs/brief.md`, the live site at 390 / 768 / 1440 px, her work in `assets/slides/` (look at the images, they are her own design), her CV (`public/pdf/CV.pdf`) and the attached PDFs (`public/attached/`). Facts come from her material, never from assumptions. Update the brief with anything new.
 2. **Write the directions in the brief.** Two or three, each a one-line concept plus the evidence from her work that justifies it (cite files). Directions must differ in structure and hierarchy, not only in colour.
 3. **Sketch on a Claude Design board.** Mock up each direction on one canvas: home and one case study, desktop and phone. Thomas reviews it there; iterating on the board is cheap. Link the board from the brief.
 4. **Build the variants for real on `dev`.** All variants live on the real routes, switchable with `?variant=a|b|c` and a small floating switcher that never renders in production. Same content and routes; only the rendering differs. Each variant meets the quality bar below, because Cristina judges what she sees on her own phone.
