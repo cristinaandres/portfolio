@@ -1,5 +1,5 @@
 import React from 'react';
-import projets from '@/public/json/projets.json';
+import { getProjects, figureImage, workPath, type Project } from '@/content';
 import { siteConfig, sameAs, absoluteUrl } from '@/lib/site.config';
 
 type SchemaValue = string | number | boolean | null | SchemaObject | SchemaValue[];
@@ -63,23 +63,27 @@ export function websiteSchema(): SchemaObject {
   };
 }
 
-export function projectsSchema(): SchemaObject[] {
-  return projets.map((p) => ({
+export function projectSchema(p: Project): SchemaObject {
+  return {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
-    '@id': `${siteConfig.url}/#project-${p.title.toLowerCase().replace(/\s+/g, '-')}`,
-    name: p.complete_name,
+    '@id': `${absoluteUrl(workPath(p))}#work`,
+    name: p.name,
     alternateName: p.title,
-    headline: p.complete_name,
-    description: p.description,
+    headline: p.name,
+    description: p.summary,
     creator: { '@id': `${siteConfig.url}/#person` },
     author: { '@id': `${siteConfig.url}/#person` },
-    dateCreated: p.year,
-    genre: p.label,
-    keywords: [p.label, p.title, 'design portfolio'].join(', '),
-    url: `${siteConfig.url}/?project=${encodeURIComponent(p.title.toLowerCase())}`,
-    image: absoluteUrl(`/images/${p.logo}`),
-  }));
+    dateCreated: p.year.slice(0, 4),
+    genre: p.tags.join(', '),
+    keywords: [...p.tags, p.title, 'design portfolio'].join(', '),
+    url: absoluteUrl(workPath(p)),
+    image: absoluteUrl(figureImage(p, p.cover).src),
+  };
+}
+
+export function projectsSchema(): SchemaObject[] {
+  return getProjects().map(projectSchema);
 }
 
 export function breadcrumbSchema(items: Array<{ name: string; path: string }>): SchemaObject {

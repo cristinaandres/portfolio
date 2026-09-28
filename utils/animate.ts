@@ -1,9 +1,16 @@
 import gsap from 'gsap';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export const animatePageIn = () => {
   const transitionElement = document.getElementById('transition-element');
   const path = document.querySelector('.path');
+
+  if (transitionElement && prefersReducedMotion()) {
+    gsap.set(transitionElement, { yPercent: 100 });
+    return;
+  }
 
   if (transitionElement && path) {
     const start = 'M 0 100 V 0 Q 50 0 100 0 V 100 z';
@@ -29,6 +36,11 @@ export const animatePageIn = () => {
 };
 
 export const animatePageOut = (href: string, router: AppRouterInstance) => {
+  if (prefersReducedMotion()) {
+    router.push(href);
+    return;
+  }
+
   const animationWrapper = document.getElementById('transition-element');
   const path = document.querySelector('.path');
 

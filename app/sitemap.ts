@@ -1,39 +1,22 @@
 import type { MetadataRoute } from 'next';
-import { siteConfig } from '@/lib/site.config';
+import { getProjects, workPath } from '@/content';
+import { absoluteUrl } from '@/lib/site.config';
+import { staticPages } from '@/lib/routes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-
   return [
-    {
-      url: `${siteConfig.url}/`,
+    ...staticPages.map((page) => ({
+      url: absoluteUrl(page.path),
       lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${siteConfig.url}/about`,
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+    })),
+    ...getProjects().map((p) => ({
+      url: absoluteUrl(workPath(p)),
       lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.9,
-    },
-    {
-      url: `${siteConfig.url}/activities`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${siteConfig.url}/activities/blender`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${siteConfig.url}/activities/animal-crossing`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
+      changeFrequency: 'yearly' as const,
+      priority: 0.8,
+    })),
   ];
 }

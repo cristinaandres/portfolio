@@ -4,6 +4,7 @@ import { HeroUIProvider } from '@heroui/react';
 import { MenuProvider } from '@/context/MenuContext';
 import { OverflowProvider } from '@/context/OverflowProvier';
 import { Analytics } from '@vercel/analytics/react';
+import { MotionConfig } from 'motion/react';
 import { NameColorProvider } from '@/context/NameColorContext';
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -12,7 +13,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <MenuProvider>
         <NameColorProvider>
           <OverflowProvider>
-            {children}
+            <MotionConfig reducedMotion="user">{children}</MotionConfig>
             <Analytics />
           </OverflowProvider>
         </NameColorProvider>

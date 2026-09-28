@@ -1,9 +1,8 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import HomeCarousel from '@/components/HomeCarousel';
+import ProjectIndex from '@/components/work/ProjectIndex';
 import { JsonLd, projectsSchema } from '@/components/seo/JsonLd';
+import { getProjects } from '@/content';
 import { siteConfig } from '@/lib/site.config';
-import projets from '@/public/json/projets.json';
 
 export const metadata: Metadata = {
   title: {
@@ -31,50 +30,20 @@ export default function Home() {
   return (
     <>
       <JsonLd id="ld-projects" data={projectsSchema()} />
-
-      <section className="sr-only" aria-label="Portfolio summary">
-        <h1>
-          {siteConfig.name} — {siteConfig.jobTitle}
-        </h1>
-        <p>{siteConfig.tagline}</p>
-        <p>{siteConfig.bio}</p>
-
-        <h2>Selected work</h2>
-        <ul>
-          {projets.map((project) => (
-            <li key={project.title}>
-              <article>
-                <h3>{project.complete_name}</h3>
-                <p>
-                  <strong>{project.label}</strong> · {project.year}
-                </p>
-                <p>{project.description}</p>
-              </article>
-            </li>
-          ))}
-        </ul>
-
-        <h2>Skills and expertise</h2>
-        <ul>
-          {siteConfig.knowsAbout.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
-
-        <h2>Contact</h2>
-        <p>
-          Reach out by email at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> or
-          book a call via{' '}
-          <a href={siteConfig.calendly} rel="noopener noreferrer">
-            Calendly
-          </a>
-          .
-        </p>
-      </section>
-
-      <Suspense fallback={<div className="h-dvh" aria-hidden="true" />}>
-        <HomeCarousel />
-      </Suspense>
+      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-24 pt-32">
+        <header className="flex max-w-3xl flex-col gap-4">
+          <h1 className="text-4xl font-bold">
+            {siteConfig.name} — {siteConfig.jobTitle}
+          </h1>
+          <p className="text-lg">{siteConfig.bio}</p>
+        </header>
+        <section aria-labelledby="work-heading" className="flex flex-col gap-6">
+          <h2 id="work-heading" className="text-2xl font-bold">
+            Selected work
+          </h2>
+          <ProjectIndex projects={getProjects()} />
+        </section>
+      </div>
     </>
   );
 }

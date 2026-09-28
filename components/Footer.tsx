@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       {pathname !== '/' && (
-        <div className="fixed bottom-0 left-0 z-20 font-inter flex flex-col w-full bg-transparent p-4 md:p-12 xl:px-16 xl:py-6 pb-[max(env(safe-area-inset-bottom),1rem)] gap-4">
+        <div className="relative font-inter flex flex-col w-full bg-transparent p-4 md:p-12 xl:px-16 xl:py-6 pb-[max(env(safe-area-inset-bottom),1rem)] gap-4">
           <div className="w-full flex justify-between items-end">
             <div className="flex gap-8 h-full justify-end items-center w-full">
               <Link
@@ -75,7 +75,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="w-full flex justify-center text-[8px] md:text-xs xl:text-sm items-center text-[#9F9F9F] border-t-[0.5px] border-black/50 py-4">
+          <div className="w-full flex justify-center text-xs xl:text-sm items-center text-neutral-700 flex-wrap text-center border-t-[0.5px] border-black/50 py-4">
             Designed by Cristina Andrés & Developed by&nbsp;
             <Link
               href={'https://www.thomasmoserdev.com/'}
