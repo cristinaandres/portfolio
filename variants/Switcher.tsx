@@ -22,6 +22,7 @@ export default function VariantSwitcher({ current }: { current: VariantId }) {
     url.searchParams.set(VARIANT_PARAM, id);
     startTransition(() => {
       router.replace(url.pathname + url.search + url.hash, { scroll: false });
+      // A soft navigation keeps the root layout (Shell, data-variant); refresh re-renders it.
       router.refresh();
     });
   }
@@ -42,12 +43,13 @@ export default function VariantSwitcher({ current }: { current: VariantId }) {
         {current.toUpperCase()}
         <span className="sr-only">, {open ? 'hide' : 'show'} options</span>
       </button>
-      {open && (
+      {
         <div
+          hidden={!open}
           id="variant-switcher-options"
           role="group"
           aria-label="Choose a design variant"
-          className="flex gap-1"
+          className="flex gap-1 [&[hidden]]:hidden"
           aria-busy={pending}
         >
           {ids.map((id) => (
@@ -69,7 +71,7 @@ export default function VariantSwitcher({ current }: { current: VariantId }) {
             </button>
           ))}
         </div>
-      )}
+      }
     </div>
   );
 }

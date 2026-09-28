@@ -4,14 +4,13 @@ import { defineConfig, devices } from '@playwright/test';
 const PORT = Number(process.env.PORT ?? 3100);
 
 // Drives the production build (`npm run test:e2e` builds first) like a visitor would.
-// A production build (VERCEL_ENV=production) runs only the @production checks; any other build
-// runs everything else.
+// A production build (VERCEL_ENV=production) runs everything except variant switching (@variants),
+// with the default variant only; any other build runs everything except the @production checks.
 const production = process.env.VERCEL_ENV === 'production';
 
 export default defineConfig({
   testDir: 'tests/e2e',
-  grep: production ? /@production/ : undefined,
-  grepInvert: production ? undefined : /@production/,
+  grepInvert: production ? /@variants/ : /@production/,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
@@ -26,7 +25,8 @@ export default defineConfig({
     : {
         command: `npx next start -p ${PORT}`,
         port: PORT,
-        reuseExistingServer: !process.env.CI,
+        // Never test a leftover server: always the build this run just made.
+        reuseExistingServer: false,
         timeout: 60_000,
       },
 });
