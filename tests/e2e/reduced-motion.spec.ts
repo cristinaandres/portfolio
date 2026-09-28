@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { routes, useVariant, variantIds } from './matrix';
+import { routes, useVariant, variantIds, settle } from './matrix';
 
 // With reduced motion requested, nothing should animate once the page has settled.
 test.use({ colorScheme: 'light' });
@@ -14,7 +14,7 @@ for (const variant of variantIds) {
       await useVariant(context, variant, baseURL!);
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await page.goto(route);
-      await page.waitForLoadState('networkidle');
+      await settle(page);
       const running = await page.evaluate(() =>
         document
           .getAnimations()
