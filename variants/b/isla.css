@@ -1,0 +1,61 @@
+/* Variant B, Isla. Everything is scoped to body[data-variant='b'] because every variant's CSS
+   ships on every page while the variants coexist. */
+
+body[data-variant='b'] {
+  background: #f6e3e5;
+  color: #3a2a33;
+}
+
+body[data-variant='b'] .isla-display {
+  font-family: var(--font-fredoka), var(--font-poppins), system-ui, sans-serif;
+}
+
+body[data-variant='b'] :focus-visible {
+  outline: 3px solid #8c4a62;
+  outline-offset: 3px;
+}
+
+/* The shared contact dialog, dressed as a cream card. */
+body[data-variant='b'] dialog[aria-labelledby='contact-title'] {
+  background: #fbf3ea;
+  color: #3a2a33;
+  border-radius: 28px;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+body[data-variant='b'] dialog[aria-labelledby='contact-title']::backdrop {
+  background: rgb(58 42 51 / 0.55);
+}
+
+body[data-variant='b'] #contact-title {
+  font-family: var(--font-fredoka), var(--font-poppins), system-ui, sans-serif;
+  font-weight: 600;
+}
+
+body[data-variant='b'] dialog[aria-labelledby='contact-title'] a:hover {
+  background: rgb(217 171 186 / 0.35);
+}
+
+body[data-variant='b'] dialog[aria-labelledby='contact-title'] .text-neutral-700 {
+  color: #6b4f5b;
+}
+
+/* A gentle lift on cards; none when reduced motion is requested. */
+body[data-variant='b'] .isla-lift {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+body[data-variant='b'] .isla-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgb(58 42 51 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-variant='b'] .isla-lift,
+  body[data-variant='b'] .isla-lift:hover {
+    transition: none;
+    transform: none;
+  }
+}
