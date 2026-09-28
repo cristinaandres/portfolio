@@ -1,6 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const PORT = 3100;
+// Parallel worktrees each pick their own PORT so they never test another build.
+const PORT = Number(process.env.PORT ?? 3100);
 
 // Drives the production build (`npm run test:e2e` builds first) like a visitor would.
 export default defineConfig({
