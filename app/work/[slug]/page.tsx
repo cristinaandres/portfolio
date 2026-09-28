@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CaseStudy from '@/components/work/CaseStudy';
 import { JsonLd, breadcrumbSchema, projectSchema } from '@/components/seo/JsonLd';
-import { figureImage, getAdjacent, getProject, getProjects } from '@/content';
+import { figureImage, getAdjacent, getProject, getProjects, workPath } from '@/content';
 
 export const dynamicParams = false;
 
@@ -15,14 +15,14 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
   if (!project) return {};
-  const image = figureImage(project, project.thumbnail);
+  const image = figureImage(project, project.cover);
   return {
     title: project.name,
     description: project.summary,
-    alternates: { canonical: `/work/${project.slug}` },
+    alternates: { canonical: workPath(project) },
     openGraph: {
       type: 'article',
-      url: `/work/${project.slug}`,
+      url: workPath(project),
       title: project.name,
       description: project.summary,
       images: [{ url: image.src, width: image.width, height: image.height, alt: image.alt }],
@@ -42,7 +42,7 @@ export default async function WorkPage({ params }: Props) {
         id="ld-breadcrumb"
         data={breadcrumbSchema([
           { name: 'Work', path: '/' },
-          { name: project.title, path: `/work/${project.slug}` },
+          { name: project.title, path: workPath(project) },
         ])}
       />
       <CaseStudy project={project} previous={previous} next={next} />

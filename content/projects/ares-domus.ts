@@ -13,8 +13,8 @@ export const aresDomus: Project = {
   ink: '#F3E9C6',
   summary:
     'A new brand for a luxury resort concept, from a brand study and a new logo to a brand book.',
-  thumbnail: {
-    id: 'thumbnail',
+  cover: {
+    id: 'cover',
     slide: 'Portfolio_cristina_page-0004.jpg',
     crop: [0.6, 0.3, 0.32, 0.4],
     alt: 'Ares Domus business card with the gold vertical-bar logo on charcoal',

@@ -1,4 +1,4 @@
-// Crops every figure and thumbnail declared in the content module out of her slides,
+// Crops every figure and cover declared in the content module out of her slides,
 // recompresses it to WebP under public/images/work/<slug>/, and records its size in
 // content/image-manifest.json so pages can give next/image real dimensions.
 // Deterministic: same slides and crops in, same files out. Run with `npm run images`.
@@ -9,8 +9,8 @@ import type { Figure } from '../../content/types.ts';
 
 const SLIDES_DIR = 'public/images/projets';
 const OUT_DIR = 'public/images/work';
-const MAX_WIDTH = 1800;
-const QUALITY = 72;
+const MAX_WIDTH = 1600;
+const QUALITY = 66;
 
 const manifest: Record<string, { width: number; height: number }> = {};
 
@@ -41,7 +41,7 @@ async function build(slug: string, figure: Figure) {
 let total = 0;
 for (const project of projects) {
   await mkdir(`${OUT_DIR}/${project.slug}`, { recursive: true });
-  const figures = [project.thumbnail, ...project.sections.flatMap((s) => s.figures)];
+  const figures = [project.cover, ...project.sections.flatMap((s) => s.figures)];
   const ids = new Set<string>();
   for (const figure of figures) {
     if (ids.has(figure.id)) throw new Error(`${project.slug}: duplicate figure id "${figure.id}"`);

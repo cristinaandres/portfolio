@@ -44,7 +44,7 @@ Projects in `public/json/projets.json`, in the site's order:
 |---|---|---|---|---|---|
 | 1 | Aqualung Group (Aquasense app, dive computer UI, two web pages) | diving gear; product awarded at CES 2025 | 2025 | sole UI designer, internship | `aqualung1-3.png`, `aqualung.pdf` |
 | 2 | Curefab Technologies GmbH | German medtech | 2023–2024 | website redesign, UX/UI (built by Thomas) | `curefab_1-3.png` |
-| 3 | Punt, "Yokohama" sideboard | furniture | 2023 | product design, prototyping, self-set brief | `Yokohama1-5.jpg`, `punt_bg.jpeg` |
+| 3 | Punt, "Yokohama" sideboard | furniture | 2022–2023 (slide; `projets.json` said 2023) | product design, prototyping, self-set brief | `Yokohama1-5.jpg`, `punt_bg.jpeg` |
 | 4 | Montezuma (Dreamland) | clothing start-up, class competition | 2022 | marketing, packaging, web survey, campaign | `page-0009` to `page-0013` |
 | 5 | Smurfit Kappa, "Pipas" bulk dispenser | packaging | 2022 | packaging and graphic design, competition | `page-0014` to `page-0017` |
 | 6 | Ares Domus | invented luxury resort on Mars | 2022 | logo, branding, merchandise | `page-0004` to `page-0006` |
@@ -75,6 +75,15 @@ Three directions with different structures, each grounded in her work. All three
 - **C. "Muestrario", a colour-swatch index with an editorial serif.** Her habit of giving each project its own muted palette becomes the navigation: the home page is a grid of swatch tiles (sage, teal-slate, charcoal and brass, rose, apricot) under her logo; each opens a long-scroll case study with one palette strip, like her Curefab palette slide. Libre Bodoni display with Poppins. _Evidence:_ the per-project colours in `projets.json`, the Curefab palette slide, her patterns as tile textures. _Keeps:_ the current site's best idea (per-project colour cards and Bodoni titles) and makes it a visible grid.
 
 Claude Design board (private to Thomas; share it from its Share menu): https://claude.ai/artifact/LJH7JdQYud8MbWBd1ZbvRr. One row per direction: desktop home and a phone case study (A: Punt, B: Blossom, C: Curefab), built from her own slides and words. In C, the chip colours for Punt (`#B89B7A`), Smurfit Kappa (`#E8DCC4`) and Ciclogreen (`#3F5A3A`) were picked from their images; the others come from `projets.json` or the client brand.
+
+## Copy she didn't write
+
+Text on the site that is ours, not hers, to list in the message to Cristina. Case-study body text is always her own words from the slides.
+
+- Project names used as case-study titles where her slide has none: "Yokohama sideboard for Punt", "Curefab Technologies website", "Sakana, a Swiss watch".
+- The one-line summary of each project (lists, metadata, `llms.txt`), condensed from her slide intros.
+- Section headings where her slide has none (Punt: "The brief").
+- Figure captions (Punt: "Concept sketches around the selected design."; "Aparador Punt 1: 190 × 76.5 cm, scale 1:10.", read off her drawing).
 
 ## Open questions
 

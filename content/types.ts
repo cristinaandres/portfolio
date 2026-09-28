@@ -63,7 +63,8 @@ export interface Project {
   ink: string;
   /** One sentence for lists, metadata and llms.txt. */
   summary: string;
-  thumbnail: Figure;
+  /** The lead image: the project's picture in lists and at the top of its case study. */
+  cover: Figure;
   sections: readonly Section[];
   downloads?: readonly Download[];
 }

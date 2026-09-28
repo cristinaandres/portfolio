@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProjects, figureImage, type Project } from '@/content';
+import { getProjects, figureImage, workPath, type Project } from '@/content';
 import { siteConfig, sameAs, absoluteUrl } from '@/lib/site.config';
 
 type SchemaValue = string | number | boolean | null | SchemaObject | SchemaValue[];
@@ -67,18 +67,18 @@ export function projectSchema(p: Project): SchemaObject {
   return {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
-    '@id': `${siteConfig.url}/work/${p.slug}#work`,
+    '@id': `${absoluteUrl(workPath(p))}#work`,
     name: p.name,
     alternateName: p.title,
     headline: p.name,
     description: p.summary,
     creator: { '@id': `${siteConfig.url}/#person` },
     author: { '@id': `${siteConfig.url}/#person` },
-    dateCreated: p.year,
+    dateCreated: p.year.slice(0, 4),
     genre: p.tags.join(', '),
     keywords: [...p.tags, p.title, 'design portfolio'].join(', '),
-    url: absoluteUrl(`/work/${p.slug}`),
-    image: absoluteUrl(figureImage(p, p.thumbnail).src),
+    url: absoluteUrl(workPath(p)),
+    image: absoluteUrl(figureImage(p, p.cover).src),
   };
 }
 

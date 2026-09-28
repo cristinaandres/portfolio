@@ -1,9 +1,9 @@
 // The routes and widths every quality check runs over. Tickets add their routes here.
-import { getProjects } from '../../content/index.ts';
+import { getProjects, workPath } from '../../content/index.ts';
 
 export const widths = [390, 768, 1440] as const;
 
-export const workRoutes = getProjects().map((p) => `/work/${p.slug}`);
+export const workRoutes = getProjects().map((p) => workPath(p));
 
 export const routes = ['/', ...workRoutes];
 

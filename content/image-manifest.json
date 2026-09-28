@@ -1,43 +1,43 @@
 {
-  "/images/work/aqualung/thumbnail.webp": {
+  "/images/work/aqualung/cover.webp": {
     "width": 720,
     "height": 547
   },
-  "/images/work/ares-domus/thumbnail.webp": {
+  "/images/work/ares-domus/cover.webp": {
     "width": 1134,
     "height": 709
   },
-  "/images/work/blossom/thumbnail.webp": {
-    "width": 1800,
-    "height": 1720
+  "/images/work/blossom/cover.webp": {
+    "width": 1600,
+    "height": 1529
   },
-  "/images/work/ciclogreen/thumbnail.webp": {
-    "width": 1800,
-    "height": 2030
+  "/images/work/ciclogreen/cover.webp": {
+    "width": 1600,
+    "height": 1805
   },
-  "/images/work/curefab/thumbnail.webp": {
+  "/images/work/curefab/cover.webp": {
     "width": 763,
     "height": 684
   },
-  "/images/work/montezuma/thumbnail.webp": {
+  "/images/work/montezuma/cover.webp": {
     "width": 1453,
     "height": 1542
   },
-  "/images/work/punt/hero.webp": {
-    "width": 1800,
-    "height": 1818
+  "/images/work/punt/cover.webp": {
+    "width": 1600,
+    "height": 1616
   },
   "/images/work/punt/parts-1.webp": {
-    "width": 1800,
-    "height": 1249
+    "width": 1600,
+    "height": 1110
   },
   "/images/work/punt/parts-2.webp": {
-    "width": 1800,
-    "height": 1268
+    "width": 1600,
+    "height": 1127
   },
   "/images/work/punt/planimetry.webp": {
-    "width": 1800,
-    "height": 1279
+    "width": 1600,
+    "height": 1137
   },
   "/images/work/punt/render-front.webp": {
     "width": 1526,
@@ -52,26 +52,22 @@
     "height": 1901
   },
   "/images/work/punt/scale-model.webp": {
-    "width": 1797,
-    "height": 1259
+    "width": 1600,
+    "height": 1121
   },
   "/images/work/punt/sketches.webp": {
-    "width": 1800,
-    "height": 549
-  },
-  "/images/work/punt/thumbnail.webp": {
-    "width": 1800,
-    "height": 1818
+    "width": 1600,
+    "height": 488
   },
   "/images/work/punt/white-prototype.webp": {
-    "width": 1757,
-    "height": 1204
+    "width": 1600,
+    "height": 1096
   },
-  "/images/work/sakana/thumbnail.webp": {
+  "/images/work/sakana/cover.webp": {
     "width": 1418,
     "height": 1418
   },
-  "/images/work/smurfit-kappa/thumbnail.webp": {
+  "/images/work/smurfit-kappa/cover.webp": {
     "width": 1063,
     "height": 1488
   }

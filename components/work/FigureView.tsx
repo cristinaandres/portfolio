@@ -5,7 +5,7 @@ interface FigureViewProps {
   project: Project;
   figure: Figure;
   sizes?: string;
-  priority?: boolean;
+  preload?: boolean;
   className?: string;
 }
 
@@ -13,7 +13,7 @@ export default function FigureView({
   project,
   figure,
   sizes = '(min-width: 1024px) 960px, 100vw',
-  priority,
+  preload,
   className,
 }: FigureViewProps) {
   const image = figureImage(project, figure);
@@ -25,7 +25,7 @@ export default function FigureView({
         height={image.height}
         alt={image.alt}
         sizes={sizes}
-        priority={priority}
+        preload={preload}
         className="h-auto w-full"
       />
       {figure.caption && <figcaption className="mt-2 text-sm">{figure.caption}</figcaption>}

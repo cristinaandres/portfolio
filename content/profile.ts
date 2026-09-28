@@ -50,7 +50,7 @@ export const profile = {
     },
     {
       title: 'Industrial Design Engineering and Product Development',
-      school: 'Universitat Politècnica de València (UPV)',
+      school: 'Universidad Politécnica de Valencia (UPV)',
       place: 'Valencia, Spain',
       period: 'Sep 2019 – Sep 2023',
       note: 'Erasmus 2021: Industrial Design Engineering, HE-Arc (HES-SO), Neuchâtel. Erasmus 2023: UX/UI Design, Hochschule Augsburg.',

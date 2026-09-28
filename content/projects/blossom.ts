@@ -13,8 +13,8 @@ export const blossom: Project = {
   ink: '#3A2A33',
   summary:
     'A flower-shaped lamp with articulated petals that graduate the light, designed for laser cutting by a group of five.',
-  thumbnail: {
-    id: 'thumbnail',
+  cover: {
+    id: 'cover',
     slide: 'Portfolio_Page_Blossom1.jpg',
     crop: [0.5, 0.08, 0.45, 0.86],
     alt: 'Line drawing of the Blossom lamp with its petals open',

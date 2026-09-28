@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { getProjects } from '../../content/index.ts';
+import { getProjects, workPath } from '../../content/index.ts';
 import { scrollThrough } from './matrix';
 
 const projects = getProjects();
@@ -11,7 +11,7 @@ for (const project of projects) {
       if (r.request().resourceType() === 'image' && r.status() >= 400) failed.push(r.url());
     });
 
-    const response = await page.goto(`/work/${project.slug}`);
+    const response = await page.goto(workPath(project));
     expect(response?.status()).toBe(200);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(project.name);
     for (const section of project.sections) {
@@ -39,14 +39,14 @@ test('an unknown project is a 404', async ({ page }) => {
 test('the home page links to every case study', async ({ page }) => {
   await page.goto('/');
   for (const project of projects) {
-    await expect(page.locator(`main a[href="/work/${project.slug}"]`).first()).toBeVisible();
+    await expect(page.locator(`main a[href="${workPath(project)}"]`).first()).toBeVisible();
   }
 });
 
 test('the sitemap lists every case study and nothing that 404s', async ({ page, request }) => {
   const xml = await (await request.get('/sitemap.xml')).text();
   const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
-  for (const project of projects) expect(urls).toContain(`/work/${project.slug}`);
+  for (const project of projects) expect(urls).toContain(workPath(project));
   for (const path of urls) {
     const r = await page.goto(path);
     expect(r?.status(), path).toBe(200);
@@ -56,7 +56,7 @@ test('the sitemap lists every case study and nothing that 404s', async ({ page, 
 test('llms.txt and llms-full.txt mention every project', async ({ request }) => {
   for (const file of ['/llms.txt', '/llms-full.txt']) {
     const text = await (await request.get(file)).text();
-    for (const project of projects) expect(text, file).toContain(`/work/${project.slug}`);
+    for (const project of projects) expect(text, file).toContain(workPath(project));
     expect(text).not.toMatch(/\+34|678\s?804/);
   }
 });

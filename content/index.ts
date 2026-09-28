@@ -6,6 +6,11 @@ import type { Figure, Project } from './types.ts';
 
 export type { Block, Figure, Project, Section, SectionKind } from './types.ts';
 
+/** The one place that knows where a case study lives. */
+export function workPath(project: Pick<Project, 'slug'>): string {
+  return `/work/${project.slug}`;
+}
+
 export function getProjects(): readonly Project[] {
   return projects;
 }

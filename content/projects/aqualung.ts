@@ -13,8 +13,8 @@ export const aqualung: Project = {
   ink: '#FFFFFF',
   summary:
     'Sole UI designer for Aquasense, a CES 2025 Best of Innovation project: the full interface of its mobile app and dive computer.',
-  thumbnail: {
-    id: 'thumbnail',
+  cover: {
+    id: 'cover',
     slide: 'aqualung1.png',
     crop: [0.5, 0.18, 0.5, 0.72],
     alt: 'A dive computer, a wrist unit and a phone showing the Aquasense app',

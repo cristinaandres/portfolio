@@ -1,26 +1,19 @@
 import type { MetadataRoute } from 'next';
-import { getProjects } from '@/content';
-import { siteConfig } from '@/lib/site.config';
-
-/** Static routes that exist today; /about joins once it is rebuilt. */
-const staticRoutes = [
-  { path: '/', priority: 1, changeFrequency: 'monthly' },
-  { path: '/activities', priority: 0.7, changeFrequency: 'monthly' },
-  { path: '/activities/blender', priority: 0.6, changeFrequency: 'monthly' },
-  { path: '/activities/animal-crossing', priority: 0.6, changeFrequency: 'monthly' },
-] as const;
+import { getProjects, workPath } from '@/content';
+import { absoluteUrl } from '@/lib/site.config';
+import { staticPages } from '@/lib/routes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
-    ...staticRoutes.map((r) => ({
-      url: `${siteConfig.url}${r.path}`,
+    ...staticPages.map((page) => ({
+      url: absoluteUrl(page.path),
       lastModified: now,
-      changeFrequency: r.changeFrequency,
-      priority: r.priority,
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
     })),
     ...getProjects().map((p) => ({
-      url: `${siteConfig.url}/work/${p.slug}`,
+      url: absoluteUrl(workPath(p)),
       lastModified: now,
       changeFrequency: 'yearly' as const,
       priority: 0.8,

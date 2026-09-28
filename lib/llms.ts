@@ -1,13 +1,8 @@
 // Builds llms.txt and llms-full.txt from the content module, so they can't drift from the pages.
-import { getProjects, type Block } from '@/content';
+import { getProjects, workPath, type Block } from '@/content';
 import { profile } from '@/content/profile';
+import { staticPages } from '@/lib/routes';
 import { absoluteUrl, siteConfig } from '@/lib/site.config';
-
-const pages = [
-  ['Home / Selected work', '/', 'All projects with thumbnails.'],
-  ['3D Modeling in Blender', '/activities/blender', 'Personal 3D experiments.'],
-  ['Animal Crossing', '/activities/animal-crossing', 'Animal Crossing island design showcase.'],
-] as const;
 
 const contact = [
   `- Email: ${siteConfig.email}`,
@@ -47,12 +42,14 @@ export function llmsTxt(): string {
     '## Selected work',
     '',
     ...getProjects().map(
-      (p) => `- [${p.name}](${absoluteUrl(`/work/${p.slug}`)}): ${p.summary} (${p.year})`
+      (p) => `- [${p.name}](${absoluteUrl(workPath(p))}): ${p.summary} (${p.year})`
     ),
     '',
     '## Pages',
     '',
-    ...pages.map(([name, path, text]) => `- [${name}](${absoluteUrl(path)}): ${text}`),
+    ...staticPages.map(
+      (page) => `- [${page.name}](${absoluteUrl(page.path)}): ${page.description}`
+    ),
     '',
     '## Contact',
     '',
@@ -71,7 +68,7 @@ export function llmsFullTxt(): string {
     `### ${p.name} (${p.year})`,
     '',
     `${p.sector}. ${p.role}. ${p.tags.join(', ')}.`,
-    `Case study: ${absoluteUrl(`/work/${p.slug}`)}`,
+    `Case study: ${absoluteUrl(workPath(p))}`,
     '',
     p.summary,
     '',
@@ -97,7 +94,9 @@ export function llmsFullTxt(): string {
     ...projects,
     '## Personal activities',
     '',
-    ...pages.slice(1).map(([name, path, text]) => `- ${name}: ${text} ${absoluteUrl(path)}`),
+    ...staticPages
+      .filter((page) => page.activity)
+      .map((page) => `- ${page.name}: ${page.description} ${absoluteUrl(page.path)}`),
     '',
     '## Contact',
     '',

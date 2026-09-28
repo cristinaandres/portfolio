@@ -13,8 +13,8 @@ export const sakana: Project = {
   ink: '#FFFFFF',
   summary:
     'A wristwatch designed following the process of a Swiss watch designer, during her Erasmus at HE-Arc in Switzerland.',
-  thumbnail: {
-    id: 'thumbnail',
+  cover: {
+    id: 'cover',
     slide: 'Portfolio_cristina_page-0018.jpg',
     crop: [0.58, 0.12, 0.4, 0.8],
     alt: 'Line drawing of two koi fish above the word Sakana',

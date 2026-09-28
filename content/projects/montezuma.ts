@@ -12,9 +12,9 @@ export const montezuma: Project = {
   color: '#91A399',
   ink: '#1F1B1A',
   summary:
-    'Marketing strategy and packaging for Montezuma, the future clothing brand of Dreamland, presented to her marketing class.',
-  thumbnail: {
-    id: 'thumbnail',
+    'Marketing strategy and packaging for Montezuma, the future clothing brand that Dreamland presented to her marketing class.',
+  cover: {
+    id: 'cover',
     slide: 'Portfolio_cristina_page-0009.jpg',
     crop: [0.57, 0.08, 0.41, 0.87],
     alt: 'Two kraft shipping boxes printed with the Montezuma mask mascot',

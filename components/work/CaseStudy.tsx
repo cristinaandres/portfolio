@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Project } from '@/content';
+import { workPath, type Project } from '@/content';
 import Blocks from './Blocks';
 import FigureView from './FigureView';
 
@@ -37,16 +37,14 @@ export default function CaseStudy({ project, previous, next }: CaseStudyProps) {
         </dl>
       </header>
 
-      {project.sections.length === 0 && (
-        <FigureView project={project} figure={project.thumbnail} priority />
-      )}
+      <FigureView project={project} figure={project.cover} preload />
 
       {project.sections.map((section, i) => (
         <section key={section.kind + i} className="flex flex-col gap-4">
           <h2 className="text-2xl font-bold">{section.heading}</h2>
           <Blocks blocks={section.body} />
           {section.figures.map((figure) => (
-            <FigureView key={figure.id} project={project} figure={figure} priority={i === 0} />
+            <FigureView key={figure.id} project={project} figure={figure} />
           ))}
         </section>
       ))}
@@ -64,10 +62,10 @@ export default function CaseStudy({ project, previous, next }: CaseStudyProps) {
       )}
 
       <nav aria-label="More projects" className="flex justify-between gap-4 border-t pt-6">
-        <Link href={`/work/${previous.slug}`} className="underline">
+        <Link href={workPath(previous)} className="underline">
           ← {previous.title}
         </Link>
-        <Link href={`/work/${next.slug}`} className="underline">
+        <Link href={workPath(next)} className="underline">
           {next.title} →
         </Link>
       </nav>

@@ -14,11 +14,11 @@ export const punt: Project = {
   ink: '#1F1B1A',
   summary:
     'A self-briefed sideboard proposal for the furniture company Punt, from forty sketches to planimetry, prototypes and renders.',
-  thumbnail: {
-    id: 'thumbnail',
+  cover: {
+    id: 'cover',
     slide: 'Portfolio_Page_Yokohama1.jpg',
     crop: [0.505, 0, 0.495, 1],
-    alt: 'Render of the Yokohama sideboard, a dark wooden cabinet with vertical slats, a lamp and dried grasses',
+    alt: 'Render of the Yokohama sideboard in a room: dark wood with vertical slats, a white top, a mushroom lamp and dried grasses in a woven vase',
   },
   sections: [
     {
@@ -28,14 +28,7 @@ export const punt: Project = {
         'The aim of this project was to develop a proposal in the field of Contract and Home Furnishings. The project was conceived as a self-commissioning within a promotional strategy (self-imposed briefing).',
         'We had to design and professionally present a viable concept that could be presented to a real and specific company (chosen by the group) with the intention of getting the design produced by the company.',
       ],
-      figures: [
-        {
-          id: 'hero',
-          slide: 'Portfolio_Page_Yokohama1.jpg',
-          crop: [0.505, 0, 0.495, 1],
-          alt: 'Render of the Yokohama sideboard in a room: dark wood with vertical slats, a white top, a mushroom lamp and dried grasses in a woven vase',
-        },
-      ],
+      figures: [],
       sources: ['Portfolio_Page_Yokohama1.jpg'],
     },
     {

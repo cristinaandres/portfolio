@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { findByLegacyTitle } from '@/content';
+import { findByLegacyTitle, workPath } from '@/content';
 
 export function proxy(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
@@ -9,7 +9,7 @@ export function proxy(request: NextRequest) {
   const legacy = pathname === '/' ? searchParams.get('project') : null;
   if (legacy) {
     const project = findByLegacyTitle(legacy);
-    if (project) return NextResponse.redirect(new URL(`/work/${project.slug}`, request.url), 308);
+    if (project) return NextResponse.redirect(new URL(workPath(project), request.url), 308);
   }
 
   if (pathname === '/about') {

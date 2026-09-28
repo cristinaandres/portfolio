@@ -13,8 +13,8 @@ export const ciclogreen: Project = {
   ink: '#FFFFFF',
   summary:
     'An indoor growing system reminiscent of a tree, designed by five designers following a design methodology within 60 days.',
-  thumbnail: {
-    id: 'thumbnail',
+  cover: {
+    id: 'cover',
     slide: 'Portfolio_Page_Ciclogreen1.jpg',
     crop: [0.55, 0.03, 0.43, 0.97],
     alt: 'Render of Ciclogreen, a white tree-like column with planter trays on a wooden base',

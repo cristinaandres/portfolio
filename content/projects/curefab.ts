@@ -13,8 +13,8 @@ export const curefab: Project = {
   ink: '#0F2E25',
   summary:
     'Website redesign for Curefab Technologies, a German medtech company, keeping its brand identity present.',
-  thumbnail: {
-    id: 'thumbnail',
+  cover: {
+    id: 'cover',
     slide: 'curefab_1.png',
     crop: [0.47, 0.08, 0.53, 0.9],
     alt: 'The redesigned Curefab Technologies website, Solutions page',
