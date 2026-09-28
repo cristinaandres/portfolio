@@ -18,7 +18,15 @@ const patched = next.map((cfg) =>
 
 const config = [
   {
-    ignores: ['.next/**', 'node_modules/**', 'public/**', 'out/**'],
+    ignores: [
+      '.next/**',
+      'node_modules/**',
+      'public/**',
+      'out/**',
+      '.claude/**',
+      'test-results/**',
+      'playwright-report/**',
+    ],
   },
   ...patched,
   prettierConfig,
