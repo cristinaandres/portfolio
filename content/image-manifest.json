@@ -71,17 +71,65 @@
     "width": 346,
     "height": 509
   },
+  "/images/work/ares-domus/amenities.webp": {
+    "width": 1600,
+    "height": 315
+  },
+  "/images/work/ares-domus/brand-book.webp": {
+    "width": 1028,
+    "height": 1435
+  },
   "/images/work/ares-domus/cover.webp": {
     "width": 1134,
     "height": 709
+  },
+  "/images/work/ares-domus/moodboard.webp": {
+    "width": 1457,
+    "height": 819
+  },
+  "/images/work/ares-domus/mugs.webp": {
+    "width": 1600,
+    "height": 407
+  },
+  "/images/work/ares-domus/stationery.webp": {
+    "width": 1600,
+    "height": 404
   },
   "/images/work/blossom/cover.webp": {
     "width": 1600,
     "height": 1529
   },
+  "/images/work/blossom/manual.webp": {
+    "width": 1600,
+    "height": 399
+  },
+  "/images/work/blossom/prototype.webp": {
+    "width": 1600,
+    "height": 1600
+  },
+  "/images/work/blossom/render.webp": {
+    "width": 1210,
+    "height": 848
+  },
+  "/images/work/blossom/sketches.webp": {
+    "width": 1094,
+    "height": 848
+  },
   "/images/work/ciclogreen/cover.webp": {
     "width": 1600,
     "height": 1805
+  },
+  "/images/work/ciclogreen/line-drawing.webp": {
+    "width": 1600,
+    "height": 1887
+  },
+  "/images/work/ciclogreen/render.webp": {
+    "width": 1600,
+    "height": 2213
+  },
+  "/images/work/ciclogreen/sketches.webp": {
+    "width": 1600,
+    "height": 1130
   },
   "/images/work/curefab/cover.webp": {
     "width": 763,
@@ -179,9 +227,17 @@
     "width": 1600,
     "height": 1096
   },
+  "/images/work/sakana/affiche.webp": {
+    "width": 1600,
+    "height": 871
+  },
   "/images/work/sakana/cover.webp": {
     "width": 1418,
     "height": 1418
+  },
+  "/images/work/sakana/technical-sheet.webp": {
+    "width": 1600,
+    "height": 1140
   },
   "/images/work/smurfit-kappa/cover.webp": {
     "width": 1063,
