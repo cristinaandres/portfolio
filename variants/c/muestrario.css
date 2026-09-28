@@ -1,0 +1,109 @@
+/* Variant C, Muestrario: a colour-swatch index with an editorial serif.
+   Everything is scoped to body[data-variant='c'] so the other variants are untouched. */
+
+body[data-variant='c'] {
+  --c-ground: #f5f2ec;
+  --c-ink: #1f1b1a;
+  --c-muted: #5c5550;
+  --c-rule: #ddd6cb;
+  --c-accent: #7a5a2e;
+  background: var(--c-ground);
+  color: var(--c-ink);
+  font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+body[data-variant='c'] .c-display {
+  font-family: var(--c-display), Georgia, serif;
+}
+
+body[data-variant='c'] .c-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+body[data-variant='c'] :focus-visible {
+  outline: 2px solid var(--c-ink);
+  outline-offset: 3px;
+}
+
+/* On a project colour, the focus ring takes the project's ink. */
+body[data-variant='c'] .c-on-colour :focus-visible {
+  outline-color: currentColor;
+}
+
+body[data-variant='c'] .c-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+body[data-variant='c'] .c-link:hover {
+  color: var(--c-accent);
+}
+
+/* Her case-study text: lists and her quoted words. */
+body[data-variant='c'] .c-prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+body[data-variant='c'] .c-prose blockquote {
+  font-family: var(--c-display), Georgia, serif;
+  font-style: italic;
+  font-size: 1.2em;
+  border-left: 2px solid var(--c-ink);
+  padding-left: 1rem;
+}
+
+/* Swatch tiles lift a little on hover; not under reduced motion. */
+body[data-variant='c'] .c-swatch {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+body[data-variant='c'] .c-swatch:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgb(31 27 26 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-variant='c'] .c-swatch {
+    transition: none;
+  }
+  body[data-variant='c'] .c-swatch:hover {
+    transform: none;
+  }
+}
+
+/* The shared contact dialog, dressed as a swatch card. */
+body[data-variant='c'] dialog[aria-labelledby='contact-title'] {
+  border-radius: 0;
+  background: #fff;
+  color: var(--c-ink);
+  box-shadow: 0 20px 48px rgb(31 27 26 / 0.25);
+  border-top: 10px solid var(--c-ink);
+}
+
+body[data-variant='c'] dialog[aria-labelledby='contact-title']::backdrop {
+  background: rgb(31 27 26 / 0.55);
+}
+
+body[data-variant='c'] #contact-title {
+  font-family: var(--c-display), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+body[data-variant='c'] dialog[aria-labelledby='contact-title'] a,
+body[data-variant='c'] dialog[aria-labelledby='contact-title'] button {
+  border-radius: 0;
+}
+
+body[data-variant='c'] dialog[aria-labelledby='contact-title'] .text-neutral-700 {
+  color: var(--c-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
