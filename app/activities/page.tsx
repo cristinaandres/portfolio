@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import type { Metadata } from 'next';
 import { JsonLd, breadcrumbSchema } from '@/components/seo/JsonLd';
+import { activityImage, getActivities } from '@/content';
 import { siteConfig } from '@/lib/site.config';
 
 export const metadata: Metadata = {
@@ -32,7 +34,7 @@ const page = () => {
           { name: 'Activities', path: '/activities' },
         ])}
       />
-      <div className="w-full min-h-[100dvh] bg-[#E2E2DB] py-16 lg:py-32 px-4 md:px-16 lg:px-24 xl:px-36 flex justify-center items-center">
+      <div className="w-full min-h-[100dvh] bg-[#E2E2DB] pt-28 pb-16 lg:py-32 px-4 md:px-16 lg:px-24 xl:px-36 flex justify-center items-center">
         <div className="w-full max-w-[1144px] flex flex-col justify-center">
           <div className="w-full px-8 md:px-[64px] lg:px-[124px] xl:px-[192px] flex flex-col">
             <h1 className="font-bold text-center text-2xl md:text-3xl">Activities</h1>
@@ -43,24 +45,27 @@ const page = () => {
               heart.
             </p>
           </div>
-          <div className="flex flex-col lg:flex-row gap-8 mt-11 justify-center items-center">
-            <Link
-              href={'/activities/blender'}
-              className="rounded-3xl border-4 border-[#E6793B] w-[160px] md:w-[200px] lg:w-[240px] xl:w-[280px] h-[160px]  md:h-[200px] lg:h-[240px] xl:h-[280px] bg-blender py-8 md:py-16 lg:py-20 xl:py-[92px] px-8 flex flex-col transition-all duration-250 hover:scale-105 bg-cover items-center justify-end"
-              style={{ paddingBottom: '3rem' }}
-            >
-              <h3 className="uppercase font-bold tracking-[4px]" style={{ color: 'white' }}>
-                3D Modeling
-              </h3>
-            </Link>
-            <Link
-              href={'/activities/animal-crossing'}
-              className="rounded-3xl border-4 border-[#E6793B] w-[160px] md:w-[200px] lg:w-[240px] xl:w-[280px] h-[160px]  md:h-[200px] lg:h-[240px] xl:h-[280px] bg-animal py-8 md:py-16 lg:py-20 xl:py-[92px] px-8 flex flex-col transition-all duration-250 hover:scale-105 bg-cover items-center justify-end"
-              style={{ paddingBottom: '3rem' }}
-            >
-              <h3 className="uppercase font-bold tracking-[4px]">Animal Crossing</h3>
-            </Link>
-          </div>
+          <ul className="flex flex-col lg:flex-row gap-8 mt-11 justify-center items-center">
+            {getActivities().map((activity) => {
+              const card = activityImage(activity.card);
+              const dark = activity.slug === 'blender';
+              return (
+                <li key={activity.slug}>
+                  <Link
+                    href={`/activities/${activity.slug}`}
+                    className="relative flex items-end justify-center overflow-hidden rounded-3xl border-4 border-[#E6793B] w-[200px] h-[200px] lg:w-[240px] lg:h-[240px] xl:w-[280px] xl:h-[280px] pb-12 transition-transform duration-200 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-black"
+                  >
+                    <Image src={card.src} alt="" fill sizes="280px" className="object-cover" />
+                    <span
+                      className={`relative whitespace-nowrap rounded-full px-4 py-1 text-sm uppercase font-bold tracking-[3px] ${dark ? 'bg-black/60 text-white' : 'bg-[#F3E9C6]/90 text-black'}`}
+                    >
+                      {activity.title}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </>

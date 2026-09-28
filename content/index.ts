@@ -1,10 +1,13 @@
 // The public face of the content module: pages, the sitemap and the llms files read
 // projects through these functions only.
 import manifest from './image-manifest.json' with { type: 'json' };
+import { activities, type ActivityImage } from './activities.ts';
 import { projects } from './projects/index.ts';
 import type { Figure, Project } from './types.ts';
 
 export type { Block, Figure, Project, Section, SectionKind } from './types.ts';
+export type { Activity, ActivityImage } from './activities.ts';
+export { animalCrossingLogo } from './activities.ts';
 
 /** The one place that knows where a case study lives. */
 export function workPath(project: Pick<Project, 'slug'>): string {
@@ -33,6 +36,14 @@ export function findByLegacyTitle(title: string): Project | undefined {
   return projects.find((p) => p.title.toLowerCase() === wanted || p.slug === wanted);
 }
 
+export function getActivities() {
+  return activities;
+}
+
+export function getActivity(slug: string) {
+  return activities.find((a) => a.slug === slug);
+}
+
 export interface FigureImage {
   src: string;
   width: number;
@@ -40,10 +51,18 @@ export interface FigureImage {
   alt: string;
 }
 
-/** Where the image script wrote a figure, and its real size. Fails the build if the script wasn't run. */
-export function figureImage(project: Project, figure: Figure): FigureImage {
-  const src = `/images/work/${project.slug}/${figure.id}.webp`;
+function sized(src: string, alt: string): FigureImage {
   const size = (manifest as Record<string, { width: number; height: number }>)[src];
   if (!size) throw new Error(`${src} is missing: run \`npm run images\``);
-  return { src, ...size, alt: figure.alt };
+  return { src, ...size, alt };
+}
+
+/** Where the image script wrote an activity image, and its real size. */
+export function activityImage(image: ActivityImage): FigureImage {
+  return sized(`/images/activities/${image.id}.webp`, image.alt);
+}
+
+/** Where the image script wrote a figure, and its real size. Fails the build if the script wasn't run. */
+export function figureImage(project: Project, figure: Figure): FigureImage {
+  return sized(`/images/work/${project.slug}/${figure.id}.webp`, figure.alt);
 }
