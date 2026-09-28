@@ -1,0 +1,3 @@
+# Lean stack for the redesign
+
+For the redesign we remove HeroUI, GSAP, `three` / `@react-three/fiber` / `@react-three/drei`, `next-share`, `react-photo-album` and `yet-another-react-lightbox`. Projects become pages, so only the contact dialog remains, and a native `<dialog>` gives it Escape and focus trapping for free. The GSAP curtain delayed every navigation by about 1.8 s and ignored reduced motion. The 3D scene was removed in 2024, and direction B uses a static render with real links on top. Sharing uses the Web Share API with a copy-link fallback. The goal is the mobile Lighthouse ≥ 90 target in `AGENTS.md`. A 3D room for direction B would be a new, deliberate addition, and only if Cristina chooses B.

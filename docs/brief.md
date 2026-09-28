@@ -2,14 +2,14 @@
 
 The single source of truth about Cristina for anyone designing or writing this site. Every claim cites her own material; paths are relative to the repository root. Colour values are estimated from her images.
 
-_Last updated 2026-09-28: initial analysis for the redesign._
+_Last updated 2026-09-28: initial analysis for the redesign; plan for step 4 (variants) settled with Thomas._
 
 ## Who she is
 
 - **Name:** Cristina Andrés Serra (`public/attached/Smartwatch_Poster.pdf`).
 - **Positioning:** the site says "Product, UX/UI & Graphic Designer" (`lib/site.config.ts`); her CV (September 2025) says "UX/UI Designer… user-first perspective" (`public/pdf/CV.pdf`); Behance, older, says "Diseñadora Gráfica" with a furniture and product focus.
-- **Studies (CV):** Industrial Design Engineering, UPV Valencia (2019–2023); Erasmus at HE-Arc Neuchâtel (2021, industrial design) and Hochschule Augsburg (2023, UX/UI); Máster en Diseño Web, ESDESIGN Barcelona (2024–2025).
-- **Experience (CV):** UX/UI internship at Aqualung Group, Sophia Antipolis (February–August 2025; `public/images/projets/aqualung1.png` says internship); freelance designer, Strasbourg (October 2023–October 2024), including the Curefab Technologies website.
+- **Studies (CV):** Industrial Design Engineering, UPV Valencia (2019–2023); Erasmus at HE-Arc Neuchâtel (2021, industrial design) and Hochschule Augsburg (2023, UX/UI); Máster en Diseño Web, ESDESIGN Barcelona (October 2024–October 2025).
+- **Experience (CV):** UX/UI internship at Aqualung Group, Sophia Antipolis (February–August 2025; `public/images/projets/aqualung1.png` says internship); freelance UX/UI designer, Strasbourg (October 2023–October 2024), including the Curefab Technologies website; graphic designer at Future Fibres Rigging Systems, Valencia (January–December 2022), marketing material for the racing industry. The site never mentioned Future Fibres; the CV also spells Sophia Antipolis "Sophie Antipolis".
 - **Based in:** Antibes (CV).
 - **Languages (CV):** Spanish, Catalan and French native; English advanced; German elementary. The site is English only.
 - **Tools:** Figma, Photoshop, Lightroom, Illustrator, InDesign, Blender, Canva, SolidWorks (`components/Logos/IconRow.tsx`); Adobe XD, Sketch (CV); Lumion (render watermark in `public/images/projets/backgrounds/punt_bg.jpeg`).
@@ -78,18 +78,26 @@ Claude Design board (private to Thomas; share it from its Share menu): https://c
 
 ## Open questions
 
-For Thomas:
-
-1. Was hiding `/about` intentional (for example because it's outdated) or a leftover?
-2. Positioning: UX/UI first (CV) or product plus graphic design (site, Behance)?
-
-For Cristina:
+For Cristina (to ask with the variants link):
 
 3. Aqualung: which images can be shown (she noted confidentiality)?
 4. Should MOCA, Compa-k and the Rituals smartwatch come back?
 5. Languages: English only, or also Spanish and French?
+6. The variants' headlines are placeholder copy, not her words (A "Designing where form meets function.", B "Hi, I'm Cristina. Come in!", C "Every project has its own colour."): keep, edit or replace?
+
+Resolved with Thomas: hiding `/about` was a leftover (it gets rebuilt from the CV); positioning is "UX/UI & Product Designer" (see Decisions).
 
 ## Decisions
 
 - 2026-09-28 (Thomas): redesign with three variants on `dev` for Cristina to choose; directions sketched on a Claude Design board first.
 - 2026-09-28 (Thomas): branches and PRs into `dev` are free; nothing reaches `main` without Cristina's go-ahead.
+- 2026-09-28 (Thomas), plan for step 4, from a grilling session:
+  - `/about` comes back, rebuilt from the September 2025 CV, including Future Fibres.
+  - Positioning: "UX/UI & Product Designer", industrial design engineering as the differentiator, graphic design as a discipline tag.
+  - The nine listed projects only; MOCA, Compa-k and the Smartwatch wait for Cristina. Aqualung shows only `aqualung1-3.png`, not the PDF.
+  - Case-study text is transcribed faithfully from her slides (typos and wrong headings fixed), each section citing its slide; visuals are cropped from the slides. Content lives in a typed module ([ADR 0002](adr/0002-typed-content-module.md)); sitemap and `llms` files are generated from it; `/?project=<title>` redirects to `/work/<slug>`.
+  - Slugs: `aqualung`, `curefab`, `punt`, `montezuma`, `smurfit-kappa`, `ares-domus`, `sakana`, `ciclogreen`, `blossom`.
+  - Variants: `?variant=a|b|c` sets a cookie; switcher and param active only outside production; default A; each variant is its own component tree over shared routes and content.
+  - Stack trimmed: no GSAP curtain, HeroUI, three/R3F, share and lightbox libraries; one native `<dialog>` for contact ([ADR 0001](adr/0001-lean-stack-for-the-redesign.md)). Isla uses the static `Deskroom.png` with real links over it.
+  - Quality checks: Playwright + axe suite over every route × variant × 390/768/1440 px, run before each merge and in a GitHub Action on PRs into `dev`.
+  - The `dev` preview is public (Vercel SSO disabled by Thomas; previews stay `noindex`): https://portfolio-git-dev-cristinaandres-projects.vercel.app

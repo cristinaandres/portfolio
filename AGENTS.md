@@ -53,4 +53,5 @@ How a redesign (or any sizeable visual change) is done here. Each step leaves an
 ## Docs
 
 - `docs/brief.md`: who she is, how she thinks, what she likes, content inventory, the current site's problems, directions, open questions, decisions.
+- `CONTEXT.md`: the glossary (project, case study, section, slide, figure, direction, variant). Use its words in code, tickets and PRs.
 - `docs/adr/`: decisions that are hard to reverse (the chosen design, stack changes), one short file each, numbered `0001-…`.
