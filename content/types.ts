@@ -30,6 +30,8 @@ export type SectionKind =
   | 'renders'
   | 'identity'
   | 'interface'
+  | 'packaging'
+  | 'campaign'
   | 'result';
 
 export interface Section {
