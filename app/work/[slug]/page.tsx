@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import CaseStudy from '@/components/work/CaseStudy';
 import { JsonLd, breadcrumbSchema, projectSchema } from '@/components/seo/JsonLd';
+import { getViews } from '@/variants/server';
 import { figureImage, getAdjacent, getProject, getProjects, workPath } from '@/content';
 
 export const dynamicParams = false;
@@ -35,6 +35,7 @@ export default async function WorkPage({ params }: Props) {
   const project = getProject((await params).slug);
   if (!project) notFound();
   const { previous, next } = getAdjacent(project.slug);
+  const { CaseStudy } = await getViews();
   return (
     <>
       <JsonLd id="ld-work" data={projectSchema(project)} />

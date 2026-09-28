@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import ProjectIndex from '@/components/work/ProjectIndex';
 import { JsonLd, projectsSchema } from '@/components/seo/JsonLd';
 import { getProjects } from '@/content';
 import { siteConfig } from '@/lib/site.config';
+import { getViews } from '@/variants/server';
 
 export const metadata: Metadata = {
   title: {
@@ -26,24 +26,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const { Home } = await getViews();
   return (
     <>
       <JsonLd id="ld-projects" data={projectsSchema()} />
-      <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-24 pt-32">
-        <header className="flex max-w-3xl flex-col gap-4">
-          <h1 className="text-4xl font-bold">
-            {siteConfig.name} — {siteConfig.jobTitle}
-          </h1>
-          <p className="text-lg">{siteConfig.bio}</p>
-        </header>
-        <section aria-labelledby="work-heading" className="flex flex-col gap-6">
-          <h2 id="work-heading" className="text-2xl font-bold">
-            Selected work
-          </h2>
-          <ProjectIndex projects={getProjects()} />
-        </section>
-      </div>
+      <Home projects={getProjects()} />
     </>
   );
 }

@@ -14,6 +14,9 @@ Before any design or content work, read [`docs/brief.md`](docs/brief.md): who Cr
 - Images: originals live outside `public/` in `assets/slides/` and `assets/activities/`; `npm run images` crops and recompresses them into `public/images/` and records their sizes.
 - Hosting: Vercel, on **Cristina's** account (`cristinadesigns.vercel.app`).
 
+- Tailwind breakpoints are custom (`tailwind.config.ts`): `sm` 320, `md` 480, `lg` 768, `xl` 1024, `2xl` 1440. So `lg:` means tablet and up, not desktop. New folders with Tailwind classes must be listed in the config's `content`.
+- Variants (redesign step 4): `variants/<a|b|c>/` each export the views listed in `variants/types.ts`; routes call `getViews()` from `variants/server.ts`. `?variant=` and the switcher work only outside production (`VERCEL_ENV !== 'production'`), where pages stay static.
+
 Commands: `npm run dev`, `npm run build`, `npm run lint` (ESLint 9 flat config), `npm run format` (Prettier: single quotes, width 100), `npm run images`, `npm run test:e2e` (Playwright + axe over the production build).
 
 ## Branches and releases
