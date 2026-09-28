@@ -1,7 +1,23 @@
 {
+  "/images/work/aqualung/app.webp": {
+    "width": 598,
+    "height": 638
+  },
   "/images/work/aqualung/cover.webp": {
     "width": 720,
     "height": 547
+  },
+  "/images/work/aqualung/dive-computer.webp": {
+    "width": 497,
+    "height": 328
+  },
+  "/images/work/aqualung/website-desktop.webp": {
+    "width": 763,
+    "height": 707
+  },
+  "/images/work/aqualung/website-mobile.webp": {
+    "width": 346,
+    "height": 509
   },
   "/images/work/ares-domus/cover.webp": {
     "width": 1134,
@@ -19,9 +35,57 @@
     "width": 763,
     "height": 684
   },
+  "/images/work/curefab/home-tablet.webp": {
+    "width": 893,
+    "height": 431
+  },
+  "/images/work/curefab/palette.webp": {
+    "width": 605,
+    "height": 293
+  },
+  "/images/work/curefab/responsive.webp": {
+    "width": 662,
+    "height": 560
+  },
+  "/images/work/montezuma/box-renders.webp": {
+    "width": 1453,
+    "height": 620
+  },
+  "/images/work/montezuma/box-ticket.webp": {
+    "width": 1170,
+    "height": 1258
+  },
+  "/images/work/montezuma/boxes.webp": {
+    "width": 1276,
+    "height": 585
+  },
   "/images/work/montezuma/cover.webp": {
     "width": 1453,
     "height": 1542
+  },
+  "/images/work/montezuma/devices.webp": {
+    "width": 1347,
+    "height": 1772
+  },
+  "/images/work/montezuma/die-line.webp": {
+    "width": 1276,
+    "height": 1418
+  },
+  "/images/work/montezuma/opening.webp": {
+    "width": 1099,
+    "height": 780
+  },
+  "/images/work/montezuma/posters.webp": {
+    "width": 1453,
+    "height": 1595
+  },
+  "/images/work/montezuma/social.webp": {
+    "width": 1506,
+    "height": 665
+  },
+  "/images/work/montezuma/survey.webp": {
+    "width": 1488,
+    "height": 718
   },
   "/images/work/punt/cover.webp": {
     "width": 1600,
@@ -70,5 +134,29 @@
   "/images/work/smurfit-kappa/cover.webp": {
     "width": 1063,
     "height": 1488
+  },
+  "/images/work/smurfit-kappa/die-line.webp": {
+    "width": 1028,
+    "height": 1488
+  },
+  "/images/work/smurfit-kappa/dispenser.webp": {
+    "width": 1134,
+    "height": 1400
+  },
+  "/images/work/smurfit-kappa/final.webp": {
+    "width": 1600,
+    "height": 870
+  },
+  "/images/work/smurfit-kappa/graphic-die-line.webp": {
+    "width": 1559,
+    "height": 1595
+  },
+  "/images/work/smurfit-kappa/moodboard.webp": {
+    "width": 1382,
+    "height": 975
+  },
+  "/images/work/smurfit-kappa/top-view.webp": {
+    "width": 461,
+    "height": 691
   }
 }
